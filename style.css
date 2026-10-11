@@ -310,7 +310,7 @@ button, a, input, select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #D3AF37;
+  color: #000000;
   text-shadow: 0 1px 1px rgba(255,255,255,.35);
 }
 
