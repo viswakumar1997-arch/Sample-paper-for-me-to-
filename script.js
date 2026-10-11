@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // 1. Audio Playback & User Interaction Handler
-    // Modern browsers block autoplay audio until the user interacts with the page (clicks or scrolls).
+    // 1. Audio Auto-play on user touch/click
     const bgMusic = document.getElementById("bgMusic");
     let hasInteracted = false;
 
@@ -9,97 +8,59 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!hasInteracted && bgMusic) {
             bgMusic.play().then(() => {
                 hasInteracted = true;
-            }).catch(e => {
-                console.log("Audio autoplay restricted by browser policy:", e);
-            });
+            }).catch(e => console.log("Audio play deferred"));
         }
     }
 
-    // Listen for first interaction anywhere on the document
     document.addEventListener("click", playAudio, { once: true });
     document.addEventListener("scroll", playAudio, { once: true });
     document.addEventListener("touchstart", playAudio, { once: true });
 
-
-    // 2. Scratch-Off Card Effect Implementation
+    // 2. Scratch Card Effect
     const canvas = document.getElementById("scratchCanvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
-        const container = canvas.parentElement;
+        
+        function initScratch() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
 
-        // Set canvas resolution to match container size
-        canvas.width = container.offsetWidth;
-        canvas.height = container.offsetHeight;
+            ctx.fillStyle = "#c5a059";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Fill the scratchable surface (silver/gold or dark overlay)
-        ctx.fillStyle = "#c5a059"; // Matching theme accent color
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = "bold 14px sans-serif";
+            ctx.fillStyle = "#1a1a1a";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Scratch to reveal ✨", canvas.width / 2, canvas.height / 2);
+        }
 
-        // Add some texture or instruction text on the scratch cover
-        ctx.font = "bold 16px sans-serif";
-        ctx.fillStyle = "#1a1a1a";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("Scratch to reveal ✨", canvas.width / 2, canvas.height / 2);
+        initScratch();
 
         let isDrawing = false;
 
         function scratch(e) {
             if (!isDrawing) return;
-            
             const rect = canvas.getBoundingClientRect();
-            let x, y;
-
-            if (e.type.includes("touch")) {
-                x = e.touches[0].clientX - rect.left;
-                y = e.touches[0].clientY - rect.top;
-            } else {
-                x = e.clientX - rect.left;
-                y = e.clientY - rect.top;
-            }
+            let x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+            let y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
 
             ctx.globalCompositeOperation = "destination-out";
             ctx.beginPath();
-            ctx.arc(x, y, 25, 0, Math.PI * 2, false);
+            ctx.arc(x, y, 22, 0, Math.PI * 2, false);
             ctx.fill();
-
-            checkScratchPercentage();
         }
 
-        // Event listeners for mouse scratching
         canvas.addEventListener("mousedown", (e) => { isDrawing = true; scratch(e); });
         canvas.addEventListener("mousemove", scratch);
         window.addEventListener("mouseup", () => { isDrawing = false; });
 
-        // Event listeners for touch scratching (mobile phones)
-        canvas.addEventListener("touchstart", (e) => { isDrawing = true; scratch(e); e.preventDefault(); });
-        canvas.addEventListener("touchmove", (e) => { scratch(e); e.preventDefault(); });
-        canvas.addEventListener("touchend", () => { isDrawing = false; });
-
-        // Optional: Automatically clear the overlay if a lot of it is scratched
-        function checkScratchPercentage() {
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            let pixels = imageData.data;
-            let transparentPixels = 0;
-
-            for (let i = 3; i < pixels.length; i += 4) {
-                if (pixels[i] === 0) {
-                    transparentPixels++;
-                }
-            }
-
-            let percentage = (transparentPixels / (pixels.length / 4)) * 100;
-            if (percentage > 40) {
-                // Fade out canvas completely once 40% is cleared
-                canvas.style.transition = "opacity 0.5s ease";
-                canvas.style.opacity = "0";
-                setTimeout(() => { canvas.style.display = "none"; }, 500);
-            }
-        }
+        canvas.addEventListener("touchstart", (e) => { isDrawing = true; scratch(e); });
+        canvas.addEventListener("touchmove", scratch);
+        window.addEventListener("touchend", () => { isDrawing = false; });
     }
 
-
-    // 3. Countdown Timer to the Wedding Date (27 November 2026)
+    // 3. Countdown Timer (27 Nov 2026)
     const weddingDate = new Date('November 27, 2026 18:30:00').getTime();
 
     function updateCountdown() {
@@ -112,17 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            const timerElements = document.querySelectorAll('#countdown strong');
-            if (timerElements.length >= 4) {
-                timerElements[0].innerText = String(days).padStart(2, '0');
-                timerElements[1].innerText = String(hours).padStart(2, '0');
-                timerElements[2].innerText = String(minutes).padStart(2, '0');
-                timerElements[3].innerText = String(seconds).padStart(2, '0');
-            }
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('mins').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('secs').innerText = String(seconds).padStart(2, '0');
         }
     }
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
-
 });
