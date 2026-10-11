@@ -854,7 +854,7 @@ button, a, input, select {
   position: relative;
 }
 
-@keyframes heartBeat {
+<span class="name-heart" style="display:inline-block;color:#ff1744;animation:heartBeat 1s infinite;">❤️</span>
   0% {
     transform: scale(1);
   }
