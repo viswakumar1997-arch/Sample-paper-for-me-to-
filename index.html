@@ -1,41 +1,70 @@
-  .unit span { font-size: 14px; opacity: .85; }
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#143c2a"><title>Subburaj & Seetha | Wedding Invitation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="music-toggle" id="musicToggle" aria-label="Toggle wedding music">♫ MUSIC <span id="musicState">OFF</span></button>
+<audio id="weddingMusic" loop preload="metadata"><source src="Is%20It%20Love%20Bgm.mp3" type="audio/mpeg"></audio>
 
-  /* RSVP */
-  .rsvp-title { font-family: "Cinzel", serif; font-size: 24px; letter-spacing: .08em; color: var(--green); line-height: 1.3; }
-  form { margin-top: 22px; text-align: left; display: grid; gap: 18px; }
-  label.fl, legend { display: block; font-size: 14px; color: var(--brown); margin-bottom: 6px; padding: 0; font-family: "Cinzel", serif; letter-spacing: .1em; }
-  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
-  input[type="text"], select {
-    width: 100%; font: inherit; font-size: 19px; color: var(--ink);
-    padding: 12px 14px; border: 1px solid var(--gold); border-radius: 10px; background: #FFFCF4;
-  }
-  .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .choices input { position: absolute; opacity: 0; pointer-events: none; }
-  .choices label {
-    display: block; text-align: center; padding: 12px 6px; border: 1px solid var(--gold); border-radius: 10px;
-    background: #FFFCF4; cursor: pointer; font-size: 17px;
-  }
-  .choices input:checked + label { background: var(--green); color: #FFF3D6; border-color: var(--green); }
-  .choices input:focus-visible + label { outline: 3px solid var(--gold); outline-offset: 2px; }
-  .send {
-    font-family: "Cinzel", serif; letter-spacing: .14em; font-size: 14px;
-    background: #1FA855; color: #fff; border: 0; border-radius: 999px; padding: 16px 20px; cursor: pointer;
-  }
-  .err { color: #A5301F; font-size: 16px; min-height: 1.3em; }
+<section class="cover" id="cover">
+  <div class="leaf leaf-a"></div><div class="leaf leaf-b"></div><div class="leaf leaf-c"></div><div class="leaf leaf-d"></div>
+  <div class="cover-flowers">✿ ❀ ✿</div>
+  <div class="monogram">S<span>&</span>S</div>
+  <p class="cover-small">A CELEBRATION OF LOVE</p>
+  <button class="open-button" id="openInvite">OPEN INVITATION</button>
+  <div class="cover-bottom">TAP TO OPEN <span>↓</span></div>
+</section>
 
-  footer { text-align: center; padding: 50px 22px 120px; }
-  footer .w { color: var(--gold); font-style: italic; }
-  footer .n { font-size: 44px; color: var(--green); margin: 4px 0; }
-  footer .dt { font-family: "Cinzel", serif; letter-spacing: .2em; color: var(--ink-soft); font-size: 15px; }
-
-  /* Music button */
-  #music {
-    position: fixed; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 60;
-    width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--gold);
-    background: rgba(18, 61, 38, .92); color: var(--gold-light); font-size: 22px; cursor: pointer; display: none;
-  }
-  #music.show { display: block; }
-  #music.off { opacity: .6; text-decoration: line-through; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .leaf-breathe { animation: none; }
+<main id="invitation">
+  <section class="hero section-pad">
+    <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p><p class="script">We invite you to celebrate</p>
+    <h1>Subburaj <span>&</span> Seetha</h1><p class="hero-copy">Two hearts, one journey, a lifetime of love.</p>
+    <div class="ornament">✦ ❦ ✦</div><p class="scroll-note">SCROLL TO EXPLORE <span>↓</span></p>
+  </section>
+  <section class="story section-pad"><p class="eyebrow">THE BEGINNING OF FOREVER</p><h2>Two souls, one beautiful story</h2><p class="body-copy">With the blessings of our families, we joyfully begin a new chapter together. Your presence will make our celebration even more special.</p><div class="floral-mark">❦</div></section>
+  <section class="couple">
+    <article class="person groom"><div class="person-photo photo-one" role="img" aria-label="Wedding photograph"></div><div class="person-text"><span class="script">Groom</span><h2>SUBBURAJ</h2><p>With love and gratitude</p></div></article>
+    <div class="and-mark">&</div>
+    <article class="person bride"><div class="person-photo photo-two" role="img" aria-label="Wedding photograph"></div><div class="person-text"><span class="script">Bride</span><h2>SEETHA</h2><p>With love and gratitude</p></div></article>
+  </section>
+  <section class="date-reveal section-pad"><p class="eyebrow">A DATE TO REMEMBER</p><h2>Our Wedding Day</h2><p>Scratch just a little to reveal our special date</p>
+    <div class="scratch-wrap"><div class="scratch-under"><span>FRIDAY</span><strong>20</strong><b>NOVEMBER 2026</b><small>9:00 AM – 10:30 AM</small></div><canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas></div><p class="scratch-hint">A few gentle scratches will reveal the date ✨</p>
+  </section>
+  <section class="events section-pad"><p class="eyebrow">PLEASE JOIN US</p><h2>Wedding Celebrations</h2>
+    <div class="event-card"><div class="event-icon">❦</div><p class="script">The Wedding Ceremony</p><h3>20 November 2026</h3><p class="event-time">9:00 AM – 10:30 AM</p><div class="fine-line"></div><p class="venue-name">Deva Kalyana Mahal</p><p>Ottapidaram, Thoothukudi, Tamil Nadu</p><a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Deva+Kalyana+Mahal+Ottapidaram+Thoothukudi+Tamil+Nadu">⌖ VIEW WEDDING VENUE</a></div>
+    <div class="event-card reception-card"><div class="event-icon">✦</div><p class="script">The Reception</p><h3>21 November 2026</h3><p class="event-time">9:30 AM – 10:30 AM</p><div class="fine-line"></div><p class="venue-name">S. Arumuganadar Rajammal Thirumana Mahal</p><p>Thoothukudi, Tamil Nadu</p><a class="map-button" target="_blank" rel="noopener" href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw">⌖ VIEW RECEPTION VENUE</a></div>
+  </section>
+  <section class="countdown-section section-pad"><p class="eyebrow">THE COUNTDOWN</p><h2>Until We Say “I Do”</h2><div class="countdown"><div><strong id="days">--</strong><span>DAYS</span></div><div><strong id="hours">--</strong><span>HOURS</span></div><div><strong id="minutes">--</strong><span>MINUTES</span></div><div><strong id="seconds">--</strong><span>SECONDS</span></div></div></section>
+  <section class="gallery-section section-pad"><p class="eyebrow">LITTLE MOMENTS, BIG LOVE</p><h2>Our Memories</h2><p class="body-copy">A few moments we would love to share with you.</p><div class="gallery">
+    <button class="gallery-image" data-full="IMG-20260918-WA0002.jpg"><img src="IMG-20260918-WA0002.jpg" alt="Subburaj and Seetha memory one" loading="lazy"></button>
+    <button class="gallery-image" data-full="IMG-20260918-WA0003.jpg"><img src="IMG-20260918-WA0003.jpg" alt="Subburaj and Seetha memory two" loading="lazy"></button>
+    <button class="gallery-image wide" data-full="IMG-20260918-WA0006.jpg"><img src="IMG-20260918-WA0006.jpg" alt="Subburaj and Seetha memory three" loading="lazy"></button>
+  </div></section>
+  <section class="rsvp section-pad" id="rsvp"><p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p><h2>Will you celebrate<br>with us?</h2><p class="body-copy">Let us know your presence and share in our happiest beginning.</p>
+    <form id="rsvpForm">
+      <label for="guestName">Your name</label><input id="guestName" name="guestName" placeholder="Enter your name" required maxlength="80">
+      <label for="eventChoice">Which celebration will you attend?</label><select id="eventChoice" required><option value="Wedding ceremony — 20 November 2026">Wedding ceremony — 20 November 2026</option><option value="Reception — 21 November 2026">Reception — 21 November 2026</option><option value="Both wedding and reception">Both wedding and reception</option></select>
+      <label for="guestCount">How many people are coming?</label><select id="guestCount" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option><option value="6">6 people</option><option value="7">7 people</option><option value="8">8 people</option><option value="9">9 people</option><option value="10">10 people</option></select>
+      <button class="whatsapp-button" type="submit">☘ INFORM US ON WHATSAPP</button>
+      <p class="rsvp-note">Your reply opens WhatsApp with a ready-to-send RSVP message.</p>
+    </form>
+  </section>
+  <section class="closing section-pad"><div class="closing-flower">❦</div><p class="script">With love,</p><h2>Subburaj <span>&</span> Seetha</h2><p class="body-copy">Your presence and blessings will make our day special.</p><p class="closing-date">20 · 11 · 2026</p><div class="ornament">✦ ❦ ✦</div><button class="open-button" id="backToTop">BACK TO TOP ↑</button></section>
+</main>
+<div class="lightbox" id="lightbox" aria-hidden="true"><button id="closeLightbox" aria-label="Close photo">×</button><img id="lightboxImage" alt="Expanded wedding memory"></div>
+<script>
+const music=document.getElementById('weddingMusic'), musicToggle=document.getElementById('musicToggle'), musicState=document.getElementById('musicState');
+musicToggle.addEventListener('click',async()=>{if(music.paused){try{await music.play();musicState.textContent='ON';musicToggle.classList.add('playing')}catch(e){musicState.textContent='TAP AGAIN'}}else{music.pause();musicState.textContent='OFF';musicToggle.classList.remove('playing')}});
+document.getElementById('openInvite').addEventListener('click',()=>{document.getElementById('cover').classList.add('opened');document.body.classList.add('invitation-open');setTimeout(()=>document.getElementById('invitation').scrollIntoView({behavior:'smooth'}),450)});
+document.getElementById('backToTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const canvas=document.getElementById('scratchCanvas'),ctx=canvas.getContext('2d');let scratching=false,revealed=false,points=0;
+function drawScratch(){const r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=r.width*dpr;canvas.height=r.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalCompositeOperation='source-over';const g=ctx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#d7a45e');g.addColorStop(.5,'#f0d6a2');g.addColorStop(1,'#a56b3d');ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='#fff4d9';ctx.textAlign='center';ctx.font='14px Georgia';ctx.fillText('✧  SCRATCH HERE  ✧',r.width/2,r.height/2);ctx.globalCompositeOperation='destination-out';}
+function erase(e){if(!scratching||revealed)return;const r=canvas.getBoundingClientRect(),p=e;ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(p.clientX-r.left,p.clientY-r.top,28,0,Math.PI*2);ctx.fill();points++;if(points>=5){revealed=true;canvas.style.transition='opacity .45s ease';canvas.style.opacity='0';setTimeout(()=>canvas.style.display='none',480);document.querySelector('.scratch-hint').textContent='Our special day: 20 November 2026 ♡';}}
+canvas.addEventListener('pointerdown',e=>{scratching=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',erase);canvas.addEventListener('pointerup',()=>scratching=false);canvas.addEventListener('pointercancel',()=>scratching=false);window.addEventListener('resize',()=>{if(!revealed)drawScratch()});drawScratch();
+function updateCountdown(){const target=new Date('2026-11-20T09:00:00+05:30').getTime(),diff=Math.max(0,target-Date.now());document.getElementById('days').textContent=Math.floor(diff/86400000);document.getElementById('hours').textContent=Math.floor(diff%86400000/3600000);document.getElementById('minutes').textContent=Math.floor(diff%3600000/60000);document.getElementById('seconds').textContent=Math.floor(diff%60000/1000)}updateCountdown();setInterval(updateCountdown,1000);
+document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('guestName').value.trim(),event=document.getElementById('eventChoice').value,count=document.getElementById('guestCount').value;const message=`Hello Subburaj and Seetha! 💐\n\nRSVP: I will attend your celebration.\nName: ${name}\nEvent: ${event}\nNumber of guests: ${count}\n\nWishing you both a beautiful married life!`;window.open('https://wa.me/918015740949?text='+encodeURIComponent(message),'_blank')});
+const lightbox=document.getElementById('lightbox'),lbimg=document.getElementById('lightboxImage');document.querySelectorAll('.gallery-image').forEach(b=>b.addEventListener('click',()=>{lbimg.src=b.dataset.full;lightbox.classList.add('show');lightbox.setAttribute('aria-hidden','false')}));function closeLb(){lightbox.classList.remove('show');lightbox.setAttribute('aria-hidden','true')}document.getElementById('closeLightbox').addEventListener('click',closeLb);lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLb()});
+</script>
+</body></html>
