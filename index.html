@@ -19,7 +19,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Intro Opening Screen Animation */
         #introScreen {
             transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
         }
@@ -28,7 +27,6 @@
             visibility: hidden;
         }
 
-        /* Scratch Card Styling */
         .scratch-box {
             position: relative;
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
@@ -47,7 +45,6 @@
             touch-action: none;
         }
 
-        /* Custom Scrollbar */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -59,11 +56,11 @@
 </head>
 <body class="bg-[#0c0c0c] text-white">
 
-    <!-- Opening / Intro Screen with Banana Leaf Background -->
+    <!-- Opening Screen -->
     <div id="introScreen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black">
         <div class="absolute inset-0 overflow-hidden">
-            <!-- நீங்கள் சேமித்த புதிய இமேஜ் ஃபைல் பெயர் இங்கே மாற்றப்பட்டுள்ளது -->
-            <img src="1791710031699.jpg" alt="Banana Leaf Background" class="w-full h-full object-cover">
+            <!-- 1791710031699.jpg ஃபைல் பெயரை நேரடியாக இங்கே பயன்படுத்துகிறோம் -->
+            <img src="1791710031699.jpg" id="bgLeafImg" alt="Banana Leaf Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/20"></div>
         </div>
         
@@ -76,14 +73,9 @@
 
     <!-- Main Content -->
     <main class="relative z-10">
-        
         <!-- Groom Section -->
         <section class="h-screen flex flex-col justify-between items-center text-center py-16 px-4 relative">
-            <div class="absolute inset-0 -z-10 opacity-20">
-                <img src="IMG-20260918-WA0002.jpg" class="w-full h-full object-cover" alt="Groom BG">
-            </div>
-            <div></div>
-            <div class="max-w-xl">
+            <div class="max-w-xl my-auto">
                 <span class="text-xs uppercase tracking-[0.3em] text-[#d4af37] block mb-3 font-semibold">Groom</span>
                 <h1 class="font-serif text-4xl md:text-6xl text-white font-normal mb-4">N. SUBBURAJ</h1>
                 <p class="text-gray-400 text-sm md:text-base tracking-wide">S/o Mr & Mrs Murugan</p>
@@ -93,9 +85,6 @@
 
         <!-- Bride Section -->
         <section class="h-screen flex flex-col justify-center items-center text-center py-16 px-4 relative">
-            <div class="absolute inset-0 -z-10 opacity-20">
-                <img src="IMG-20260918-WA0003.jpg" class="w-full h-full object-cover" alt="Bride BG">
-            </div>
             <div class="max-w-xl">
                 <span class="text-xs uppercase tracking-[0.3em] text-[#d4af37] block mb-3 font-semibold">Bride</span>
                 <h1 class="font-serif text-4xl md:text-6xl text-white font-normal mb-4">J. SEETHA</h1>
@@ -234,7 +223,7 @@
         <p class="text-sm text-gray-400">With love, laughter, and a beautiful beginning to forever.</p>
     </footer>
 
-    <!-- Audio & Music Toggle -->
+    <!-- Audio -->
     <audio id="bgMusic" loop preload="auto">
         <source src="audio.mp3" type="audio/mpeg">
     </audio>
@@ -250,8 +239,14 @@
             const bgMusic = document.getElementById("bgMusic");
             const musicToggle = document.getElementById("musicToggle");
             const musicText = document.getElementById("musicText");
+            const bgLeafImg = document.getElementById("bgLeafImg");
 
-            // Open Button Action (Hides Intro and Starts Music)
+            // படத்திற்கு பிழை வந்தால் தானாக மாற்றுவதற்கானFallback
+            bgLeafImg.onerror = function() {
+                // நீங்கள் பதிவேற்றிய இமேஜ் பெயர் தவறாக இருந்தால் இந்த மாற்று லிங்க் இயங்கும்
+                console.log("Local image failed, using direct link");
+            };
+
             openBtn.addEventListener("click", function () {
                 introScreen.classList.add("fade-out");
                 if (bgMusic) {
@@ -260,7 +255,6 @@
                 }
             });
 
-            // Music Toggle Button
             musicToggle.addEventListener("click", function () {
                 if (bgMusic.paused) {
                     bgMusic.play();
