@@ -1,874 +1,1155 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<meta name="theme-color" content="#143c2a">  
+<title>Subburaj &amp; Seetha | Wedding Invitation</title>  
+<link rel="stylesheet" href="style.css">  
+</head>  
+<body>  <button class="music-toggle" id="musicToggle" aria-label="Toggle wedding music">♫ MUSIC <span id="musicState">OFF</span></button>
+<audio id="weddingMusic" loop preload="metadata">
+<source src="Is%20It%20Love%20Bgm.mp3" type="audio/mpeg">
+</audio>
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+<section class="cover" id="cover">  
+  <div class="leaf leaf-a"></div>  
+  <div class="leaf leaf-b"></div>  
+  <div class="leaf leaf-c"></div>  
+  <div class="leaf leaf-d"></div>  
+  <div class="cover-flowers">✿ ❀ ✿</div>  
+  <div class="monogram">S<span>&amp;</span>S</div>  
+  <p class="cover-small">A CELEBRATION OF LOVE</p>  
+  <button class="open-button" id="openInvite">OPEN INVITATION</button>  
+  <div class="cover-bottom">TAP TO OPEN <span>↓</span></div>  
+</section>  <main id="invitation">    <section class="hero section-pad">  
+    <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>  
+    <p class="script">We invite you to celebrate</p>  
+    <h1>Subburaj <span>&amp;</span> Seetha</h1>  
+    <p class="hero-copy">Two hearts, one journey, a lifetime of love.</p>  
+    <div class="ornament">✦ ❦ ✦</div>  
+    <p class="scroll-note">SCROLL TO EXPLORE <span>↓</span></p>  
+  </section>    <!-- SECOND PAGE: LARGE LUXURY SERIF NUMBER 8 -->    <section class="story section-pad">  
+    <div class="story-content">  
+      <h2 class="story-heading">  
+        <span class="story-heading-top">THE BEGINNING OF</span>  
+        <span class="story-number">8</span>  
+        <span class="story-heading-bottom">YEARS OF LOVE</span>  
+      </h2>  <div class="story-divider">✦ ❦ ✦</div>  
+
+  <p class="story-subtitle">Two souls, one beautiful story</p>  
+
+  <p class="body-copy">  
+    With the blessings of our families, we joyfully begin a new  
+    chapter together. Your presence will make our celebration  
+    even more special.  
+  </p>  
+
+  <div class="floral-mark">❦</div>  
+  <p class="story-ending">OUR FOREVER BEGINS</p>  
+</div>
+
+  </section>    <section class="couple">  
+    <article class="person groom">  
+      <div class="person-photo photo-one" role="img" aria-label="Wedding photograph"></div>  
+      <div class="person-text">  
+        <span class="script">Groom</span>  
+        <h2>SUBBURAJ</h2>  
+        <p>With love and gratitude</p>  
+      </div>  
+    </article>  <div class="and-mark">&amp;</div>  
+
+<article class="person bride">  
+  <div class="person-photo photo-two" role="img" aria-label="Wedding photograph"></div>  
+  <div class="person-text">  
+    <span class="script">Bride</span>  
+    <h2>SEETHA</h2>  
+    <p>With love and gratitude</p>  
+  </div>  
+</article>
+
+  </section>    <section class="date-reveal section-pad">  
+    <p class="eyebrow">A DATE TO REMEMBER</p>  
+    <h2>Our Wedding Day</h2>  
+    <p>Scratch just a little to reveal our special date</p>  <div class="scratch-wrap">  
+  <div class="scratch-under">  
+    <span>FRIDAY</span>  
+    <strong>20</strong>  
+    <b>NOVEMBER 2026</b>  
+    <small>9:00 AM – 10:30 AM</small>  
+  </div>  
+  <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>  
+</div>  
+
+<p class="scratch-hint">A few gentle scratches will reveal the date ✨</p>
+
+  </section>    <section class="events section-pad">  
+    <p class="eyebrow">PLEASE JOIN US</p>  
+    <h2>Wedding Celebrations</h2>  <div class="event-card">  
+  <div class="event-icon">❦</div>  
+  <p class="script">The Wedding Ceremony</p>  
+  <h3>20 November 2026</h3>  
+  <p class="event-time">9:00 AM – 10:30 AM</p>  
+  <div class="fine-line"></div>  
+  <p class="venue-name">Deva Kalyana Mahal</p>  
+  <p>Ottapidaram, Thoothukudi, Tamil Nadu</p>  
+  <a class="map-button" target="_blank" rel="noopener"  
+     href="https://www.google.com/maps/search/?api=1&amp;query=Deva+Kalyana+Mahal+Ottapidaram+Thoothukudi+Tamil+Nadu">⌖ VIEW WEDDING VENUE</a>  
+</div>  
+
+<div class="event-card reception-card">  
+  <div class="event-icon">✦</div>  
+  <p class="script">The Reception</p>  
+  <h3>21 November 2026</h3>  
+  <p class="event-time">9:30 AM – 10:30 AM</p>  
+  <div class="fine-line"></div>  
+  <p class="venue-name">S. Arumuganadar Rajammal Thirumana Mahal</p>  
+  <p>Thoothukudi, Tamil Nadu</p>  
+  <a class="map-button" target="_blank" rel="noopener"  
+     href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw">⌖ VIEW RECEPTION VENUE</a>  
+</div>
+
+  </section>    <section class="countdown-section section-pad">  
+    <p class="eyebrow">THE COUNTDOWN</p>  
+    <h2>Until We Say “I Do”</h2>  
+    <div class="countdown">  
+      <div><strong id="days">--</strong><span>DAYS</span></div>  
+      <div><strong id="hours">--</strong><span>HOURS</span></div>  
+      <div><strong id="minutes">--</strong><span>MINUTES</span></div>  
+      <div><strong id="seconds">--</strong><span>SECONDS</span></div>  
+    </div>  
+  </section>    <section class="gallery-section section-pad">  
+    <p class="eyebrow">LITTLE MOMENTS, BIG LOVE</p>  
+    <h2>Our Memories</h2>  
+    <p class="body-copy">A few moments we would love to share with you.</p>  <div class="gallery">  
+  <button class="gallery-image" data-full="IMG-20260918-WA0002.jpg">  
+    <img src="IMG-20260918-WA0002.jpg" alt="Subburaj and Seetha memory one" loading="lazy">  
+  </button>  
+
+  <button class="gallery-image" data-full="IMG-20260918-WA0003.jpg">  
+    <img src="IMG-20260918-WA0003.jpg" alt="Subburaj and Seetha memory two" loading="lazy">  
+  </button>  
+
+  <button class="gallery-image wide" data-full="IMG-20260918-WA0006.jpg">  
+    <img src="IMG-20260918-WA0006.jpg" alt="Subburaj and Seetha memory three" loading="lazy">  
+  </button>  
+</div>
+
+  </section>    <section class="rsvp section-pad" id="rsvp">  
+    <p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p>  
+    <h2>Will you celebrate<br>with us?</h2>  
+    <p class="body-copy">Let us know your presence and share in our happiest beginning.</p>  <form id="rsvpForm">  
+  <label for="guestName">Your name</label>  
+  <input id="guestName" name="guestName" placeholder="Enter your name" required maxlength="80">  
+
+  <label for="eventChoice">Which celebration will you attend?</label>  
+  <select id="eventChoice" required>  
+    <option value="Wedding ceremony — 20 November 2026">Wedding ceremony — 20 November 2026</option>  
+    <option value="Reception — 21 November 2026">Reception — 21 November 2026</option>  
+    <option value="Both wedding and reception">Both wedding and reception</option>  
+  </select>  
+
+  <label for="guestCount">How many people are coming?</label>  
+  <select id="guestCount" required>  
+    <option value="1">1 person</option>  
+    <option value="2">2 people</option>  
+    <option value="3">3 people</option>  
+    <option value="4">4 people</option>  
+    <option value="5">5 people</option>  
+    <option value="6">6 people</option>  
+    <option value="7">7 people</option>  
+    <option value="8">8 people</option>  
+    <option value="9">9 people</option>  
+    <option value="10">10 people</option>  
+  </select>  
+
+  <button class="whatsapp-button" type="submit">☘ INFORM US ON WHATSAPP</button>  
+  <p class="rsvp-note">Your reply opens WhatsApp with a ready-to-send RSVP message.</p>  
+</form>
+
+  </section>    <section class="closing section-pad">  
+    <div class="closing-flower">❦</div>  
+    <p class="script">With love,</p>  
+    <h2>Subburaj <span>&amp;</span> Seetha</h2>  
+    <p class="body-copy">Your presence and blessings will make our day special.</p>  
+    <p class="closing-date">20 · 11 · 2026</p>  
+    <div class="ornament">✦ ❦ ✦</div>  
+    <button class="open-button" id="backToTop">BACK TO TOP ↑</button>  
+  </section>  </main>  <div class="lightbox" id="lightbox" aria-hidden="true">  
+  <button id="closeLightbox" aria-label="Close photo">×</button>  
+  <img id="lightboxImage" alt="Expanded wedding memory">  
+</div>  <script>  
+const music = document.getElementById('weddingMusic');  
+const musicToggle = document.getElementById('musicToggle');  
+const musicState = document.getElementById('musicState');  
+  
+musicToggle.addEventListener('click', async () => {  
+  if (music.paused) {  
+    try {  
+      await music.play();  
+      musicState.textContent = 'ON';  
+      musicToggle.classList.add('playing');  
+    } catch (e) {  
+      musicState.textContent = 'TAP AGAIN';  
+    }  
+  } else {  
+    music.pause();  
+    musicState.textContent = 'OFF';  
+    musicToggle.classList.remove('playing');  
+  }  
+});  
+  
+document.getElementById('openInvite').addEventListener('click', () => {  
+  document.getElementById('cover').classList.add('opened');  
+  document.body.classList.add('invitation-open');  
+  setTimeout(() => {  
+    document.getElementById('invitation').scrollIntoView({ behavior: 'smooth' });  
+  }, 450);  
+});  
+  
+document.getElementById('backToTop').addEventListener('click', () => {  
+  window.scrollTo({ top: 0, behavior: 'smooth' });  
+});  
+  
+/* Scratch-to-reveal wedding date */  
+const canvas = document.getElementById('scratchCanvas');  
+const ctx = canvas.getContext('2d');  
+let scratching = false;  
+let revealed = false;  
+let points = 0;  
+  
+function drawScratch() {  
+  const r = canvas.getBoundingClientRect();  
+  const dpr = window.devicePixelRatio || 1;  
+  
+  canvas.width = r.width * dpr;  
+  canvas.height = r.height * dpr;  
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);  
+  ctx.globalCompositeOperation = 'source-over';  
+  
+  const g = ctx.createLinearGradient(0, 0, r.width, r.height);  
+  g.addColorStop(0, '#d7a45e');  
+  g.addColorStop(0.5, '#f0d6a2');  
+  g.addColorStop(1, '#a56b3d');  
+  
+  ctx.fillStyle = g;  
+  ctx.fillRect(0, 0, r.width, r.height);  
+  ctx.fillStyle = '#fff4d9';  
+  ctx.textAlign = 'center';  
+  ctx.font = '14px Georgia';  
+  ctx.fillText('✧ SCRATCH HERE ✧', r.width / 2, r.height / 2);  
+  ctx.globalCompositeOperation = 'destination-out';  
+}  
+  
+function erase(e) {  
+  if (!scratching || revealed) return;  
+  
+  const r = canvas.getBoundingClientRect();  
+  ctx.globalCompositeOperation = 'destination-out';  
+  ctx.beginPath();  
+  ctx.arc(e.clientX - r.left, e.clientY - r.top, 28, 0, Math.PI * 2);  
+  ctx.fill();  
+  
+  points++;  
+  
+  if (points >= 5) {  
+    revealed = true;  
+    canvas.style.transition = 'opacity .45s ease';  
+    canvas.style.opacity = '0';  
+  
+    setTimeout(() => {  
+      canvas.style.display = 'none';  
+    }, 480);  
+  
+    document.querySelector('.scratch-hint').textContent =  
+      'Our special day: 20 November 2026 ♡';  
+  }  
+}  
+  
+canvas.addEventListener('pointerdown', e => {  
+  scratching = true;  
+  canvas.setPointerCapture(e.pointerId);  
+  erase(e);  
+});  
+  
+canvas.addEventListener('pointermove', erase);  
+canvas.addEventListener('pointerup', () => scratching = false);  
+canvas.addEventListener('pointercancel', () => scratching = false);  
+  
+window.addEventListener('resize', () => {  
+  if (!revealed) drawScratch();  
+});  
+  
+drawScratch();  
+  
+/* Wedding countdown */  
+function updateCountdown() {  
+  const target = new Date('2026-11-20T09:00:00+05:30').getTime();  
+  const diff = Math.max(0, target - Date.now());  
+  
+  document.getElementById('days').textContent = Math.floor(diff / 86400000);  
+  document.getElementById('hours').textContent = Math.floor(diff % 86400000 / 3600000);  
+  document.getElementById('minutes').textContent = Math.floor(diff % 3600000 / 60000);  
+  document.getElementById('seconds').textContent = Math.floor(diff % 60000 / 1000);  
+}  
+  
+updateCountdown();  
+setInterval(updateCountdown, 1000);  
+  
+/* WhatsApp RSVP */  
+document.getElementById('rsvpForm').addEventListener('submit', e => {  
+  e.preventDefault();  
+  
+  const name = document.getElementById('guestName').value.trim();  
+  const event = document.getElementById('eventChoice').value;  
+  const count = document.getElementById('guestCount').value;  
+  
+  const message =  
+    `Hello Subburaj and Seetha! 💐\n\n` +  
+    `RSVP: I will attend your celebration.\n` +  
+    `Name: ${name}\n` +  
+    `Event: ${event}\n` +  
+    `Number of guests: ${count}\n\n` +  
+    `Wishing you both a beautiful married life!`;  
+  
+  window.open(  
+    'https://wa.me/918015740949?text=' + encodeURIComponent(message),  
+    '_blank'  
+  );  
+});  
+  
+/* Gallery lightbox */  
+const lightbox = document.getElementById('lightbox');  
+const lbimg = document.getElementById('lightboxImage');  
+  
+document.querySelectorAll('.gallery-image').forEach(button => {  
+  button.addEventListener('click', () => {  
+    lbimg.src = button.dataset.full;  
+    lightbox.classList.add('show');  
+    lightbox.setAttribute('aria-hidden', 'false');  
+  });  
+});  
+  
+function closeLb() {  
+  lightbox.classList.remove('show');  
+  lightbox.setAttribute('aria-hidden', 'true');  
+}  
+  
+document.getElementById('closeLightbox').addEventListener('click', closeLb);  
+  
+lightbox.addEventListener('click', e => {  
+  if (e.target === lightbox) closeLb();  
+});  
+</script>  </body>  
+</html>  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --green: #163b2a;
-  --deep: #0c2419;
-  --cream: #f8f1e4;
-  --gold: #d9b879;
-  --rust: #b96e43;
-  --ink: #2c3027;
+--green: #163b2a;
+--deep: #0c2419;
+--cream: #f8f1e4;
+--gold: #d9b879;
+--rust: #b96e43;
+--ink: #2c3027;
 }
 
-* {
+- {
   box-sizing: border-box;
-}
+  }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: Montserrat, Arial, sans-serif;
-  font-weight: 300;
+margin: 0;
+background: var(--cream);
+color: var(--ink);
+font-family: Montserrat, Arial, sans-serif;
+font-weight: 300;
 }
 
 button, a, input, select {
-  -webkit-tap-highlight-color: transparent;
+-webkit-tap-highlight-color: transparent;
 }
 
 /* COVER */
 .cover {
-  height: 100svh;
-  min-height: 600px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: #f8e8c7;
-  background: radial-gradient(ellipse at center, #4b7943 0%, #1d4b2b 48%, #092719 100%);
-  transition: height .8s, opacity .7s, transform .8s;
+height: 100svh;
+min-height: 600px;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+color: #f8e8c7;
+background: radial-gradient(ellipse at center, #4b7943 0%, #1d4b2b 48%, #092719 100%);
+transition: height .8s, opacity .7s, transform .8s;
 }
 
 .cover:before {
-  content: "";
-  position: absolute;
-  inset: -12%;
-  background: repeating-conic-gradient(from 8deg at 50% 50%, transparent 0deg 7deg, rgba(177,205,112,.22) 8deg 9deg, transparent 11deg 18deg);
-  filter: blur(5px);
-  transform: scale(1.12);
+content: "";
+position: absolute;
+inset: -12%;
+background: repeating-conic-gradient(from 8deg at 50% 50%, transparent 0deg 7deg, rgba(177,205,112,.22) 8deg 9deg, transparent 11deg 18deg);
+filter: blur(5px);
+transform: scale(1.12);
 }
 
 .cover:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse, transparent 25%, rgba(0,0,0,.4) 100%);
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse, transparent 25%, rgba(0,0,0,.4) 100%);
 }
 
 .leaf {
-  position: absolute;
-  z-index: 1;
-  width: 70%;
-  height: 38%;
-  background: linear-gradient(110deg, #174327, #63964b 45%, #174327 78%, #a3b75b);
-  border: 1px solid #9eaf5b;
-  border-radius: 8% 90% 8% 90%;
-  box-shadow: inset 0 0 0 2px #244d2b, inset 0 0 18px #0c2419;
-  opacity: .88;
+position: absolute;
+z-index: 1;
+width: 70%;
+height: 38%;
+background: linear-gradient(110deg, #174327, #63964b 45%, #174327 78%, #a3b75b);
+border: 1px solid #9eaf5b;
+border-radius: 8% 90% 8% 90%;
+box-shadow: inset 0 0 0 2px #244d2b, inset 0 0 18px #0c2419;
+opacity: .88;
 }
 
 .leaf:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #c4c56d;
-  transform: rotate(22deg);
-  opacity: .8;
+content: "";
+position: absolute;
+left: 50%;
+top: 0;
+width: 2px;
+height: 100%;
+background: #c4c56d;
+transform: rotate(22deg);
+opacity: .8;
 }
 
-.leaf-a {
-  top: -4%;
-  left: -25%;
-  transform: rotate(25deg);
-}
-
-.leaf-b {
-  top: 12%;
-  right: -28%;
-  transform: rotate(155deg);
-}
-
-.leaf-c {
-  bottom: 5%;
-  left: -25%;
-  transform: rotate(-20deg);
-}
-
-.leaf-d {
-  bottom: -7%;
-  right: -25%;
-  transform: rotate(200deg);
-}
+.leaf-a { top: -4%; left: -25%; transform: rotate(25deg); }
+.leaf-b { top: 12%; right: -28%; transform: rotate(155deg); }
+.leaf-c { bottom: 5%; left: -25%; transform: rotate(-20deg); }
+.leaf-d { bottom: -7%; right: -25%; transform: rotate(200deg); }
 
 .cover-flowers {
-  position: absolute;
-  z-index: 2;
-  top: 12%;
-  color: #f4d2c3;
-  font-size: 28px;
-  letter-spacing: 15px;
-  text-shadow: 0 2px 12px #0008;
+position: absolute;
+z-index: 2;
+top: 12%;
+color: #f4d2c3;
+font-size: 28px;
+letter-spacing: 15px;
+text-shadow: 0 2px 12px #0008;
 }
 
 .monogram {
-  position: relative;
-  z-index: 3;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(100px, 28vw, 190px);
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: -.09em;
-  color: #ffe0d5;
-  text-shadow: 0 3px 20px #0008;
+position: relative;
+z-index: 3;
+font-family: "Cormorant Garamond", serif;
+font-size: clamp(100px, 28vw, 190px);
+line-height: 1;
+font-weight: 400;
+letter-spacing: -.09em;
+color: #ffe0d5;
+text-shadow: 0 3px 20px #0008;
 }
 
 .monogram span {
-  font-family: "Great Vibes", cursive;
-  font-size: .6em;
-  letter-spacing: 0;
-  color: #fff1d7;
+font-family: "Great Vibes", cursive;
+font-size: .6em;
+letter-spacing: 0;
+color: #fff1d7;
 }
 
-.cover-small,
-.open-button,
-.cover-bottom {
-  position: relative;
-  z-index: 3;
-  letter-spacing: .22em;
-  font-size: 10px;
+.cover-small, .open-button, .cover-bottom {
+position: relative;
+z-index: 3;
+letter-spacing: .22em;
+font-size: 10px;
 }
 
 .cover-small {
-  margin: 15px 0 28px;
+margin: 15px 0 28px;
 }
 
 .open-button {
-  border: 1px solid #f8d9aa;
-  border-radius: 40px;
-  background: linear-gradient(110deg, #e99b55, #d77835);
-  color: #fff5e4;
-  padding: 17px 31px;
-  letter-spacing: .18em;
-  font-family: Montserrat, sans-serif;
-  cursor: pointer;
-  box-shadow: 0 8px 30px #0002;
+border: 1px solid #f8d9aa;
+border-radius: 40px;
+background: linear-gradient(110deg, #e99b55, #d77835);
+color: #fff5e4;
+padding: 17px 31px;
+letter-spacing: .18em;
+font-family: Montserrat, sans-serif;
+cursor: pointer;
+box-shadow: 0 8px 30px #0002;
 }
 
 .cover-bottom {
-  position: absolute;
-  z-index: 3;
-  bottom: 30px;
-  display: grid;
-  gap: 9px;
-  text-align: center;
+position: absolute;
+z-index: 3;
+bottom: 30px;
+display: grid;
+gap: 9px;
+text-align: center;
 }
 
-.cover-bottom span,
-.scroll-note span {
-  font-size: 20px;
+.cover-bottom span, .scroll-note span {
+font-size: 20px;
 }
 
 .cover.opened {
-  height: 0;
-  min-height: 0;
-  opacity: 0;
-  transform: scale(1.06);
-  pointer-events: none;
+height: 0;
+min-height: 0;
+opacity: 0;
+transform: scale(1.06);
+pointer-events: none;
 }
 
 /* MUSIC BUTTON */
 .music-toggle {
-  position: fixed;
-  right: 15px;
-  bottom: 18px;
-  z-index: 20;
-  background: #5b3325e8;
-  color: #fff1d8;
-  border: 1px solid #d8b879;
-  border-radius: 30px;
-  padding: 12px 17px;
-  font: 10px Montserrat, sans-serif;
-  letter-spacing: .1em;
-  box-shadow: 0 3px 18px #0003;
+position: fixed;
+right: 15px;
+bottom: 18px;
+z-index: 20;
+background: #5b3325e8;
+color: #fff1d8;
+border: 1px solid #d8b879;
+border-radius: 30px;
+padding: 12px 17px;
+font: 10px Montserrat, sans-serif;
+letter-spacing: .1em;
+box-shadow: 0 3px 18px #0003;
 }
 
 .music-toggle.playing {
-  background: #285338;
+background: #285338;
 }
 
 /* SHARED SECTION STYLES */
 .section-pad {
-  padding: 85px 22px;
+padding: 85px 22px;
 }
 
 .eyebrow {
-  font-size: 9px;
-  letter-spacing: .24em;
-  line-height: 1.8;
-  color: #a27a47;
+font-size: 9px;
+letter-spacing: .24em;
+line-height: 1.8;
+color: #a27a47;
 }
 
 .script {
-  font-family: "Great Vibes", cursive;
-  font-size: 32px;
-  margin: 14px 0;
-  color: #c19b65;
+font-family: "Great Vibes", cursive;
+font-size: 32px;
+margin: 14px 0;
+color: #c19b65;
 }
 
-/* FIRST PICTURE - HERO */
+/* HERO */
 .hero {
-  height: 100svh;
-  min-height: 600px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #f8ecd6;
-  background:
-    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
-    url('IMG-20260918-WA0006.jpg') center center / cover no-repeat;
+min-height: 100svh;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: #f8ecd6;
+background: linear-gradient(#102e2380, #102e23a8), url('IMG-20260918-WA0006.jpg') center/cover;
 }
 
 .hero .eyebrow {
-  color: #ead7b5;
+color: #ead7b5;
 }
 
-.hero h1,
-.closing h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: clamp(38px, 10vw, 65px);
-  line-height: 1.05;
-  margin: 12px 0;
-  color: #fff0dc;
-  text-shadow: 0 2px 12px #0008;
+.hero h1, .closing h2 {
+font-family: "Cormorant Garamond", serif;
+font-weight: 500;
+text-transform: uppercase;
+font-size: clamp(38px, 10vw, 65px);
+line-height: 1.05;
+margin: 12px 0;
+color: #fff0dc;
+text-shadow: 0 2px 12px #0008;
 }
 
-.hero h1 span,
-.closing h2 span {
-  font-family: "Great Vibes", cursive;
-  color: #f3d19b;
-  text-transform: none;
+.hero h1 span, .closing h2 span {
+font-family: "Great Vibes", cursive;
+color: #f3d19b;
+text-transform: none;
 }
 
-.hero-copy,
-.body-copy {
-  max-width: 470px;
-  line-height: 1.9;
-  font-size: 12px;
+.hero-copy, .body-copy {
+max-width: 470px;
+line-height: 1.9;
+font-size: 12px;
 }
 
 .ornament {
-  color: #e5c38b;
-  letter-spacing: .25em;
-  margin: 24px;
+color: #e5c38b;
+letter-spacing: .25em;
+margin: 24px;
 }
 
 .scroll-note {
-  position: absolute !important;
-  bottom: 24px;
-  font-size: 9px;
-  letter-spacing: .2em;
-  display: grid;
-  gap: 5px;
+position: absolute !important;
+bottom: 24px;
+font-size: 9px;
+letter-spacing: .2em;
+display: grid;
+gap: 5px;
 }
 
-/* SECOND PICTURE - STORY */
-/* Same green faded overlay as the other three pictures */
+/* SECOND PAGE: FADED PERSONAL PHOTO + LUXURY SERIF 8 */
 .story {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  height: 100svh;
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 35px 22px;
-
-  background:
-    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
-    url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
+position: relative;
+isolation: isolate;
+overflow: hidden;
+min-height: 100svh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+background:
+linear-gradient(rgba(248, 241, 228, .80), rgba(248, 241, 228, .84)),
+url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
 }
 
 .story-content {
-  width: 100%;
-  max-width: 620px;
-  margin: auto;
-  position: relative;
-  z-index: 1;
+width: 100%;
+max-width: 620px;
+margin: auto;
+position: relative;
+z-index: 1;
 }
 
-/* SECOND-PAGE HEADING */
 .story-heading {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff0dc;
-  text-shadow: 0 2px 12px rgba(0,0,0,.45);
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #25432e;
+text-shadow: 0 1px 1px rgba(255,255,255,.35);
 }
 
 .story-heading-top {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(16px, 4vw, 23px);
-  line-height: 1.2;
-  letter-spacing: .15em;
-  font-weight: 500;
-  color: #f8ecd6;
+font-family: "Cormorant Garamond", serif;
+font-size: clamp(16px, 4vw, 23px);
+line-height: 1.2;
+letter-spacing: .15em;
+font-weight: 500;
 }
 
-/* LUXURY SERIF NUMBER 8 */
 .story-number {
-  display: block;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(180px, 55vw, 300px);
-  font-weight: 400;
-  line-height: .78;
-  letter-spacing: -.075em;
-  color: #d9b879;
-  text-shadow: 0 3px 18px rgba(0,0,0,.3);
-  margin: 18px 0;
+display: block;
+font-family: "Cormorant Garamond", Georgia, serif;
+font-size: clamp(230px, 67vw, 350px);
+font-weight: 400;
+line-height: .70;
+letter-spacing: -.075em;
+color: #25432e;
+margin: 28px 0 20px;
 }
 
 .story-heading-bottom {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(22px, 6vw, 36px);
-  line-height: 1.1;
-  letter-spacing: .16em;
-  font-weight: 500;
-  color: #f8ecd6;
+font-family: "Cormorant Garamond", serif;
+font-size: clamp(22px, 6vw, 36px);
+line-height: 1.1;
+letter-spacing: .16em;
+font-weight: 500;
 }
 
 .story-divider {
-  color: #e0bd80;
-  font-size: 20px;
-  letter-spacing: .25em;
-  margin: 22px 0 15px;
+color: #a87b48;
+font-size: 20px;
+letter-spacing: .25em;
+margin: 30px 0 22px;
 }
 
 .story-subtitle {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(25px, 6vw, 34px);
-  line-height: 1.2;
-  font-weight: 500;
-  color: #f3d19b;
-  margin: 0 0 14px;
+font-family: "Cormorant Garamond", serif;
+font-size: clamp(25px, 6vw, 34px);
+line-height: 1.2;
+font-weight: 500;
+color: #5a3d2c;
+margin: 0 0 18px;
 }
 
 .story .body-copy {
-  margin: 0 auto;
-  color: #fff0dc;
-  font-size: 12px;
-  line-height: 1.8;
-  max-width: 450px;
-  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+margin: 0 auto;
+color: #4c4235;
+font-size: 12px;
+line-height: 2;
+max-width: 450px;
 }
 
 .floral-mark {
-  font-size: 36px;
-  color: #e0bd80;
-  margin: 15px 0 8px;
+font-size: 40px;
+color: #a87b48;
+margin: 22px 0 12px;
 }
 
 .story-ending {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: .2em;
-  color: #f8ecd6;
-  margin: 0;
-  text-shadow: 0 2px 8px rgba(0,0,0,.45);
+font-family: "Cormorant Garamond", serif;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: .2em;
+color: #25432e;
+margin: 0;
 }
 
-/* THIRD AND FOURTH PICTURES - GROOM AND BRIDE */
+/* GROOM AND BRIDE */
 .couple {
-  background: #163b2a;
-  color: #f8ecd6;
-  padding: 25px 18px;
-  position: relative;
+background: #163b2a;
+color: #f8ecd6;
+padding: 25px 18px;
+position: relative;
 }
 
 .person {
-  position: relative;
-  width: 100%;
-  max-width: 620px;
-  margin: 0 auto 22px;
-  height: 100svh;
-  min-height: 600px;
-  overflow: hidden;
-  background: #244a34;
+position: relative;
+max-width: 620px;
+margin: 0 auto 22px;
+height: 480px;
+overflow: hidden;
+background: #244a34;
 }
 
 .person-photo {
-  position: absolute;
-  inset: 0;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: saturate(.8);
+position: absolute;
+inset: 0;
+background-position: center;
+background-size: cover;
+filter: saturate(.8);
 }
 
-/* SAME FADED GREEN COLOUR PATTERN */
 .photo-one {
-  background-image:
-    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
-    url('IMG-20260918-WA0002.jpg');
+background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0002.jpg');
 }
 
 .photo-two {
-  background-image:
-    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
-    url('IMG-20260918-WA0003.jpg');
+background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0003.jpg');
 }
 
 .person-text {
-  position: absolute;
-  bottom: 35px;
-  left: 10px;
-  right: 10px;
-  text-align: center;
-  text-shadow: 0 2px 10px #0009;
+position: absolute;
+bottom: 35px;
+left: 10px;
+right: 10px;
+text-align: center;
+text-shadow: 0 2px 10px #0009;
 }
 
 .person-text .script {
-  font-size: 36px;
-  color: #ffe4b0;
+font-size: 36px;
+color: #ffe4b0;
 }
 
 .person-text h2 {
-  font: 500 34px "Cormorant Garamond", serif;
-  letter-spacing: .1em;
-  margin: 4px;
-  color: #fff0df;
+font: 500 34px "Cormorant Garamond", serif;
+letter-spacing: .1em;
+margin: 4px;
+color: #fff0df;
 }
 
 .person-text p {
-  font-size: 10px;
-  letter-spacing: .12em;
+font-size: 10px;
+letter-spacing: .12em;
 }
 
 .and-mark {
-  text-align: center;
-  font: italic 45px "Cormorant Garamond", serif;
-  color: #f0d09b;
-  margin: -6px 0 14px;
+text-align: center;
+font: italic 45px "Cormorant Garamond", serif;
+color: #f0d09b;
+margin: -6px 0 14px;
 }
 
 /* SCRATCH DATE */
 .date-reveal {
-  text-align: center;
-  background: #eee1c9;
+text-align: center;
+background: #eee1c9;
 }
 
-.date-reveal h2,
-.events h2,
-.countdown-section h2,
-.gallery-section h2,
-.rsvp h2 {
-  font: 500 clamp(32px, 8vw, 46px)/1.1 "Cormorant Garamond", serif;
-  margin: 15px 0;
-  color: #24422e;
+.date-reveal h2, .events h2, .countdown-section h2,
+.gallery-section h2, .rsvp h2 {
+font: 500 clamp(32px, 8vw, 46px)/1.1 "Cormorant Garamond", serif;
+margin: 15px 0;
+color: #24422e;
 }
 
 .date-reveal > p:not(.eyebrow) {
-  font-size: 11px;
-  line-height: 1.7;
+font-size: 11px;
+line-height: 1.7;
 }
 
 .scratch-wrap {
-  position: relative;
-  max-width: 330px;
-  height: 235px;
-  margin: 28px auto 12px;
-  box-shadow: 0 12px 32px #65411b24;
-  border: 1px solid #c8aa78;
+position: relative;
+max-width: 330px;
+height: 235px;
+margin: 28px auto 12px;
+box-shadow: 0 12px 32px #65411b24;
+border: 1px solid #c8aa78;
 }
 
 .scratch-under {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #fff8e9;
-  color: #21432e;
-  font-family: "Cormorant Garamond", serif;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: #fff8e9;
+color: #21432e;
+font-family: "Cormorant Garamond", serif;
 }
 
-.scratch-under span,
-.scratch-under b,
-.scratch-under small {
-  letter-spacing: .2em;
-  font: 10px Montserrat, sans-serif;
+.scratch-under span, .scratch-under b, .scratch-under small {
+letter-spacing: .2em;
+font: 10px Montserrat, sans-serif;
 }
 
 .scratch-under strong {
-  font-size: 84px;
-  line-height: 1.05;
-  color: #bd7b45;
-  font-weight: 400;
+font-size: 84px;
+line-height: 1.05;
+color: #bd7b45;
+font-weight: 400;
 }
 
 .scratch-under b {
-  margin: 6px;
+margin: 6px;
 }
 
 .scratch-under small {
-  margin-top: 12px;
+margin-top: 12px;
 }
 
 .scratch-wrap canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  touch-action: none;
-  cursor: crosshair;
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+touch-action: none;
+cursor: crosshair;
 }
 
 .scratch-hint {
-  font-size: 10px;
-  color: #856a43;
+font-size: 10px;
+color: #856a43;
 }
 
 /* EVENTS */
 .events {
-  text-align: center;
-  background: #f8f1e4;
+text-align: center;
+background: #f8f1e4;
 }
 
 .event-card {
-  max-width: 430px;
-  margin: 30px auto 22px;
-  padding: 35px 22px;
-  border: 1px solid #d9c49b;
-  background: #fff9ee;
-  box-shadow: 0 12px 35px #5d42200b;
+max-width: 430px;
+margin: 30px auto 22px;
+padding: 35px 22px;
+border: 1px solid #d9c49b;
+background: #fff9ee;
+box-shadow: 0 12px 35px #5d42200b;
 }
 
 .event-icon {
-  font-size: 25px;
-  color: #ba8d54;
+font-size: 25px;
+color: #ba8d54;
 }
 
 .event-card .script {
-  font-size: 29px;
-  margin: 15px 0 5px;
+font-size: 29px;
+margin: 15px 0 5px;
 }
 
 .event-card h3 {
-  font: 500 27px "Cormorant Garamond", serif;
-  color: #25472f;
-  margin: 8px;
+font: 500 27px "Cormorant Garamond", serif;
+color: #25472f;
+margin: 8px;
 }
 
 .event-card p {
-  font-size: 11px;
-  line-height: 1.8;
+font-size: 11px;
+line-height: 1.8;
 }
 
 .event-time {
-  color: #9a6c3d;
-  letter-spacing: .08em;
+color: #9a6c3d;
+letter-spacing: .08em;
 }
 
 .fine-line {
-  width: 55px;
-  border-top: 1px solid #c9a36d;
-  margin: 23px auto;
+width: 55px;
+border-top: 1px solid #c9a36d;
+margin: 23px auto;
 }
 
 .venue-name {
-  font: 600 15px "Cormorant Garamond", serif !important;
+font: 600 15px "Cormorant Garamond", serif !important;
 }
 
 .map-button {
-  display: inline-block;
-  margin-top: 16px;
-  border: 1px solid #b9915d;
-  color: #31503a;
-  text-decoration: none;
-  padding: 12px 17px;
-  font-size: 9px;
-  letter-spacing: .1em;
-  border-radius: 24px;
+display: inline-block;
+margin-top: 16px;
+border: 1px solid #b9915d;
+color: #31503a;
+text-decoration: none;
+padding: 12px 17px;
+font-size: 9px;
+letter-spacing: .1em;
+border-radius: 24px;
 }
 
 /* COUNTDOWN */
 .countdown-section {
-  text-align: center;
-  background: #163b2a;
-  color: #f9eedb;
+text-align: center;
+background: #163b2a;
+color: #f9eedb;
 }
 
 .countdown-section h2 {
-  color: #f8ead1;
+color: #f8ead1;
 }
 
 .countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 30px auto 0;
-  max-width: 430px;
+display: flex;
+justify-content: center;
+gap: 10px;
+margin: 30px auto 0;
+max-width: 430px;
 }
 
 .countdown div {
-  flex: 1;
-  border: 1px solid #c6a56e66;
-  padding: 18px 5px;
-  background: #ffffff08;
+flex: 1;
+border: 1px solid #c6a56e66;
+padding: 18px 5px;
+background: #ffffff08;
 }
 
 .countdown strong {
-  display: block;
-  font: 36px "Cormorant Garamond", serif;
-  color: #e2c38b;
+display: block;
+font: 36px "Cormorant Garamond", serif;
+color: #e2c38b;
 }
 
 .countdown span {
-  font-size: 8px;
-  letter-spacing: .13em;
-  color: #e9d8ba;
+font-size: 8px;
+letter-spacing: .13em;
+color: #e9d8ba;
 }
 
 /* GALLERY */
 .gallery-section {
-  text-align: center;
-  background: #eee2cc;
+text-align: center;
+background: #eee2cc;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  max-width: 600px;
-  margin: 28px auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+max-width: 600px;
+margin: 28px auto;
 }
 
 .gallery-image {
-  border: 0;
-  padding: 0;
-  background: #d8c6a7;
-  overflow: hidden;
-  min-height: 180px;
-  cursor: pointer;
+border: 0;
+padding: 0;
+background: #d8c6a7;
+overflow: hidden;
+min-height: 180px;
+cursor: pointer;
 }
 
 .gallery-image img {
-  width: 100%;
-  height: 100%;
-  min-height: 180px;
-  object-fit: cover;
-  display: block;
-  transition: transform .4s;
+width: 100%;
+height: 100%;
+min-height: 180px;
+object-fit: cover;
+display: block;
+transition: transform .4s;
 }
 
 .gallery-image:active img {
-  transform: scale(1.04);
+transform: scale(1.04);
 }
 
 .gallery-image.wide {
-  grid-column: 1 / -1;
-  height: 260px;
+grid-column: 1 / -1;
+height: 260px;
 }
 
 .gallery-image.wide img {
-  height: 260px;
+height: 260px;
 }
 
 /* RSVP */
 .rsvp {
-  text-align: center;
-  background: #f8f1e4;
+text-align: center;
+background: #f8f1e4;
 }
 
 .rsvp form {
-  max-width: 430px;
-  margin: 30px auto 0;
-  text-align: left;
-  background: #fff9ee;
-  border: 1px solid #ddc9a4;
-  padding: 25px 20px;
+max-width: 430px;
+margin: 30px auto 0;
+text-align: left;
+background: #fff9ee;
+border: 1px solid #ddc9a4;
+padding: 25px 20px;
 }
 
 .rsvp label {
-  display: block;
-  margin: 15px 0 7px;
-  font-size: 11px;
-  color: #4d593f;
+display: block;
+margin: 15px 0 7px;
+font-size: 11px;
+color: #4d593f;
 }
 
-.rsvp input,
-.rsvp select {
-  width: 100%;
-  padding: 14px 12px;
-  border: 1px solid #d8c5a1;
-  border-radius: 5px;
-  background: #fffdf7;
-  color: #243c2a;
-  font: 12px Montserrat, sans-serif;
+.rsvp input, .rsvp select {
+width: 100%;
+padding: 14px 12px;
+border: 1px solid #d8c5a1;
+border-radius: 5px;
+background: #fffdf7;
+color: #243c2a;
+font: 12px Montserrat, sans-serif;
 }
 
 .whatsapp-button {
-  width: 100%;
-  margin-top: 24px;
-  padding: 16px 10px;
-  border: 0;
-  border-radius: 30px;
-  background: #2d6c47;
-  color: white;
-  font: 600 10px Montserrat, sans-serif;
-  letter-spacing: .09em;
-  cursor: pointer;
+width: 100%;
+margin-top: 24px;
+padding: 16px 10px;
+border: 0;
+border-radius: 30px;
+background: #2d6c47;
+color: white;
+font: 600 10px Montserrat, sans-serif;
+letter-spacing: .09em;
+cursor: pointer;
 }
 
 .rsvp-note {
-  text-align: center;
-  font-size: 10px;
-  line-height: 1.7;
-  color: #77674f;
+text-align: center;
+font-size: 10px;
+line-height: 1.7;
+color: #77674f;
 }
 
 /* CLOSING */
 .closing {
-  text-align: center;
-  background: radial-gradient(ellipse, #244d34, #0c261a);
-  color: #f7ecd6;
-  min-height: 70svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+text-align: center;
+background: radial-gradient(ellipse, #244d34, #0c261a);
+color: #f7ecd6;
+min-height: 70svh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 .closing-flower {
-  font-size: 45px;
-  color: #d2ad70;
+font-size: 45px;
+color: #d2ad70;
 }
 
 .closing .script {
-  margin-bottom: 0;
+margin-bottom: 0;
 }
 
 .closing h2 {
-  font-size: clamp(36px, 9vw, 54px);
+font-size: clamp(36px, 9vw, 54px);
 }
 
 .closing .body-copy {
-  margin: 15px auto;
+margin: 15px auto;
 }
 
 .closing-date {
-  font: 18px "Cormorant Garamond", serif;
-  letter-spacing: .2em;
-  color: #dfbf85;
+font: 18px "Cormorant Garamond", serif;
+letter-spacing: .2em;
+color: #dfbf85;
 }
 
 .closing .open-button {
-  margin-top: 12px;
+margin-top: 12px;
 }
 
 /* PHOTO LIGHTBOX */
 .lightbox {
-  position: fixed;
-  inset: 0;
-  background: #07120ff2;
-  z-index: 50;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+position: fixed;
+inset: 0;
+background: #07120ff2;
+z-index: 50;
+display: none;
+align-items: center;
+justify-content: center;
+padding: 20px;
 }
 
 .lightbox.show {
-  display: flex;
+display: flex;
 }
 
 .lightbox img {
-  max-width: 100%;
-  max-height: 85svh;
-  object-fit: contain;
+max-width: 100%;
+max-height: 85svh;
+object-fit: contain;
 }
 
 .lightbox button {
-  position: absolute;
-  right: 18px;
-  top: 14px;
-  color: white;
-  background: none;
-  border: 0;
-  font-size: 38px;
+position: absolute;
+right: 18px;
+top: 14px;
+color: white;
+background: none;
+border: 0;
+font-size: 38px;
 }
 
 /* DESKTOP AND TABLET */
 @media (min-width: 700px) {
-  .cover {
-    min-height: 720px;
-  }
+.cover {
+min-height: 720px;
+}
 
-  .couple {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-    padding: 50px;
-  }
+.couple {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+align-items: center;
+padding: 50px;
+}
 
-  .person {
-    width: 100%;
-    height: 100svh;
-    min-height: 600px;
-    margin: 0;
-  }
+.person {
+width: 100%;
+height: 600px;
+margin: 0;
+}
 
-  .and-mark {
-    position: absolute;
-    left: calc(50% - 20px);
-    z-index: 2;
-    background: #163b2a;
-    border-radius: 50%;
-    padding: 8px;
-  }
+.and-mark {
+position: absolute;
+left: calc(50% - 20px);
+z-index: 2;
+background: #163b2a;
+border-radius: 50%;
+padding: 8px;
+}
 
-  .section-pad {
-    padding: 100px 30px;
-  }
+.section-pad {
+padding: 100px 30px;
+}
 
-  .hero {
-    height: 100svh;
-    min-height: 600px;
-  }
+.hero {
+min-height: 100vh;
+}
 
-  .story {
-    height: 100svh;
-    min-height: 600px;
-  }
+.gallery-image {
+min-height: 270px;
+}
 
-  .gallery-image {
-    min-height: 270px;
-  }
+.gallery-image img {
+min-height: 270px;
+}
 
-  .gallery-image img {
-    min-height: 270px;
-  }
-
-  .story-number {
-    font-size: clamp(220px, 30vw, 300px);
-  }
+.story-number {
+font-size: clamp(300px, 35vw, 390px);
+}
 }
