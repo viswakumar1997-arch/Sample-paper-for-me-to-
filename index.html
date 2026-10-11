@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +16,10 @@
 </audio>
 
 <section class="cover" id="cover">
-  <div class="leaf leaf-a"></div><div class="leaf leaf-b"></div>
-  <div class="leaf leaf-c"></div><div class="leaf leaf-d"></div>
+  <div class="leaf leaf-a"></div>
+  <div class="leaf leaf-b"></div>
+  <div class="leaf leaf-c"></div>
+  <div class="leaf leaf-d"></div>
   <div class="cover-flowers">✿ ❀ ✿</div>
   <div class="monogram">S<span>&amp;</span>S</div>
   <p class="cover-small">A CELEBRATION OF LOVE</p>
@@ -35,13 +38,28 @@
     <p class="scroll-note">SCROLL TO EXPLORE <span>↓</span></p>
   </section>
 
-  <!-- SECOND PAGE: YOUR NEW 8 YEARS OF LOVE IMAGE -->
-  <section class="story-image-section" aria-label="Our love story">
-    <img
-      class="love-story-image"
-      src="file_000000008e2c8211b2a95120772aabc2.png""
-      alt="The Beginning of Forever. Eight Years of Love. Two souls, one beautiful story. With the blessings of our families, we joyfully begin a new chapter together. Your presence will make our celebration even more special. 20 November 2026."
-    >
+  <!-- SECOND PAGE: LARGE LUXURY SERIF NUMBER 8 -->
+  <section class="story section-pad">
+    <div class="story-content">
+      <h2 class="story-heading">
+        <span class="story-heading-top">THE BEGINNING OF</span>
+        <span class="story-number">8</span>
+        <span class="story-heading-bottom">YEARS OF LOVE</span>
+      </h2>
+
+      <div class="story-divider">✦ ❦ ✦</div>
+
+      <p class="story-subtitle">Two souls, one beautiful story</p>
+
+      <p class="body-copy">
+        With the blessings of our families, we joyfully begin a new
+        chapter together. Your presence will make our celebration
+        even more special.
+      </p>
+
+      <div class="floral-mark">❦</div>
+      <p class="story-ending">OUR FOREVER BEGINS</p>
+    </div>
   </section>
 
   <section class="couple">
@@ -53,7 +71,9 @@
         <p>With love and gratitude</p>
       </div>
     </article>
+
     <div class="and-mark">&amp;</div>
+
     <article class="person bride">
       <div class="person-photo photo-two" role="img" aria-label="Wedding photograph"></div>
       <div class="person-text">
@@ -68,6 +88,7 @@
     <p class="eyebrow">A DATE TO REMEMBER</p>
     <h2>Our Wedding Day</h2>
     <p>Scratch just a little to reveal our special date</p>
+
     <div class="scratch-wrap">
       <div class="scratch-under">
         <span>FRIDAY</span>
@@ -77,6 +98,7 @@
       </div>
       <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
     </div>
+
     <p class="scratch-hint">A few gentle scratches will reveal the date ✨</p>
   </section>
 
@@ -124,15 +146,18 @@
     <p class="eyebrow">LITTLE MOMENTS, BIG LOVE</p>
     <h2>Our Memories</h2>
     <p class="body-copy">A few moments we would love to share with you.</p>
+
     <div class="gallery">
       <button class="gallery-image" data-full="IMG-20260918-WA0002.jpg">
-        <img src="IMG-20260918-WA0002.jpg" alt="Wedding memory one" loading="lazy">
+        <img src="IMG-20260918-WA0002.jpg" alt="Subburaj and Seetha memory one" loading="lazy">
       </button>
+
       <button class="gallery-image" data-full="IMG-20260918-WA0003.jpg">
-        <img src="IMG-20260918-WA0003.jpg" alt="Wedding memory two" loading="lazy">
+        <img src="IMG-20260918-WA0003.jpg" alt="Subburaj and Seetha memory two" loading="lazy">
       </button>
+
       <button class="gallery-image wide" data-full="IMG-20260918-WA0006.jpg">
-        <img src="IMG-20260918-WA0006.jpg" alt="Wedding memory three" loading="lazy">
+        <img src="IMG-20260918-WA0006.jpg" alt="Subburaj and Seetha memory three" loading="lazy">
       </button>
     </div>
   </section>
@@ -141,6 +166,7 @@
     <p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p>
     <h2>Will you celebrate<br>with us?</h2>
     <p class="body-copy">Let us know your presence and share in our happiest beginning.</p>
+
     <form id="rsvpForm">
       <label for="guestName">Your name</label>
       <input id="guestName" name="guestName" placeholder="Enter your name" required maxlength="80">
@@ -209,18 +235,9 @@ musicToggle.addEventListener('click', async () => {
   }
 });
 
-document.getElementById('openInvite').addEventListener('click', async () => {
-  try {
-    await music.play();
-    musicState.textContent = 'ON';
-    musicToggle.classList.add('playing');
-  } catch (e) {
-    musicState.textContent = 'TAP TO PLAY';
-  }
-
+document.getElementById('openInvite').addEventListener('click', () => {
   document.getElementById('cover').classList.add('opened');
   document.body.classList.add('invitation-open');
-
   setTimeout(() => {
     document.getElementById('invitation').scrollIntoView({ behavior: 'smooth' });
   }, 450);
@@ -230,6 +247,7 @@ document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+/* Scratch-to-reveal wedding date */
 const canvas = document.getElementById('scratchCanvas');
 const ctx = canvas.getContext('2d');
 let scratching = false;
@@ -239,6 +257,7 @@ let points = 0;
 function drawScratch() {
   const r = canvas.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
+
   canvas.width = r.width * dpr;
   canvas.height = r.height * dpr;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -246,31 +265,38 @@ function drawScratch() {
 
   const g = ctx.createLinearGradient(0, 0, r.width, r.height);
   g.addColorStop(0, '#d7a45e');
-  g.addColorStop(.5, '#f0d6a2');
+  g.addColorStop(0.5, '#f0d6a2');
   g.addColorStop(1, '#a56b3d');
+
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, r.width, r.height);
-
   ctx.fillStyle = '#fff4d9';
   ctx.textAlign = 'center';
   ctx.font = '14px Georgia';
-  ctx.fillText('✧  SCRATCH HERE  ✧', r.width / 2, r.height / 2);
+  ctx.fillText('✧ SCRATCH HERE ✧', r.width / 2, r.height / 2);
+  ctx.globalCompositeOperation = 'destination-out';
 }
 
 function erase(e) {
   if (!scratching || revealed) return;
+
   const r = canvas.getBoundingClientRect();
   ctx.globalCompositeOperation = 'destination-out';
   ctx.beginPath();
   ctx.arc(e.clientX - r.left, e.clientY - r.top, 28, 0, Math.PI * 2);
   ctx.fill();
+
   points++;
 
   if (points >= 5) {
     revealed = true;
     canvas.style.transition = 'opacity .45s ease';
     canvas.style.opacity = '0';
-    setTimeout(() => canvas.style.display = 'none', 480);
+
+    setTimeout(() => {
+      canvas.style.display = 'none';
+    }, 480);
+
     document.querySelector('.scratch-hint').textContent =
       'Our special day: 20 November 2026 ♡';
   }
@@ -281,39 +307,46 @@ canvas.addEventListener('pointerdown', e => {
   canvas.setPointerCapture(e.pointerId);
   erase(e);
 });
+
 canvas.addEventListener('pointermove', erase);
 canvas.addEventListener('pointerup', () => scratching = false);
 canvas.addEventListener('pointercancel', () => scratching = false);
+
 window.addEventListener('resize', () => {
   if (!revealed) drawScratch();
 });
+
 drawScratch();
 
+/* Wedding countdown */
 function updateCountdown() {
   const target = new Date('2026-11-20T09:00:00+05:30').getTime();
   const diff = Math.max(0, target - Date.now());
+
   document.getElementById('days').textContent = Math.floor(diff / 86400000);
   document.getElementById('hours').textContent = Math.floor(diff % 86400000 / 3600000);
   document.getElementById('minutes').textContent = Math.floor(diff % 3600000 / 60000);
   document.getElementById('seconds').textContent = Math.floor(diff % 60000 / 1000);
 }
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+/* WhatsApp RSVP */
 document.getElementById('rsvpForm').addEventListener('submit', e => {
   e.preventDefault();
+
   const name = document.getElementById('guestName').value.trim();
   const event = document.getElementById('eventChoice').value;
   const count = document.getElementById('guestCount').value;
 
-  const message = `Hello Subburaj and Seetha! 💐
-
-RSVP: I will attend your celebration.
-Name: ${name}
-Event: ${event}
-Number of guests: ${count}
-
-Wishing you both a beautiful married life!`;
+  const message =
+    `Hello Subburaj and Seetha! 💐\n\n` +
+    `RSVP: I will attend your celebration.\n` +
+    `Name: ${name}\n` +
+    `Event: ${event}\n` +
+    `Number of guests: ${count}\n\n` +
+    `Wishing you both a beautiful married life!`;
 
   window.open(
     'https://wa.me/918015740949?text=' + encodeURIComponent(message),
@@ -321,6 +354,7 @@ Wishing you both a beautiful married life!`;
   );
 });
 
+/* Gallery lightbox */
 const lightbox = document.getElementById('lightbox');
 const lbimg = document.getElementById('lightboxImage');
 
@@ -336,10 +370,13 @@ function closeLb() {
   lightbox.classList.remove('show');
   lightbox.setAttribute('aria-hidden', 'true');
 }
+
 document.getElementById('closeLightbox').addEventListener('click', closeLb);
+
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) closeLb();
 });
 </script>
+
 </body>
 </html>
