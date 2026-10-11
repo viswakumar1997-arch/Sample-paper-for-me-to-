@@ -310,11 +310,11 @@ button, a, input, select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #25432e;
+  color: #B22222;
   text-shadow: 0 1px 1px rgba(255,255,255,.35);
 }
 
-..story-heading-top {
+.story-heading-top {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(16px, 4vw, 23px);
   line-height: 1.2;
