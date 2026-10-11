@@ -380,13 +380,23 @@ button, a, input, select {
   margin: 0;
 }
 
-/* GROOM AND BRIDE */
-.couple {
-  background: #163b2a;
-  color: #f8ecd6;
-  padding: 25px 18px;
-  position: relative;
+/* Increase Groom & Bride photo size */
+.couple-card img,
+.couple-photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
+
+@media (max-width: 600px) {
+  .couple-card img,
+  .couple-photo {
+    height: 420px;
+  }
+}
+
 
 .person {
   position: relative;
