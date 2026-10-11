@@ -30,7 +30,16 @@ button, a, input, select {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* COVER */
+button, input, select {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* OPENING COVER */
+
 .cover {
   height: 100svh;
   min-height: 600px;
@@ -41,15 +50,27 @@ button, a, input, select {
   justify-content: center;
   overflow: hidden;
   color: #f8e8c7;
-  background: radial-gradient(ellipse at center, #4b7943 0%, #1d4b2b 48%, #092719 100%);
-  transition: height .8s, opacity .7s, transform .8s;
+  background: radial-gradient(
+    ellipse at center,
+    #4b7943 0%,
+    #1d4b2b 48%,
+    #092719 100%
+  );
+  isolation: isolate;
+  transition: opacity 1s ease, visibility 1s ease;
 }
 
 .cover:before {
   content: "";
   position: absolute;
   inset: -12%;
-  background: repeating-conic-gradient(from 8deg at 50% 50%, transparent 0deg 7deg, rgba(177,205,112,.22) 8deg 9deg, transparent 11deg 18deg);
+  z-index: -1;
+  background: repeating-conic-gradient(
+    from 8deg at 50% 50%,
+    transparent 0deg 7deg,
+    rgba(177,205,112,.22) 8deg 9deg,
+    transparent 11deg 18deg
+  );
   filter: blur(5px);
   transform: scale(1.12);
 }
@@ -58,7 +79,12 @@ button, a, input, select {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse, transparent 25%, rgba(0,0,0,.4) 100%);
+  z-index: -1;
+  background: radial-gradient(
+    ellipse,
+    transparent 25%,
+    rgba(0,0,0,.4) 100%
+  );
 }
 
 .leaf {
@@ -66,11 +92,20 @@ button, a, input, select {
   z-index: 1;
   width: 70%;
   height: 38%;
-  background: linear-gradient(110deg, #174327, #63964b 45%, #174327 78%, #a3b75b);
+  background: linear-gradient(
+    110deg,
+    #174327,
+    #63964b 45%,
+    #174327 78%,
+    #a3b75b
+  );
   border: 1px solid #9eaf5b;
   border-radius: 8% 90% 8% 90%;
-  box-shadow: inset 0 0 0 2px #244d2b, inset 0 0 18px #0c2419;
+  box-shadow:
+    inset 0 0 0 2px #244d2b,
+    inset 0 0 18px #0c2419;
   opacity: .88;
+  transition: transform 1.4s cubic-bezier(.2,.8,.2,1);
 }
 
 .leaf:after {
@@ -85,10 +120,50 @@ button, a, input, select {
   opacity: .8;
 }
 
-.leaf-a { top: -4%; left: -25%; transform: rotate(25deg); }
-.leaf-b { top: 12%; right: -28%; transform: rotate(155deg); }
-.leaf-c { bottom: 5%; left: -25%; transform: rotate(-20deg); }
-.leaf-d { bottom: -7%; right: -25%; transform: rotate(200deg); }
+.leaf-a {
+  top: -4%;
+  left: -25%;
+  transform: rotate(25deg);
+  transform-origin: left top;
+}
+
+.leaf-b {
+  top: 12%;
+  right: -28%;
+  transform: rotate(155deg);
+  transform-origin: right top;
+}
+
+.leaf-c {
+  bottom: 5%;
+  left: -25%;
+  transform: rotate(-20deg);
+  transform-origin: left bottom;
+}
+
+.leaf-d {
+  bottom: -7%;
+  right: -25%;
+  transform: rotate(200deg);
+  transform-origin: right bottom;
+}
+
+/* Leaves open outward when the invitation is opened */
+.cover.opened .leaf-a {
+  transform: translate(-85%, -45%) rotate(-45deg);
+}
+
+.cover.opened .leaf-b {
+  transform: translate(85%, -45%) rotate(205deg);
+}
+
+.cover.opened .leaf-c {
+  transform: translate(-85%, 45%) rotate(-55deg);
+}
+
+.cover.opened .leaf-d {
+  transform: translate(85%, 45%) rotate(235deg);
+}
 
 .cover-flowers {
   position: absolute;
@@ -98,6 +173,7 @@ button, a, input, select {
   font-size: 28px;
   letter-spacing: 15px;
   text-shadow: 0 2px 12px #0008;
+  transition: opacity .5s ease;
 }
 
 .monogram {
@@ -110,6 +186,7 @@ button, a, input, select {
   letter-spacing: -.09em;
   color: #ffe0d5;
   text-shadow: 0 3px 20px #0008;
+  transition: transform .7s ease, opacity .5s ease;
 }
 
 .monogram span {
@@ -119,7 +196,9 @@ button, a, input, select {
   color: #fff1d7;
 }
 
-.cover-small, .open-button, .cover-bottom {
+.cover-small,
+.open-button,
+.cover-bottom {
   position: relative;
   z-index: 3;
   letter-spacing: .22em;
@@ -140,6 +219,11 @@ button, a, input, select {
   font-family: Montserrat, sans-serif;
   cursor: pointer;
   box-shadow: 0 8px 30px #0002;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.open-button:active {
+  transform: scale(.97);
 }
 
 .cover-bottom {
@@ -151,19 +235,28 @@ button, a, input, select {
   text-align: center;
 }
 
-.cover-bottom span, .scroll-note span {
+.cover-bottom span,
+.scroll-note span {
   font-size: 20px;
 }
 
+/* Fade the cover without collapsing it vertically */
 .cover.opened {
-  height: 0;
-  min-height: 0;
   opacity: 0;
-  transform: scale(1.06);
+  visibility: hidden;
   pointer-events: none;
 }
 
+.cover.opened .monogram,
+.cover.opened .cover-small,
+.cover.opened .open-button,
+.cover.opened .cover-bottom,
+.cover.opened .cover-flowers {
+  opacity: 0;
+}
+
 /* MUSIC BUTTON */
+
 .music-toggle {
   position: fixed;
   right: 15px;
@@ -176,6 +269,7 @@ button, a, input, select {
   padding: 12px 17px;
   font: 10px Montserrat, sans-serif;
   letter-spacing: .1em;
+  cursor: pointer;
 }
 
 .music-toggle.playing {
@@ -183,6 +277,7 @@ button, a, input, select {
 }
 
 /* SHARED SECTION STYLES */
+
 .section-pad {
   padding: 85px 22px;
 }
@@ -201,7 +296,8 @@ button, a, input, select {
   color: #c19b65;
 }
 
-/* HERO — FIRST INVITATION PAGE */
+/* FIRST PAGE: MAIN INVITATION */
+
 .hero {
   min-height: 100svh;
   position: relative;
@@ -211,49 +307,73 @@ button, a, input, select {
   align-items: center;
   text-align: center;
   color: #f8ecd6;
-  background: linear-gradient(#102e2380, #102e23a8), url('IMG-20260918-WA0006.jpg') center/cover;
+  background:
+    linear-gradient(#102e2380, #102e23a8),
+    url('IMG-20260918-WA0006.jpg') center/cover;
 }
 
-/* TOGETHER WITH OUR FAMILIES — increased size */
+/* TOGETHER WITH OUR FAMILIES */
 .hero .eyebrow {
   color: #ead7b5;
   font-size: 15px;
   line-height: 1.8;
   letter-spacing: .16em;
+  max-width: 100%;
 }
 
-/* We invite you to celebrate — increased size */
+/* WE INVITE YOU TO CELEBRATE */
 .hero .script {
   font-size: 42px;
   line-height: 1.3;
 }
 
-/* Subburaj ❤️ Seetha — significantly larger */
+/* COUPLE NAMES: LUXURY SERIF */
 .hero h1.couple-names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 .12em;
+  width: 100%;
+  padding: 0 5px;
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: clamp(58px, 12vw, 88px);
-  line-height: 1.1;
+  font-size: clamp(42px, 10.5vw, 76px);
+  line-height: 1.15;
   margin: 20px 0;
   color: #fff0dc;
   text-shadow: 0 2px 12px #0008;
 }
 
-/* Keep the existing decorative script style for the names and heart */
-.hero h1 span, .closing h2 span {
+/* Keep both names in serif; only the heart uses script */
+.hero h1.couple-names .couple-name {
+  font-family: "Cormorant Garamond", serif;
+  color: #fff0dc;
+  text-transform: none;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+.hero h1.couple-names .name-heart {
+  font-family: "Great Vibes", cursive;
+  font-size: .65em;
+  font-weight: 400;
+  color: #f3d19b;
+  text-transform: none;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Preserve the decorative script in the closing section */
+.closing h2 span {
   font-family: "Great Vibes", cursive;
   color: #f3d19b;
   text-transform: none;
 }
 
-.hero h1.couple-names .name-heart {
-  font-size: .65em;
-  vertical-align: middle;
-}
-
-/* Two hearts, one journey — increased size */
-.hero-copy, .body-copy {
+.hero-copy,
+.body-copy {
   max-width: 470px;
   line-height: 1.9;
   font-size: 12px;
@@ -261,6 +381,7 @@ button, a, input, select {
 
 .hero .hero-copy {
   max-width: 550px;
+  padding: 0 8px;
   font-size: 17px;
   line-height: 1.9;
 }
@@ -271,8 +392,12 @@ button, a, input, select {
   margin: 24px;
 }
 
+.hero-map {
+  margin-bottom: 30px;
+}
+
 .scroll-note {
-  position: absolute !important;
+  position: absolute;
   bottom: 24px;
   font-size: 9px;
   letter-spacing: .2em;
@@ -280,7 +405,8 @@ button, a, input, select {
   gap: 5px;
 }
 
-/* SECOND PAGE: FADED PERSONAL PHOTO + LUXURY SERIF 8 */
+/* SECOND PAGE: EIGHT YEARS OF LOVE */
+
 .story {
   position: relative;
   isolation: isolate;
@@ -292,7 +418,10 @@ button, a, input, select {
   align-items: center;
   text-align: center;
   background:
-    linear-gradient(rgba(248, 241, 228, .80), rgba(248, 241, 228, .84)),
+    linear-gradient(
+      rgba(248, 241, 228, .80),
+      rgba(248, 241, 228, .84)
+    ),
     url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
 }
 
@@ -380,6 +509,7 @@ button, a, input, select {
 }
 
 /* GROOM AND BRIDE */
+
 .couple {
   background: #163b2a;
   color: #f8ecd6;
@@ -405,11 +535,15 @@ button, a, input, select {
 }
 
 .photo-one {
-  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0002.jpg');
+  background-image:
+    linear-gradient(#09241722, #092417a8),
+    url('IMG-20260918-WA0002.jpg');
 }
 
 .photo-two {
-  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0003.jpg');
+  background-image:
+    linear-gradient(#09241722, #092417a8),
+    url('IMG-20260918-WA0003.jpg');
 }
 
 .person-text {
@@ -446,13 +580,17 @@ button, a, input, select {
 }
 
 /* SCRATCH DATE */
+
 .date-reveal {
   text-align: center;
   background: #eee1c9;
 }
 
-.date-reveal h2, .events h2, .countdown-section h2,
-.gallery-section h2, .rsvp h2 {
+.date-reveal h2,
+.events h2,
+.countdown-section h2,
+.gallery-section h2,
+.rsvp h2 {
   font: 500 clamp(32px, 8vw, 46px)/1.1 "Cormorant Garamond", serif;
   margin: 15px 0;
   color: #24422e;
@@ -483,7 +621,9 @@ button, a, input, select {
   font-family: "Cormorant Garamond", serif;
 }
 
-.scratch-under span, .scratch-under b, .scratch-under small {
+.scratch-under span,
+.scratch-under b,
+.scratch-under small {
   letter-spacing: .2em;
   font: 10px Montserrat, sans-serif;
 }
@@ -518,6 +658,7 @@ button, a, input, select {
 }
 
 /* EVENTS */
+
 .events {
   text-align: center;
   background: #f8f1e4;
@@ -581,6 +722,7 @@ button, a, input, select {
 }
 
 /* COUNTDOWN */
+
 .countdown-section {
   text-align: center;
   background: #163b2a;
@@ -601,6 +743,7 @@ button, a, input, select {
 
 .countdown div {
   flex: 1;
+  min-width: 0;
   border: 1px solid #c6a56e66;
   padding: 18px 5px;
   background: #ffffff08;
@@ -619,6 +762,7 @@ button, a, input, select {
 }
 
 /* GALLERY */
+
 .gallery-section {
   text-align: center;
   background: #eee2cc;
@@ -664,6 +808,7 @@ button, a, input, select {
 }
 
 /* RSVP */
+
 .rsvp {
   text-align: center;
   background: #f8f1e4;
@@ -685,7 +830,8 @@ button, a, input, select {
   color: #4d593f;
 }
 
-.rsvp input, .rsvp select {
+.rsvp input,
+.rsvp select {
   width: 100%;
   padding: 14px 12px;
   border: 1px solid #d8c5a1;
@@ -716,6 +862,7 @@ button, a, input, select {
 }
 
 /* CLOSING */
+
 .closing {
   text-align: center;
   background: radial-gradient(ellipse, #244d34, #0c261a);
@@ -737,7 +884,10 @@ button, a, input, select {
 }
 
 .closing h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
   font-size: clamp(36px, 9vw, 54px);
+  color: #fff0dc;
 }
 
 .closing .body-copy {
@@ -755,6 +905,7 @@ button, a, input, select {
 }
 
 /* PHOTO LIGHTBOX */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -784,9 +935,11 @@ button, a, input, select {
   background: none;
   border: 0;
   font-size: 38px;
+  cursor: pointer;
 }
 
-/* DESKTOP AND TABLET */
+/* TABLET AND DESKTOP */
+
 @media (min-width: 700px) {
   .cover {
     min-height: 720px;
@@ -833,5 +986,60 @@ button, a, input, select {
 
   .story-number {
     font-size: clamp(300px, 35vw, 390px);
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+  .section-pad {
+    padding: 70px 16px;
+  }
+
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: .12em;
+  }
+
+  .hero .script {
+    font-size: 34px;
+  }
+
+  .hero h1.couple-names {
+    font-size: 42px;
+    gap: 0 .08em;
+  }
+
+  .hero .hero-copy {
+    font-size: 15px;
+  }
+
+  .story-heading-bottom {
+    font-size: 21px;
+  }
+
+  .countdown {
+    gap: 5px;
+  }
+
+  .countdown strong {
+    font-size: 29px;
+  }
+
+  .countdown span {
+    font-size: 7px;
+  }
+}
+
+/* ACCESSIBILITY: RESPECT REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
