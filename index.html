@@ -4,7 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subburaj & Seetha Wedding Invitation</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0c0c0c;
+            color: #f4f4f4;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .content-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c5a059;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        p {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        /* Scratch Card */
+        .card-date-box {
+            background: #1a1a1a;
+            border: 1px solid #c5a059;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px auto;
+            position: relative;
+            width: 300px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .date-text h3 {
+            font-size: 1.3rem;
+            color: #c5a059;
+            margin-top: 5px;
+        }
+
+        #scratchCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border-radius: 12px;
+            touch-action: none;
+        }
+
+        .scratch-instruction {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* Event Cards */
+        .event-card {
+            background: #151515;
+            border: 1px solid #333;
+            width: 100%;
+            max-width: 450px;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 0 auto;
+        }
+
+        .event-card h2 {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: #c5a059;
+            margin-bottom: 15px;
+        }
+
+        .date-highlight {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .date-highlight span {
+            color: #c5a059;
+        }
+
+        .day-text {
+            font-size: 0.9rem;
+            color: #aaa;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #333;
+            margin: 25px 0;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .info-row .icon {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            color: #c5a059;
+        }
+
+        .info-row b {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #888;
+        }
+
+        .info-row strong {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .info-row p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid #c5a059;
+            color: #c5a059;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        .map-btn:hover {
+            background: #c5a059;
+            color: #000;
+        }
+
+        /* Gallery Slider */
+        .gallery-section h2 {
+            font-size: 1.5rem;
+            color: #c5a059;
+            margin-bottom: 20px;
+        }
+
+        .gallery-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 800px;
+            scrollbar-width: none;
+        }
+
+        .gallery-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-item {
+            min-width: 250px;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 1px solid #333;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swipe-hint {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        /* Message Section */
+        .message-section .ornament {
+            color: #c5a059;
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .message-section p {
+            font-style: italic;
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        .message-section h4 {
+            color: #c5a059;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        /* Countdown Section */
+        .countdown-section h2 {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .countdown-section p {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #c5a059;
+            margin-bottom: 30px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            color: #c5a059;
+            margin-bottom: 40px;
+        }
+
+        .countdown-timer div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .countdown-timer strong {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .countdown-timer span {
+            font-size: 0.65rem;
+            color: #888;
+        }
+
+        /* Footer */
+        footer {
+            background: #080808;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            color: #c5a059;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +312,7 @@
         <section class="section groom-section">
             <div class="content-box">
                 <span class="subtitle">Groom</span>
-                <h1>Subburaj</h1>
+                <h1>SUBBURAJ</h1>
                 <p>S/o Murugan</p>
             </div>
             <div class="scroll-hint">SCROLL TO EXPLORE</div>
@@ -23,7 +322,7 @@
         <section class="section bride-section">
             <div class="content-box">
                 <span class="subtitle">Bride</span>
-                <h1>Seetha</h1>
+                <h1>SEETHA</h1>
                 <p>D/o Rajapa Di</p>
             </div>
         </section>
@@ -78,7 +377,7 @@
         <!-- Reception Details -->
         <section class="section event-details">
             <div class="event-card">
-                <h2>RECEPTION / DINNER</h2>
+                <h2>RECEPTION</h2>
                 <div class="date-highlight">21 <span>NOVEMBER</span> 2026</div>
                 <p class="day-text">SATURDAY</p>
                 <div class="divider"></div>
@@ -110,10 +409,9 @@
         <section class="section gallery-section">
             <h2>Our Gallery</h2>
             <div class="gallery-slider">
-                <div class="gallery-item"><img src="assets/IMG-20260918-WA0002.jpg" alt="Gallery Image 1"></div>
-                <div class="gallery-item"><img src="assets/IMG-20260918-WA0003.jpg" alt="Gallery Image 2"></div>
-                <div class="gallery-item"><img src="assets/IMG-20260918-WA0006.jpg" alt="Gallery Image 3"></div>
-                <div class="gallery-item"><img src="assets/IMG-20260918-WA0002.jpg" alt="Gallery Image 4"></div>
+                <div class="gallery-item"><img src="assets/IMG-20260918-WA0002.jpg" alt="Gallery 1"></div>
+                <div class="gallery-item"><img src="assets/IMG-20260918-WA0003.jpg" alt="Gallery 2"></div>
+                <div class="gallery-item"><img src="assets/IMG-20260918-WA0006.jpg" alt="Gallery 3"></div>
             </div>
             <p class="swipe-hint">SWIPE LEFT OR RIGHT</p>
         </section>
@@ -152,11 +450,91 @@
         <p>With love, laughter, and a beautiful beginning to forever.</p>
     </footer>
 
-    <!-- Background Music (நீங்கள் சேர்த்துள்ள MP3 பாடலின் உண்மையான பெயரை இங்கு மாற்றிக்கொள்ளலாம். தற்காலிகமாக song.mp3 என உள்ளது) -->
+    <!-- Background Music -->
     <audio id="bgMusic" loop preload="auto">
         <source src="assets/song.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="style.js"></script> <!-- ஒருவேளை script.js-க்கு பதிலாக style.js என பெயரிட்டிருந்தால் இதைப் பயன்படுத்தவும் அல்லது கீழെയുള്ള script.js கோடைப் பார்க்கவும் -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Audio Playback on interaction
+            const bgMusic = document.getElementById("bgMusic");
+            let hasInteracted = false;
+
+            function playAudio() {
+                if (!hasInteracted && bgMusic) {
+                    bgMusic.play().then(() => {
+                        hasInteracted = true;
+                    }).catch(e => console.log("Audio play deferred"));
+                }
+            }
+
+            document.addEventListener("click", playAudio, { once: true });
+            document.addEventListener("scroll", playAudio, { once: true });
+            document.addEventListener("touchstart", playAudio, { once: true });
+
+            // Scratch Card Effect
+            const canvas = document.getElementById("scratchCanvas");
+            if (canvas) {
+                const ctx = canvas.getContext("2d");
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+
+                ctx.fillStyle = "#c5a059";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = "bold 14px sans-serif";
+                ctx.fillStyle = "#1a1a1a";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText("Scratch to reveal ✨", canvas.width / 2, canvas.height / 2);
+
+                let isDrawing = false;
+
+                function scratch(e) {
+                    if (!isDrawing) return;
+                    const rect = canvas.getBoundingClientRect();
+                    let x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+                    let y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+
+                    ctx.globalCompositeOperation = "destination-out";
+                    ctx.beginPath();
+                    ctx.arc(x, y, 22, 0, Math.PI * 2, false);
+                    ctx.fill();
+                }
+
+                canvas.addEventListener("mousedown", (e) => { isDrawing = true; scratch(e); });
+                canvas.addEventListener("mousemove", scratch);
+                window.addEventListener("mouseup", () => { isDrawing = false; });
+
+                canvas.addEventListener("touchstart", (e) => { isDrawing = true; scratch(e); });
+                canvas.addEventListener("touchmove", scratch);
+                window.addEventListener("touchend", () => { isDrawing = false; });
+            }
+
+            // Countdown Timer (20 Nov 2026)
+            const weddingDate = new Date('November 20, 2026 09:30:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = weddingDate - now;
+
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').innerText = String(days).padStart(2, '0');
+                    document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                    document.getElementById('mins').innerText = String(minutes).padStart(2, '0');
+                    document.getElementById('secs').innerText = String(seconds).padStart(2, '0');
+                }
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+    </script>
 </body>
 </html>
