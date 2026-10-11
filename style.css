@@ -268,9 +268,10 @@ button, a, input, select {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background:
-    linear-gradient(rgba(248, 241, 228, .80), rgba(248, 241, 228, .84)),
-    url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
+  
+background:
+  linear-gradient(#102e2380, #102e23a8),
+  url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
 }
 
 .story-content {
