@@ -8,14 +8,14 @@
 </head>
 <body>
 
-    <!-- Opening Intro Video/Banner Screen -->
+    <!-- Intro Video Screen -->
     <div class="intro-screen">
-        <video autoplay muted playsinline poster="assets/opening-poster.jpg" preload="auto">
+        <video autoplay muted playsinline loop poster="assets/opening-poster.jpg" id="introVideo">
             <source src="assets/opening.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
         <div class="intro-logo">
-            <img src="assets/EA-new.png" alt="EA">
+            <img src="assets/EA-new.png" alt="EA Logo">
         </div>
     </div>
 
@@ -27,7 +27,7 @@
                 <h1>N. Esvaran</h1>
                 <p>S/o Mr & Mrs Narayanasamy Vengadaswary</p>
             </div>
-            <div class="scroll-hint" aria-hidden="true">SCROLL TO EXPLORE</div>
+            <div class="scroll-hint">SCROLL TO EXPLORE</div>
         </section>
 
         <!-- Bride Section -->
@@ -117,86 +117,13 @@
             </div>
         </section>
 
-        <!-- Photo Gallery Section -->
+        <!-- Gallery Section -->
         <section class="section gallery-section">
             <h2>Our Gallery</h2>
             <div class="gallery-slider">
-                <div class="gallery-item"><img src="assets/gallery-01.png" alt="Esvaran and Ashwieni"></div>
-                <div class="gallery-item"><img src="assets/gallery-02.png" alt="Esvaran and Ashwieni"></div>
-                <div class="gallery-item"><img src="assets/gallery-03.png" alt="Esvaran and Ashwieni"></div>
-                <div class="gallery-item"><img src="assets/gallery-04.png" alt="Esvaran and Ashwieni"></div>
+                <div class="gallery-item"><img src="assets/gallery-01.png" alt="Gallery Image 1"></div>
+                <div class="gallery-item"><img src="assets/gallery-02.png" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="assets/gallery-03.png" alt="Gallery Image 3"></div>
+                <div class="gallery-item"><img src="assets/gallery-04.png" alt="Gallery Image 4"></div>
             </div>
-            <p class="swipe-hint">SWIPE LEFT OR RIGHT</p>
-        </section>
-
-        <!-- Message Section -->
-        <section class="section message-section">
-            <div class="content-box">
-                <span class="subtitle">From our hearts</span>
-                <h3>A Message for You</h3>
-                <div class="ornament">❦</div>
-                <p>“Your presence, blessings and love will make our celebration truly complete.”</p>
-                <div class="ornament">❦</div>
-                <h4>Esvaran & Ashwieni</h4>
-            </div>
-        </section>
-
-        <!-- Countdown Timer Section -->
-        <section class="section countdown-section">
-            <h2>The Big Day</h2>
-            <p>COUNTING DOWN TO ESVARAN & ASHWIENI</p>
-            <div class="countdown-timer" id="countdown">
-                <div><strong>0</strong><span>DAYS</span></div>
-                <div>:</div>
-                <div><strong>0</strong><span>HOURS</span></div>
-                <div>:</div>
-                <div><strong>0</strong><span>MIN</span></div>
-                <div>:</div>
-                <div><strong>0</strong><span>SEC</span></div>
-            </div>
-            <div class="couple-illustration">
-                <img src="assets/countdown-couple.png" alt="Cartoon couple">
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p class="footer-title">See you there</p>
-        <p>With love, laughter, and a beautiful beginning to forever.</p>
-        <p class="credit">Made with love by</p>
-        <a href="https://www.instagram.com/craft_and_celebrate/" target="_blank" rel="noopener noreferrer">@craft_and_celebrate</a>
-    </footer>
-
-    <!-- Background Music -->
-    <audio id="bgMusic" loop preload="auto">
-        <source src="assets/Naane-varugiren.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        // Simple basic countdown script framework
-        function updateCountdown() {
-            const weddingDate = new Date('November 27, 2026 18:30:00').getTime();
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
-
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                const timers = document.querySelectorAll('#countdown strong');
-                if(timers.length >= 4) {
-                    timers[0].innerText = days;
-                    timers[1].innerText = hours;
-                    timers[2].innerText = minutes;
-                    timers[3].innerText = seconds;
-                }
-            }
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
-</body>
-</html>
+            <p class="swipe-hint">SW
