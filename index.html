@@ -19,6 +19,70 @@
             text-align: center;
         }
 
+        /* Opening / Intro Screen */
+        .intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: opacity 0.8s ease;
+        }
+
+        .intro-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .intro-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .intro-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .intro-logo {
+            width: 120px;
+            margin-bottom: 30px;
+        }
+
+        .open-btn {
+            background: linear-gradient(135deg, #d4af37, #aa8228);
+            color: #000;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .open-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Sections */
         .section {
             min-height: 100vh;
             display: flex;
@@ -38,7 +102,7 @@
             font-size: 0.9rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #c5a059;
+            color: #d4af37;
             margin-bottom: 10px;
             display: block;
         }
@@ -67,7 +131,7 @@
         /* Scratch Card */
         .card-date-box {
             background: #1a1a1a;
-            border: 1px solid #c5a059;
+            border: 1px solid #d4af37;
             padding: 30px;
             border-radius: 12px;
             margin: 20px auto;
@@ -81,7 +145,7 @@
 
         .date-text h3 {
             font-size: 1.3rem;
-            color: #c5a059;
+            color: #d4af37;
             margin-top: 5px;
         }
 
@@ -116,7 +180,7 @@
         .event-card h2 {
             font-size: 1.2rem;
             letter-spacing: 2px;
-            color: #c5a059;
+            color: #d4af37;
             margin-bottom: 15px;
         }
 
@@ -127,7 +191,7 @@
         }
 
         .date-highlight span {
-            color: #c5a059;
+            color: #d4af37;
         }
 
         .day-text {
@@ -153,7 +217,7 @@
         .info-row .icon {
             font-size: 1.2rem;
             margin-right: 15px;
-            color: #c5a059;
+            color: #d4af37;
         }
 
         .info-row b {
@@ -178,8 +242,8 @@
             align-items: center;
             justify-content: center;
             background: transparent;
-            border: 1px solid #c5a059;
-            color: #c5a059;
+            border: 1px solid #d4af37;
+            color: #d4af37;
             padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
@@ -188,14 +252,14 @@
         }
 
         .map-btn:hover {
-            background: #c5a059;
+            background: #d4af37;
             color: #000;
         }
 
         /* Gallery Slider */
         .gallery-section h2 {
             font-size: 1.5rem;
-            color: #c5a059;
+            color: #d4af37;
             margin-bottom: 20px;
         }
 
@@ -237,7 +301,7 @@
 
         /* Message Section */
         .message-section .ornament {
-            color: #c5a059;
+            color: #d4af37;
             margin: 15px 0;
             font-size: 1.2rem;
         }
@@ -249,7 +313,7 @@
         }
 
         .message-section h4 {
-            color: #c5a059;
+            color: #d4af37;
             font-weight: 400;
             margin-top: 10px;
         }
@@ -263,7 +327,7 @@
         .countdown-section p {
             font-size: 0.8rem;
             letter-spacing: 2px;
-            color: #c5a059;
+            color: #d4af37;
             margin-bottom: 30px;
         }
 
@@ -272,7 +336,7 @@
             justify-content: center;
             gap: 15px;
             font-size: 1.5rem;
-            color: #c5a059;
+            color: #d4af37;
             margin-bottom: 40px;
         }
 
@@ -291,6 +355,24 @@
             color: #888;
         }
 
+        /* Floating Music Button */
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         /* Footer */
         footer {
             background: #080808;
@@ -300,12 +382,21 @@
 
         .footer-title {
             font-size: 1.2rem;
-            color: #c5a059;
+            color: #d4af37;
             margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Intro Opening Screen -->
+    <div class="intro-screen" id="introScreen">
+        <img src="assets/IMG-20260918-WA0002.jpg" alt="Background" class="intro-bg">
+        <div class="intro-content">
+            <img src="assets/logo.png" alt="Logo" class="intro-logo">
+            <button class="open-btn" id="openInvitation">Open Invitation</button>
+        </div>
+    </div>
 
     <main>
         <!-- Groom Section -->
@@ -450,28 +541,37 @@
         <p>With love, laughter, and a beautiful beginning to forever.</p>
     </footer>
 
-    <!-- Background Music -->
+    <!-- Background Music & Toggle Button -->
     <audio id="bgMusic" loop preload="auto">
         <source src="assets/song.mp3" type="audio/mpeg">
     </audio>
+    <button class="music-toggle" id="musicToggle">🎵 MUSIC</button>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Audio Playback on interaction
             const bgMusic = document.getElementById("bgMusic");
-            let hasInteracted = false;
+            const introScreen = document.getElementById("introScreen");
+            const openBtn = document.getElementById("openInvitation");
+            const musicToggle = document.getElementById("musicToggle");
 
-            function playAudio() {
-                if (!hasInteracted && bgMusic) {
-                    bgMusic.play().then(() => {
-                        hasInteracted = true;
-                    }).catch(e => console.log("Audio play deferred"));
+            // Open Button Action (Hides Intro and Plays Music)
+            openBtn.addEventListener("click", function () {
+                introScreen.classList.add("hidden");
+                if (bgMusic) {
+                    bgMusic.play().catch(e => console.log("Audio play error:", e));
                 }
-            }
+            });
 
-            document.addEventListener("click", playAudio, { once: true });
-            document.addEventListener("scroll", playAudio, { once: true });
-            document.addEventListener("touchstart", playAudio, { once: true });
+            // Music Toggle Button
+            musicToggle.addEventListener("click", function () {
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    musicToggle.innerText = "🎵 PLAYING";
+                } else {
+                    bgMusic.pause();
+                    musicToggle.innerText = "🔇 MUTED";
+                }
+            });
 
             // Scratch Card Effect
             const canvas = document.getElementById("scratchCanvas");
@@ -480,7 +580,7 @@
                 canvas.width = canvas.parentElement.offsetWidth;
                 canvas.height = canvas.parentElement.offsetHeight;
 
-                ctx.fillStyle = "#c5a059";
+                ctx.fillStyle = "#d4af37";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 ctx.font = "bold 14px sans-serif";
@@ -515,7 +615,7 @@
             // Countdown Timer (20 Nov 2026)
             const weddingDate = new Date('November 20, 2026 09:30:00').getTime();
 
-            function updateCountdown() {
+.            function updateCountdown() {
                 const now = new Date().getTime();
                 const diff = weddingDate - now;
 
