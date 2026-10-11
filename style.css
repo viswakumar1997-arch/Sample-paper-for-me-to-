@@ -1,4 +1,3 @@
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,7 @@ body {
     text-align: center;
 }
 
-/* Intro / Video Screen */
+/* Intro Video */
 .intro-screen {
     position: relative;
     width: 100vw;
@@ -21,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #000;
     overflow: hidden;
 }
 
@@ -39,10 +39,8 @@ body {
 
 .intro-screen .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
@@ -55,10 +53,9 @@ body {
 
 .intro-logo img {
     width: 100%;
-    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5));
 }
 
-/* General Section Structure */
+/* Sections Structure */
 .section {
     min-height: 100vh;
     display: flex;
@@ -104,20 +101,25 @@ p {
     color: #888;
 }
 
-/* Save the Date & Scratch Card Component */
+/* Scratch Card */
 .card-date-box {
     background: #1a1a1a;
     border: 1px solid #c5a059;
     padding: 30px;
     border-radius: 12px;
-    margin: 20px 0 10px 0;
+    margin: 20px auto;
     position: relative;
+    width: 280px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .date-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #c5a059;
-    margin: 10px 0;
+    margin-top: 5px;
 }
 
 #scratchCanvas {
@@ -128,6 +130,7 @@ p {
     height: 100%;
     cursor: pointer;
     border-radius: 12px;
+    touch-action: none;
 }
 
 .scratch-instruction {
@@ -135,13 +138,13 @@ p {
     color: #aaa;
 }
 
-/* Event Cards Style */
+/* Event Cards */
 .event-card {
     background: #151515;
     border: 1px solid #333;
     width: 100%;
     max-width: 450px;
-    padding: 40px 25px;
+    padding: 35px 25px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -204,7 +207,6 @@ p {
 .info-row p {
     font-size: 0.9rem;
     color: #aaa;
-    margin-top: 2px;
 }
 
 .map-btn {
@@ -219,23 +221,9 @@ p {
     text-decoration: none;
     font-size: 0.9rem;
     margin-top: 15px;
-    transition: all 0.3s ease;
 }
 
-.map-btn:hover {
-    background: #c5a059;
-    color: #000;
-}
-
-.map-btn span {
-    margin-right: 8px;
-}
-
-/* Gallery Slider Style */
-.gallery-section {
-    width: 100%;
-}
-
+/* Gallery Slider */
 .gallery-section h2 {
     font-size: 1.5rem;
     color: #c5a059;
@@ -257,8 +245,8 @@ p {
 }
 
 .gallery-item {
-    min-width: 260px;
-    height: 360px;
+    min-width: 250px;
+    height: 350px;
     border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
@@ -278,7 +266,7 @@ p {
     margin-top: 15px;
 }
 
-/* Message Section Style */
+/* Message Section */
 .message-section .ornament {
     color: #c5a059;
     margin: 15px 0;
@@ -289,14 +277,11 @@ p {
     font-style: italic;
     color: #ddd;
     font-size: 1.1rem;
-    max-width: 450px;
-    margin: 0 auto;
 }
 
 .message-section h4 {
     color: #c5a059;
     font-weight: 400;
-    letter-spacing: 1px;
     margin-top: 10px;
 }
 
@@ -304,7 +289,6 @@ p {
 .countdown-section h2 {
     font-size: 1.5rem;
     color: #fff;
-    margin-bottom: 5px;
 }
 
 .countdown-section p {
@@ -317,7 +301,6 @@ p {
 .countdown-timer {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 15px;
     font-size: 1.5rem;
     color: #c5a059;
@@ -327,7 +310,6 @@ p {
 .countdown-timer div {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .countdown-timer strong {
@@ -337,21 +319,19 @@ p {
 
 .countdown-timer span {
     font-size: 0.65rem;
-    letter-spacing: 1px;
     color: #888;
 }
 
 .couple-illustration img {
-    max-width: 200px;
+    max-width: 180px;
     width: 100%;
 }
 
-/* Footer Style */
+/* Footer */
 footer {
     background: #080808;
-    padding: 50px 20px;
+    padding: 40px 20px;
     border-top: 1px solid #222;
-    text-align: center;
 }
 
 .footer-title {
@@ -360,13 +340,8 @@ footer {
     margin-bottom: 10px;
 }
 
-footer p {
-    font-size: 0.9rem;
-    color: #aaa;
-}
-
 .credit {
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 0.8rem;
     color: #777;
 }
@@ -374,8 +349,4 @@ footer p {
 footer a {
     color: #c5a059;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-top: 5px;
 }
