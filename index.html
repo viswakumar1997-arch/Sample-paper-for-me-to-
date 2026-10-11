@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esvaran & Ashwieni Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Audio -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/Naane-varugiren.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Audio Toggle Button -->
+    <button id="music-toggle" aria-label="Toggle Music">🎵</button>
+
+    <main class="container">
+        
+        <!-- Opening / Intro Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="subtitle">The Wedding of</span>
+                <h1>Esvaran <span class="amp">&</span> Ashwieni</h1>
+                <p class="scroll-hint">↓ Scroll to Explore</p>
+            </div>
+        </section>
+
+        <!-- Groom & Bride Intro -->
+        <section class="couple-section">
+            <div class="person">
+                <h3>Groom</h3>
+                <h2>N. Esvaran</h2>
+                <p>S/o Mr & Mrs Narayanasamy Vengadaswary</p>
+            </div>
+            <div class="divider">❦</div>
+            <div class="person">
+                <h3>Bride</h3>
+                <h2>J. Ashwieni</h2>
+                <p>D/o Mr & Mrs Jagatheesan Lecthumy</p>
+            </div>
+        </section>
+
+        <!-- Save The Date / Scratch Card Section -->
+        <section class="save-date-section">
+            <div class="card-box">
+                <h3>Save the Date</h3>
+                <div class="event-date-card">
+                    <h4>OUR WEDDING</h4>
+                    <p class="date-num">27 NOVEMBER 2026</p>
+                    <p class="day-name">FRIDAY</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Ceremony Details -->
+        <section class="details-section">
+            <div class="detail-card">
+                <h2>THE WEDDING CEREMONY</h2>
+                <p class="date-highlight">27 <span>NOVEMBER</span> 2026</p>
+                <p class="day-highlight">FRIDAY</p>
+                <hr>
+                <div class="info-row">
+                    <span class="icon">◷</span>
+                    <div>
+                        <b>TIME</b>
+                        <strong>6:30 – 8:00 PM</strong>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span class="icon">⌖</span>
+                    <div>
+                        <b>VENUE</b>
+                        <strong>Level 9, Sky Garden By Diva</strong>
+                        <p>1 Jalan Bayu Puteri 2/1, Johor Bahru, Johor Darul Ta'zim</p>
+                    </div>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Level+9%2C+Sky+Garden+By+Diva%2C+1+Jalan+Bayu+Puteri+2%2F1%2C+Johor+Bahru%2C+Johor+Darul+Ta%27zim" target="_blank" class="map-btn">Open Map</a>
+            </div>
+        </section>
+
+        <!-- Wedding Dinner Details -->
+        <section class="details-section">
+            <div class="detail-card">
+                <h2>WEDDING DINNER</h2>
+                <p class="date-highlight">28 <span>NOVEMBER</span> 2026</p>
+                <p class="day-highlight">SATURDAY</p>
+                <hr>
+                <div class="info-row">
+                    <span class="icon">◷</span>
+                    <div>
+                        <b>TIME</b>
+                        <strong>7:30 PM</strong>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span class="icon">⌖</span>
+                    <div>
+                        <b>VENUE</b>
+                        <strong>Dewan Serbaguna Kaum India Daerah Tangkak</strong>
+                        <p>Genting Plantation Ladang Tanah Merah, Tangkak, Johor</p>
+                    </div>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Dewan+Serbaguna+Kaum+India+Daerah+Tangkak%2C+Genting+Plantation+Ladang+Tanah+Merah%2C+Tangkak%2C+Johor" target="_blank" class="map-btn">Open Map</a>
+            </div>
+        </section>
+
+        <!-- Message From Hearts -->
+        <section class="message-section">
+            <div class="message-box">
+                <h4>From our hearts</h4>
+                <h2>A Message for You</h2>
+                <p class="quote">“Your presence, blessings and love will make our celebration truly complete.”</p>
+                <p class="names">Esvaran & Ashwieni</p>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+            <h2>The Big Day</h2>
+            <p>COUNTING DOWN TO ESVARAN & ASHWIENI</p>
+            <div id="countdown" class="countdown-timer">
+                <div><strong id="days">0</strong><span>DAYS</span></div> :
+                <div><strong id="hours">0</strong><span>HOURS</span></div> :
+                <div><strong id="minutes">0</strong><span>MIN</span></div> :
+                <div><strong id="seconds">0</strong><span>SEC</span></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>See you there</h3>
+        <p>With love, laughter, and a beautiful beginning to forever.</p>
+        <p class="credits">Made with love for the couple ✨</p>
+    </footer>
+
+    <!-- Simple Script for Countdown & Music Toggle -->
+    <script>
+        // Countdown Timer Logic to Nov 27, 2026
+        const weddingDate = new Date("November 27, 2026 18:30:00").getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const gap = weddingDate - now;
+
+            if (gap < 0) return;
+
+            document.getElementById("days").innerText = Math.floor(gap / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((gap % (1000 * 60)) / 1000);
+        }
+        setInterval(updateCountdown, 1000);
+
+        // Music Play/Pause Toggle
+        const music = document.getElementById("bg-music");
+        const toggleBtn = document.getElementById("music-toggle");
+        let isPlaying = false;
+
+        toggleBtn.addEventListener("click", () => {
+            if (isPlaying) {
+                music.pause();
+                toggleBtn.innerText = "🔇";
+            } else {
+                music.play();
+                toggleBtn.innerText = "🎵";
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
