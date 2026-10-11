@@ -413,7 +413,7 @@ button, a, input, select {
   background-image: linear-gradient(rgba(9, 36, 23, 0.05), rgba(9, 36, 23, 0.45)), url('IMG-20260918-WA0003.jpg');
   background-position: center;
   background-size: cover;
-  filter: saturate(0.9);
+  filter: saturate(0.4);
 }
 
 .person-text {
