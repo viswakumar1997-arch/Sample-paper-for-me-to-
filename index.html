@@ -2,378 +2,509 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#143c2a">
-<title>Subburaj &amp; Seetha | Wedding Invitation</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#163b2a">
+  <title>Subburaj &amp; Seetha | Wedding Invitation</title>
+  <meta name="description" content="With love and joy, Subburaj and Seetha invite you to celebrate their wedding on 20 November 2026.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<audio id="weddingMusic" loop preload="auto">
-  <source src="Is%20It%20Love%20Bgm.mp3" type="audio/mpeg">
-</audio>
+  <!-- OPENING COVER -->
+  <section class="cover" id="cover">
+    <div class="leaf leaf-a"></div>
+    <div class="leaf leaf-b"></div>
+    <div class="leaf leaf-c"></div>
+    <div class="leaf leaf-d"></div>
 
-<section class="cover" id="cover">
-  <div class="leaf leaf-a"></div>
-  <div class="leaf leaf-b"></div>
-  <div class="leaf leaf-c"></div>
-  <div class="leaf leaf-d"></div>
-  <div class="cover-flowers">✿ ❀ ✿</div>
-  <div class="monogram">S<span>&amp;</span>S</div>
-  <p class="cover-small">A CELEBRATION OF LOVE</p>
-  <button class="open-button" id="openInvite">OPEN INVITATION</button>
-  <div class="cover-bottom">TAP TO OPEN <span>↓</span></div>
-</section>
+    <div class="cover-flowers" aria-hidden="true">✿ ❀ ✿</div>
 
-<main id="invitation">
+    <div class="monogram" aria-label="Subburaj and Seetha">
+      S<span>&amp;</span>S
+    </div>
 
-  <section class="hero section-pad">
-    <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
-    <p class="script">We invite you to celebrate</p>
+    <p class="cover-small">A CELEBRATION OF LOVE</p>
 
-    <h1 class="couple-names">
-      <span>Subburaj</span>
-      <span class="name-heart">❤️</span>
-      <span>Seetha</span>
-    </h1>
+    <button class="open-button" id="openInvitation" type="button">
+      OPEN INVITATION ✨
+    </button>
 
-    <p class="hero-copy">Two hearts, one journey, a lifetime of love.</p>
-    <div class="ornament">✦ ❦ ✦</div>
-    <p class="scroll-note">SCROLL TO EXPLORE <span>↓</span></p>
+    <div class="cover-bottom">
+      <span>❧</span>
+      <span>20 · 11 · 2026</span>
+      <span>WITH LOVE, FROM OUR FAMILIES</span>
+    </div>
   </section>
 
-  <section class="story section-pad">
-    <div class="story-content">
-      <h2 class="story-heading">
-        <span class="story-heading-top">THE BEGINNING OF</span>
-        <span class="story-number">8</span>
-        <span class="story-heading-bottom">YEARS OF LOVE</span>
-      </h2>
+  <!-- BACKGROUND MUSIC -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="Is%20It%20Love%20Bgm.mp3" type="audio/mpeg">
+  </audio>
 
-      <div class="story-divider">✦ ❦ ✦</div>
-      <p class="story-subtitle">Two souls, one beautiful story</p>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Play or pause wedding music">
+    ♫ PLAY MUSIC
+  </button>
 
-      <p class="body-copy">
-        With the blessings of our families, we joyfully begin a new
-        chapter together. Your presence will make our celebration
-        even more special.
+  <main id="invitation">
+
+    <!-- FIRST PAGE: MAIN INVITATION -->
+    <section class="hero section-pad" id="home">
+      <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
+
+      <p class="script">We invite you to celebrate</p>
+
+      <h1 class="couple-names">
+        <span class="couple-name">Subburaj</span>
+        <span class="name-heart" aria-label="and">&amp;</span>
+        <span class="couple-name">Seetha</span>
+      </h1>
+
+      <p class="hero-copy">
+        Two hearts, one journey, a lifetime of love.
+        Join us as we begin our beautiful forever together.
       </p>
 
-      <div class="floral-mark">❦</div>
-      <p class="story-ending">OUR FOREVER BEGINS</p>
-    </div>
-  </section>
+      <div class="ornament" aria-hidden="true">✦ ❧ ✦</div>
 
-  <section class="couple">
-    <article class="person groom">
-      <div class="person-photo photo-one" role="img" aria-label="Wedding photograph"></div>
-      <div class="person-text">
-        <span class="script">Groom</span>
-        <h2>SUBBURAJ</h2>
-        <p>With love and gratitude</p>
+      <p class="eyebrow">SAVE THE DATE</p>
+      <p class="script">Friday, 20 November 2026</p>
+
+      <a class="map-button hero-map"
+         href="https://www.google.com/maps/search/?api=1&query=Deva+Kalyana+Mahal+Ottapidaram+Thoothukudi+Tamil+Nadu"
+         target="_blank" rel="noopener">
+        VIEW WEDDING LOCATION
+      </a>
+
+      <div class="scroll-note">
+        <span>⌄</span>
+        <span>OUR STORY</span>
       </div>
-    </article>
+    </section>
 
-    <div class="and-mark">&amp;</div>
+    <!-- SECOND PAGE: EIGHT YEARS OF LOVE -->
+    <section class="story section-pad" id="our-story">
+      <div class="story-content">
+        <div class="story-heading">
+          <span class="story-heading-top">THE BEGINNING OF</span>
+          <span class="story-number">8</span>
+          <span class="story-heading-bottom">YEARS OF LOVE</span>
+        </div>
 
-    <article class="person bride">
-      <div class="person-photo photo-two" role="img" aria-label="Wedding photograph"></div>
-      <div class="person-text">
-        <span class="script">Bride</span>
-        <h2>SEETHA</h2>
-        <p>With love and gratitude</p>
+        <div class="story-divider">✦ ❧ ✦</div>
+
+        <p class="story-subtitle">Eight Years, One Beautiful Journey</p>
+
+        <p class="body-copy">
+          From the first hello to this beautiful day, our journey has been
+          filled with memories, laughter, lessons and love. Now, we are ready
+          to begin our next chapter together.
+        </p>
+
+        <div class="floral-mark" aria-hidden="true">❦</div>
+
+        <p class="story-ending">OUR FOREVER BEGINS HERE</p>
       </div>
-    </article>
-  </section>
+    </section>
 
-  <section class="date-reveal section-pad">
-    <p class="eyebrow">A DATE TO REMEMBER</p>
-    <h2>Our Wedding Day</h2>
-    <p>Scratch just a little to reveal our special date</p>
+    <!-- GROOM AND BRIDE -->
+    <section class="couple section-pad" id="couple">
+      <article class="person">
+        <div class="person-photo photo-one" role="img" aria-label="Photo of Subburaj"></div>
+        <div class="person-text">
+          <p class="script">The Groom</p>
+          <h2>SUBBURAJ</h2>
+          <p>WITH A HEART FULL OF LOVE</p>
+        </div>
+      </article>
 
-    <div class="scratch-wrap">
-      <div class="scratch-under">
-        <span>FRIDAY</span>
-        <strong>20</strong>
-        <b>NOVEMBER 2026</b>
-        <small>9:00 AM – 10:30 AM</small>
+      <div class="and-mark" aria-hidden="true">&amp;</div>
+
+      <article class="person">
+        <div class="person-photo photo-two" role="img" aria-label="Photo of Seetha"></div>
+        <div class="person-text">
+          <p class="script">The Bride</p>
+          <h2>SEETHA</h2>
+          <p>WITH A HEART FULL OF DREAMS</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- SCRATCH TO REVEAL THE DATE -->
+    <section class="date-reveal section-pad" id="date">
+      <p class="eyebrow">A SPECIAL DAY TO REMEMBER</p>
+      <h2>Our Wedding Date</h2>
+      <p>Scratch the card below to reveal our special date.</p>
+
+      <div class="scratch-wrap" id="scratchWrap">
+        <div class="scratch-under">
+          <span>THE WEDDING OF</span>
+          <strong>20</strong>
+          <b>NOVEMBER 2026</b>
+          <small>FRIDAY · 9:00–10:30 AM</small>
+        </div>
+        <canvas id="scratchCanvas" aria-label="Scratch this card to reveal the wedding date"></canvas>
       </div>
-      <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
+
+      <p class="scratch-hint">Use your finger to gently scratch the card.</p>
+    </section>
+
+    <!-- WEDDING AND RECEPTION DETAILS -->
+    <section class="events section-pad" id="events">
+      <p class="eyebrow">PLEASE JOIN US</p>
+      <h2>Celebrate With Us</h2>
+
+      <article class="event-card">
+        <div class="event-icon" aria-hidden="true">❦</div>
+        <p class="script">The Wedding</p>
+        <h3>Subburaj &amp; Seetha</h3>
+
+        <p class="event-time">FRIDAY · 20 NOVEMBER 2026</p>
+        <p>9:00 AM – 10:30 AM</p>
+
+        <div class="fine-line"></div>
+
+        <p class="venue-name">Deva Kalyana Mahal</p>
+        <p>Ottapidaram, Thoothukudi,<br>Tamil Nadu, India</p>
+
+        <a class="map-button"
+           href="https://www.google.com/maps/search/?api=1&query=Deva+Kalyana+Mahal+Ottapidaram+Thoothukudi+Tamil+Nadu"
+           target="_blank" rel="noopener">
+          GET DIRECTIONS
+        </a>
+      </article>
+
+      <article class="event-card">
+        <div class="event-icon" aria-hidden="true">✧</div>
+        <p class="script">The Reception</p>
+        <h3>Join Our Celebration</h3>
+
+        <p class="event-time">SATURDAY · 21 NOVEMBER 2026</p>
+        <p>9:30 AM – 10:30 AM</p>
+
+        <div class="fine-line"></div>
+
+        <p class="venue-name">S. Arumuganadar Rajammal Thirumana Mahal</p>
+        <p>Thoothukudi, Tamil Nadu, India</p>
+
+        <a class="map-button"
+           href="https://www.google.com/maps/search/?api=1&query=S.+Arumuganadar+Rajammal+Thirumana+Mahal+Thoothukudi+Tamil+Nadu"
+           target="_blank" rel="noopener">
+          GET DIRECTIONS
+        </a>
+      </article>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section section-pad" id="countdown">
+      <p class="eyebrow">COUNTING DOWN TO FOREVER</p>
+      <h2>Our Big Day</h2>
+
+      <div class="countdown" aria-label="Time remaining until the wedding">
+        <div><strong id="days">--</strong><span>DAYS</span></div>
+        <div><strong id="hours">--</strong><span>HOURS</span></div>
+        <div><strong id="minutes">--</strong><span>MINUTES</span></div>
+        <div><strong id="seconds">--</strong><span>SECONDS</span></div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-section section-pad" id="gallery">
+      <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+      <h2>Our Memories</h2>
+      <p class="body-copy">A few special moments from our journey together.</p>
+
+      <div class="gallery">
+        <button class="gallery-image wide" type="button"
+                data-image="IMG-20260918-WA0006.jpg"
+                aria-label="Open couple photograph">
+          <img src="IMG-20260918-WA0006.jpg" alt="Subburaj and Seetha together" loading="lazy">
+        </button>
+
+        <button class="gallery-image" type="button"
+                data-image="IMG-20260918-WA0002.jpg"
+                aria-label="Open groom photograph">
+          <img src="IMG-20260918-WA0002.jpg" alt="Subburaj" loading="lazy">
+        </button>
+
+        <button class="gallery-image" type="button"
+                data-image="IMG-20260918-WA0003.jpg"
+                aria-label="Open bride photograph">
+          <img src="IMG-20260918-WA0003.jpg" alt="Seetha" loading="lazy">
+        </button>
+
+        <button class="gallery-image wide" type="button"
+                data-image="IMG-20260918-WA0004.jpg"
+                aria-label="Open story photograph">
+          <img src="IMG-20260918-WA0004.jpg" alt="A special memory from our journey" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <!-- PHOTO LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button id="closeLightbox" type="button" aria-label="Close photo">&times;</button>
+      <img id="lightboxImage" src="" alt="Enlarged wedding memory">
     </div>
 
-    <p class="scratch-hint">A few gentle scratches will reveal the date ✨</p>
-  </section>
+    <!-- RSVP -->
+    <section class="rsvp section-pad" id="rsvp">
+      <p class="eyebrow">YOUR PRESENCE MEANS THE WORLD TO US</p>
+      <h2>Kindly RSVP</h2>
+      <p class="body-copy">Please let us know if you can join our celebration.</p>
 
-  <section class="events section-pad">
-    <p class="eyebrow">PLEASE JOIN US</p>
-    <h2>Wedding Celebrations</h2>
+      <form id="rsvpForm">
+        <label for="guestName">Your Name</label>
+        <input id="guestName" name="guestName" type="text"
+               placeholder="Enter your name" required>
 
-    <div class="event-card">
-      <div class="event-icon">❦</div>
-      <p class="script">The Wedding Ceremony</p>
-      <h3>20 November 2026</h3>
-      <p class="event-time">9:00 AM – 10:30 AM</p>
-      <div class="fine-line"></div>
-      <p class="venue-name">Deva Kalyana Mahal</p>
-      <p>Ottapidaram, Thoothukudi, Tamil Nadu</p>
-      <a class="map-button" target="_blank" rel="noopener"
-         href="https://www.google.com/maps/search/?api=1&amp;query=Deva+Kalyana+Mahal+Ottapidaram+Thoothukudi+Tamil+Nadu">⌖ VIEW WEDDING VENUE</a>
-    </div>
+        <label for="guestCount">Number of Guests</label>
+        <select id="guestCount" name="guestCount" required>
+          <option value="">Select number of guests</option>
+          <option value="1">1 guest</option>
+          <option value="2">2 guests</option>
+          <option value="3">3 guests</option>
+          <option value="4">4 guests</option>
+          <option value="5 or more">5 or more guests</option>
+        </select>
 
-    <div class="event-card reception-card">
-      <div class="event-icon">✦</div>
-      <p class="script">The Reception</p>
-      <h3>21 November 2026</h3>
-      <p class="event-time">9:30 AM – 10:30 AM</p>
-      <div class="fine-line"></div>
-      <p class="venue-name">S. Arumuganadar Rajammal Thirumana Mahal</p>
-      <p>Thoothukudi, Tamil Nadu</p>
-      <a class="map-button" target="_blank" rel="noopener"
-         href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw">⌖ VIEW RECEPTION VENUE</a>
-    </div>
-  </section>
+        <label for="attendance">Will you attend?</label>
+        <select id="attendance" name="attendance" required>
+          <option value="">Choose your response</option>
+          <option value="Yes, I will attend">Yes, I will attend</option>
+          <option value="Sorry, I cannot attend">Sorry, I cannot attend</option>
+        </select>
 
-  <section class="countdown-section section-pad">
-    <p class="eyebrow">THE COUNTDOWN</p>
-    <h2>Until We Say “I Do”</h2>
-    <div class="countdown">
-      <div><strong id="days">--</strong><span>DAYS</span></div>
-      <div><strong id="hours">--</strong><span>HOURS</span></div>
-      <div><strong id="minutes">--</strong><span>MINUTES</span></div>
-      <div><strong id="seconds">--</strong><span>SECONDS</span></div>
-    </div>
-  </section>
+        <button class="whatsapp-button" type="submit">
+          SEND RSVP ON WHATSAPP
+        </button>
 
-  <section class="gallery-section section-pad">
-    <p class="eyebrow">LITTLE MOMENTS, BIG LOVE</p>
-    <h2>Our Memories</h2>
-    <p class="body-copy">A few moments we would love to share with you.</p>
+        <p class="rsvp-note">
+          Your response will open in WhatsApp for you to send.
+        </p>
+      </form>
+    </section>
 
-    <div class="gallery">
-      <button class="gallery-image" data-full="IMG-20260918-WA0002.jpg">
-        <img src="IMG-20260918-WA0002.jpg" alt="Subburaj and Seetha memory one" loading="lazy">
+    <!-- CLOSING -->
+    <section class="closing section-pad" id="closing">
+      <div class="closing-flower" aria-hidden="true">❀</div>
+      <p class="script">With love and gratitude</p>
+      <h2>Subburaj <span>&amp;</span> Seetha</h2>
+      <p class="body-copy">
+        Thank you for being part of our story.
+        We look forward to celebrating this beautiful beginning with you.
+      </p>
+      <p class="closing-date">20 · 11 · 2026</p>
+      <button class="open-button" id="backToTop" type="button">
+        BACK TO INVITATION
       </button>
+    </section>
 
-      <button class="gallery-image" data-full="IMG-20260918-WA0003.jpg">
-        <img src="IMG-20260918-WA0003.jpg" alt="Subburaj and Seetha memory two" loading="lazy">
-      </button>
+  </main>
 
-      <button class="gallery-image wide" data-full="IMG-20260918-WA0006.jpg">
-        <img src="IMG-20260918-WA0006.jpg" alt="Subburaj and Seetha memory three" loading="lazy">
-      </button>
-    </div>
-  </section>
+  <script>
+    // OPEN INVITATION AND START MUSIC
+    const cover = document.getElementById("cover");
+    const openInvitation = document.getElementById("openInvitation");
+    const weddingMusic = document.getElementById("weddingMusic");
+    const musicToggle = document.getElementById("musicToggle");
 
-  <section class="rsvp section-pad" id="rsvp">
-    <p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p>
-    <h2>Will you celebrate<br>with us?</h2>
-    <p class="body-copy">Let us know your presence and share in our happiest beginning.</p>
+    openInvitation.addEventListener("click", async () => {
+      cover.classList.add("opened");
 
-    <form id="rsvpForm">
-      <label for="guestName">Your name</label>
-      <input id="guestName" name="guestName" placeholder="Enter your name" required maxlength="80">
+      try {
+        await weddingMusic.play();
+        musicToggle.textContent = "♫ MUSIC ON";
+        musicToggle.classList.add("playing");
+      } catch (error) {
+        musicToggle.textContent = "♫ PLAY MUSIC";
+      }
 
-      <label for="eventChoice">Which celebration will you attend?</label>
-      <select id="eventChoice" required>
-        <option value="Wedding ceremony — 20 November 2026">Wedding ceremony — 20 November 2026</option>
-        <option value="Reception — 21 November 2026">Reception — 21 November 2026</option>
-        <option value="Both wedding and reception">Both wedding and reception</option>
-      </select>
-
-      <label for="guestCount">How many people are coming?</label>
-      <select id="guestCount" required>
-        <option value="1">1 person</option>
-        <option value="2">2 people</option>
-        <option value="3">3 people</option>
-        <option value="4">4 people</option>
-        <option value="5">5 people</option>
-        <option value="6">6 people</option>
-        <option value="7">7 people</option>
-        <option value="8">8 people</option>
-        <option value="9">9 people</option>
-        <option value="10">10 people</option>
-      </select>
-
-      <button class="whatsapp-button" type="submit">☘ INFORM US ON WHATSAPP</button>
-      <p class="rsvp-note">Your reply opens WhatsApp with a ready-to-send RSVP message.</p>
-    </form>
-  </section>
-
-  <section class="closing section-pad">
-    <div class="closing-flower">❦</div>
-    <p class="script">With love,</p>
-    <h2>Subburaj <span>&amp;</span> Seetha</h2>
-    <p class="body-copy">Your presence and blessings will make our day special.</p>
-    <p class="closing-date">20 · 11 · 2026</p>
-    <div class="ornament">✦ ❦ ✦</div>
-    <button class="open-button" id="backToTop">BACK TO TOP ↑</button>
-  </section>
-
-</main>
-
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button id="closeLightbox" aria-label="Close photo">×</button>
-  <img id="lightboxImage" alt="Expanded wedding memory">
-</div>
-
-<script>
-const music = document.getElementById('weddingMusic');
-const openInvite = document.getElementById('openInvite');
-
-openInvite.addEventListener('click', async () => {
-  document.getElementById('cover').classList.add('opened');
-  document.body.classList.add('invitation-open');
-
-  try {
-    await music.play();
-  } catch (error) {
-    console.log('Music could not start. Please check the audio file.');
-  }
-
-  setTimeout(() => {
-    document.getElementById('invitation').scrollIntoView({
-      behavior: 'smooth'
+      document.getElementById("home").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
-  }, 450);
-});
 
-document.getElementById('backToTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+    musicToggle.addEventListener("click", async () => {
+      if (weddingMusic.paused) {
+        try {
+          await weddingMusic.play();
+          musicToggle.textContent = "♫ MUSIC ON";
+          musicToggle.classList.add("playing");
+        } catch (error) {
+          musicToggle.textContent = "♫ TAP TO PLAY";
+        }
+      } else {
+        weddingMusic.pause();
+        musicToggle.textContent = "♫ PLAY MUSIC";
+        musicToggle.classList.remove("playing");
+      }
+    });
 
-/* Scratch-to-reveal wedding date */
-const canvas = document.getElementById('scratchCanvas');
-const ctx = canvas.getContext('2d');
-let scratching = false;
-let revealed = false;
-let points = 0;
+    // COUNTDOWN TO THE WEDDING: INDIA STANDARD TIME
+    const weddingDate = new Date("2026-11-20T09:00:00+05:30").getTime();
 
-function drawScratch() {
-  const r = canvas.getBoundingClientRect();
-  if (!r.width || !r.height) return;
+    function updateCountdown() {
+      const remaining = weddingDate - Date.now();
 
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width = r.width * dpr;
-  canvas.height = r.height * dpr;
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.globalCompositeOperation = 'source-over';
+      if (remaining <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        return;
+      }
 
-  const g = ctx.createLinearGradient(0, 0, r.width, r.height);
-  g.addColorStop(0, '#d7a45e');
-  g.addColorStop(0.5, '#f0d6a2');
-  g.addColorStop(1, '#a56b3d');
+      document.getElementById("days").textContent =
+        Math.floor(remaining / (1000 * 60 * 60 * 24));
 
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, r.width, r.height);
-  ctx.fillStyle = '#fff4d9';
-  ctx.textAlign = 'center';
-  ctx.font = '14px Georgia';
-  ctx.fillText('✧ SCRATCH HERE ✧', r.width / 2, r.height / 2);
-  ctx.globalCompositeOperation = 'destination-out';
-}
+      document.getElementById("hours").textContent =
+        Math.floor((remaining / (1000 * 60 * 60)) % 24);
 
-function erase(e) {
-  if (!scratching || revealed) return;
+      document.getElementById("minutes").textContent =
+        Math.floor((remaining / (1000 * 60)) % 60);
 
-  const r = canvas.getBoundingClientRect();
-  ctx.globalCompositeOperation = 'destination-out';
-  ctx.beginPath();
-  ctx.arc(e.clientX - r.left, e.clientY - r.top, 28, 0, Math.PI * 2);
-  ctx.fill();
+      document.getElementById("seconds").textContent =
+        Math.floor((remaining / 1000) % 60);
+    }
 
-  points++;
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-  if (points >= 5) {
-    revealed = true;
-    canvas.style.transition = 'opacity .45s ease';
-    canvas.style.opacity = '0';
+    // SCRATCH CARD
+    const scratchCanvas = document.getElementById("scratchCanvas");
+    const scratchWrap = document.getElementById("scratchWrap");
+    const scratchContext = scratchCanvas.getContext("2d");
+    let scratching = false;
+    let scratchStarted = false;
 
-    setTimeout(() => {
-      canvas.style.display = 'none';
-    }, 480);
+    function setupScratchCard() {
+      const rect = scratchWrap.getBoundingClientRect();
+      const pixelRatio = window.devicePixelRatio || 1;
 
-    document.querySelector('.scratch-hint').textContent =
-      'Our special day: 20 November 2026 ♡';
-  }
-}
+      scratchCanvas.width = rect.width * pixelRatio;
+      scratchCanvas.height = rect.height * pixelRatio;
+      scratchContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-canvas.addEventListener('pointerdown', e => {
-  scratching = true;
-  canvas.setPointerCapture(e.pointerId);
-  erase(e);
-});
+      const gradient = scratchContext.createLinearGradient(
+        0, 0, rect.width, rect.height
+      );
+      gradient.addColorStop(0, "#d9bd87");
+      gradient.addColorStop(0.5, "#b18a52");
+      gradient.addColorStop(1, "#e6d1a5");
 
-canvas.addEventListener('pointermove', erase);
-canvas.addEventListener('pointerup', () => scratching = false);
-canvas.addEventListener('pointercancel', () => scratching = false);
+      scratchContext.globalCompositeOperation = "source-over";
+      scratchContext.fillStyle = gradient;
+      scratchContext.fillRect(0, 0, rect.width, rect.height);
 
-window.addEventListener('resize', () => {
-  if (!revealed) drawScratch();
-});
+      scratchContext.fillStyle = "#fff4d9";
+      scratchContext.textAlign = "center";
+      scratchContext.font = "14px Montserrat, sans-serif";
+      scratchContext.fillText("SCRATCH TO REVEAL", rect.width / 2, rect.height / 2 - 5);
 
-drawScratch();
+      scratchContext.font = "26px Georgia, serif";
+      scratchContext.fillText("✧  ♥  ✧", rect.width / 2, rect.height / 2 + 35);
+    }
 
-/* Wedding countdown */
-function updateCountdown() {
-  const target = new Date('2026-11-20T09:00:00+05:30').getTime();
-  const diff = Math.max(0, target - Date.now());
+    function scratchAt(event) {
+      if (!scratching) return;
 
-  document.getElementById('days').textContent = Math.floor(diff / 86400000);
-  document.getElementById('hours').textContent = Math.floor(diff % 86400000 / 3600000);
-  document.getElementById('minutes').textContent = Math.floor(diff % 3600000 / 60000);
-  document.getElementById('seconds').textContent = Math.floor(diff % 60000 / 1000);
-}
+      const rect = scratchCanvas.getBoundingClientRect();
+      const point = event.touches ? event.touches[0] : event;
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+      scratchContext.globalCompositeOperation = "destination-out";
+      scratchContext.beginPath();
+      scratchContext.arc(
+        point.clientX - rect.left,
+        point.clientY - rect.top,
+        22,
+        0,
+        Math.PI * 2
+      );
+      scratchContext.fill();
 
-/* WhatsApp RSVP */
-document.getElementById('rsvpForm').addEventListener('submit', e => {
-  e.preventDefault();
+      scratchStarted = true;
+    }
 
-  const name = document.getElementById('guestName').value.trim();
-  const event = document.getElementById('eventChoice').value;
-  const count = document.getElementById('guestCount').value;
+    scratchCanvas.addEventListener("pointerdown", (event) => {
+      scratching = true;
+      scratchCanvas.setPointerCapture(event.pointerId);
+      scratchAt(event);
+    });
 
-  const message =
-    `Hello Subburaj and Seetha! 💐\n\n` +
-    `RSVP: I will attend your celebration.\n` +
-    `Name: ${name}\n` +
-    `Event: ${event}\n` +
-    `Number of guests: ${count}\n\n` +
-    `Wishing you both a beautiful married life!`;
+    scratchCanvas.addEventListener("pointermove", scratchAt);
 
-  window.open(
-    'https://wa.me/918015740949?text=' + encodeURIComponent(message),
-    '_blank'
-  );
-});
+    scratchCanvas.addEventListener("pointerup", () => {
+      scratching = false;
+    });
 
-/* Gallery lightbox */
-const lightbox = document.getElementById('lightbox');
-const lbimg = document.getElementById('lightboxImage');
+    scratchCanvas.addEventListener("pointercancel", () => {
+      scratching = false;
+    });
 
-document.querySelectorAll('.gallery-image').forEach(button => {
-  button.addEventListener('click', () => {
-    lbimg.src = button.dataset.full;
-    lightbox.classList.add('show');
-    lightbox.setAttribute('aria-hidden', 'false');
-  });
-});
+    setupScratchCard();
 
-function closeLb() {
-  lightbox.classList.remove('show');
-  lightbox.setAttribute('aria-hidden', 'true');
-  lbimg.src = '';
-}
+    window.addEventListener("resize", () => {
+      if (!scratchStarted) setupScratchCard();
+    });
 
-document.getElementById('closeLightbox').addEventListener('click', closeLb);
+    // GALLERY LIGHTBOX
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
 
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) closeLb();
-});
-</script>
+    document.querySelectorAll(".gallery-image").forEach((button) => {
+      button.addEventListener("click", () => {
+        lightboxImage.src = button.dataset.image;
+        lightbox.classList.add("show");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("show");
+      lightboxImage.src = "";
+    }
+
+    document.getElementById("closeLightbox").addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLightbox();
+    });
+
+    // RSVP VIA WHATSAPP
+    document.getElementById("rsvpForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const guestName = document.getElementById("guestName").value.trim();
+      const guestCount = document.getElementById("guestCount").value;
+      const attendance = document.getElementById("attendance").value;
+
+      const message =
+        "Wedding RSVP - Subburaj & Seetha\n\n" +
+        "Name: " + guestName + "\n" +
+        "Number of guests: " + guestCount + "\n" +
+        "Response: " + attendance + "\n\n" +
+        "Wedding: 20 November 2026\n" +
+        "Reception: 21 November 2026";
+
+      const whatsappURL =
+        "https://wa.me/918015740949?text=" + encodeURIComponent(message);
+
+      window.open(whatsappURL, "_blank", "noopener");
+    });
+
+    // RETURN TO THE MAIN INVITATION
+    document.getElementById("backToTop").addEventListener("click", () => {
+      document.getElementById("home").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  </script>
 
 </body>
 </html>
