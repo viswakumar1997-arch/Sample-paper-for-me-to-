@@ -85,10 +85,29 @@ button, a, input, select {
   opacity: .8;
 }
 
-.leaf-a { top: -4%; left: -25%; transform: rotate(25deg); }
-.leaf-b { top: 12%; right: -28%; transform: rotate(155deg); }
-.leaf-c { bottom: 5%; left: -25%; transform: rotate(-20deg); }
-.leaf-d { bottom: -7%; right: -25%; transform: rotate(200deg); }
+.leaf-a {
+  top: -4%;
+  left: -25%;
+  transform: rotate(25deg);
+}
+
+.leaf-b {
+  top: 12%;
+  right: -28%;
+  transform: rotate(155deg);
+}
+
+.leaf-c {
+  bottom: 5%;
+  left: -25%;
+  transform: rotate(-20deg);
+}
+
+.leaf-d {
+  bottom: -7%;
+  right: -25%;
+  transform: rotate(200deg);
+}
 
 .cover-flowers {
   position: absolute;
@@ -119,7 +138,9 @@ button, a, input, select {
   color: #fff1d7;
 }
 
-.cover-small, .open-button, .cover-bottom {
+.cover-small,
+.open-button,
+.cover-bottom {
   position: relative;
   z-index: 3;
   letter-spacing: .22em;
@@ -151,7 +172,8 @@ button, a, input, select {
   text-align: center;
 }
 
-.cover-bottom span, .scroll-note span {
+.cover-bottom span,
+.scroll-note span {
   font-size: 20px;
 }
 
@@ -202,9 +224,10 @@ button, a, input, select {
   color: #c19b65;
 }
 
-/* HERO */
+/* FIRST PICTURE - HERO */
 .hero {
-  min-height: 100svh;
+  height: 100svh;
+  min-height: 600px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -212,14 +235,17 @@ button, a, input, select {
   align-items: center;
   text-align: center;
   color: #f8ecd6;
-  background: linear-gradient(#102e2380, #102e23a8), url('IMG-20260918-WA0006.jpg') center/cover;
+  background:
+    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
+    url('IMG-20260918-WA0006.jpg') center center / cover no-repeat;
 }
 
 .hero .eyebrow {
   color: #ead7b5;
 }
 
-.hero h1, .closing h2 {
+.hero h1,
+.closing h2 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -230,13 +256,15 @@ button, a, input, select {
   text-shadow: 0 2px 12px #0008;
 }
 
-.hero h1 span, .closing h2 span {
+.hero h1 span,
+.closing h2 span {
   font-family: "Great Vibes", cursive;
   color: #f3d19b;
   text-transform: none;
 }
 
-.hero-copy, .body-copy {
+.hero-copy,
+.body-copy {
   max-width: 470px;
   line-height: 1.9;
   font-size: 12px;
@@ -257,24 +285,24 @@ button, a, input, select {
   gap: 5px;
 }
 
-/* SECOND PAGE: FADED PERSONAL PHOTO + LUXURY SERIF 8 */
+/* SECOND PICTURE - STORY */
+/* Same green faded overlay as the other three pictures */
 .story {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 100svh;
+  height: 100svh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
-background:
-  linear-gradient(
-    rgba(115, 77, 48, 0.38),
-    rgba(248, 241, 228, 0.58)
-  ),
-  url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
+  padding: 35px 22px;
+
+  background:
+    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
+    url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
 }
 
 .story-content {
@@ -285,13 +313,14 @@ background:
   z-index: 1;
 }
 
+/* SECOND-PAGE HEADING */
 .story-heading {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #25432e;
-  text-shadow: 0 1px 1px rgba(255,255,255,.35);
+  color: #fff0dc;
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
 }
 
 .story-heading-top {
@@ -300,17 +329,20 @@ background:
   line-height: 1.2;
   letter-spacing: .15em;
   font-weight: 500;
+  color: #f8ecd6;
 }
 
+/* LUXURY SERIF NUMBER 8 */
 .story-number {
   display: block;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(230px, 67vw, 350px);
+  font-size: clamp(180px, 55vw, 300px);
   font-weight: 400;
-  line-height: .70;
+  line-height: .78;
   letter-spacing: -.075em;
-  color: #D4AF37;
-  margin: 28px 0 20px;
+  color: #d9b879;
+  text-shadow: 0 3px 18px rgba(0,0,0,.3);
+  margin: 18px 0;
 }
 
 .story-heading-bottom {
@@ -319,13 +351,14 @@ background:
   line-height: 1.1;
   letter-spacing: .16em;
   font-weight: 500;
+  color: #f8ecd6;
 }
 
 .story-divider {
-  color: #a87b48;
+  color: #e0bd80;
   font-size: 20px;
   letter-spacing: .25em;
-  margin: 30px 0 22px;
+  margin: 22px 0 15px;
 }
 
 .story-subtitle {
@@ -333,22 +366,23 @@ background:
   font-size: clamp(25px, 6vw, 34px);
   line-height: 1.2;
   font-weight: 500;
-  color: #5a3d2c;
-  margin: 0 0 18px;
+  color: #f3d19b;
+  margin: 0 0 14px;
 }
 
 .story .body-copy {
   margin: 0 auto;
-  color: #4c4235;
+  color: #fff0dc;
   font-size: 12px;
-  line-height: 2;
+  line-height: 1.8;
   max-width: 450px;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
 }
 
 .floral-mark {
-  font-size: 40px;
-  color: #a87b48;
-  margin: 22px 0 12px;
+  font-size: 36px;
+  color: #e0bd80;
+  margin: 15px 0 8px;
 }
 
 .story-ending {
@@ -356,11 +390,12 @@ background:
   font-size: 16px;
   font-weight: 600;
   letter-spacing: .2em;
-  color: #25432e;
+  color: #f8ecd6;
   margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,.45);
 }
 
-/* GROOM AND BRIDE */
+/* THIRD AND FOURTH PICTURES - GROOM AND BRIDE */
 .couple {
   background: #163b2a;
   color: #f8ecd6;
@@ -370,9 +405,11 @@ background:
 
 .person {
   position: relative;
+  width: 100%;
   max-width: 620px;
   margin: 0 auto 22px;
-  height: 480px;
+  height: 100svh;
+  min-height: 600px;
   overflow: hidden;
   background: #244a34;
 }
@@ -380,17 +417,23 @@ background:
 .person-photo {
   position: absolute;
   inset: 0;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
   filter: saturate(.8);
 }
 
+/* SAME FADED GREEN COLOUR PATTERN */
 .photo-one {
-  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0002.jpg');
+  background-image:
+    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
+    url('IMG-20260918-WA0002.jpg');
 }
 
 .photo-two {
-  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0003.jpg');
+  background-image:
+    linear-gradient(rgba(9,36,23,.13), rgba(9,36,23,.66)),
+    url('IMG-20260918-WA0003.jpg');
 }
 
 .person-text {
@@ -432,8 +475,11 @@ background:
   background: #eee1c9;
 }
 
-.date-reveal h2, .events h2, .countdown-section h2,
-.gallery-section h2, .rsvp h2 {
+.date-reveal h2,
+.events h2,
+.countdown-section h2,
+.gallery-section h2,
+.rsvp h2 {
   font: 500 clamp(32px, 8vw, 46px)/1.1 "Cormorant Garamond", serif;
   margin: 15px 0;
   color: #24422e;
@@ -464,7 +510,9 @@ background:
   font-family: "Cormorant Garamond", serif;
 }
 
-.scratch-under span, .scratch-under b, .scratch-under small {
+.scratch-under span,
+.scratch-under b,
+.scratch-under small {
   letter-spacing: .2em;
   font: 10px Montserrat, sans-serif;
 }
@@ -666,7 +714,8 @@ background:
   color: #4d593f;
 }
 
-.rsvp input, .rsvp select {
+.rsvp input,
+.rsvp select {
   width: 100%;
   padding: 14px 12px;
   border: 1px solid #d8c5a1;
@@ -783,7 +832,8 @@ background:
 
   .person {
     width: 100%;
-    height: 600px;
+    height: 100svh;
+    min-height: 600px;
     margin: 0;
   }
 
@@ -801,7 +851,13 @@ background:
   }
 
   .hero {
-    min-height: 100vh;
+    height: 100svh;
+    min-height: 600px;
+  }
+
+  .story {
+    height: 100svh;
+    min-height: 600px;
   }
 
   .gallery-image {
@@ -813,6 +869,6 @@ background:
   }
 
   .story-number {
-    font-size: clamp(300px, 35vw, 390px);
+    font-size: clamp(220px, 30vw, 300px);
   }
 }
