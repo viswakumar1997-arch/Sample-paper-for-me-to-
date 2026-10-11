@@ -270,7 +270,10 @@ button, a, input, select {
   text-align: center;
   
 background:
-  linear-gradient(#102e2380, #102e23a8),
+  linear-gradient(
+    rgba(115, 77, 48, 0.38),
+    rgba(248, 241, 228, 0.58)
+  ),
   url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
 }
 
