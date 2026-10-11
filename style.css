@@ -1,5 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
 
-#bd7b45;
+:root {
+  --green: #163b2a;
+  --deep: #0c2419;
+  --cream: #f8f1e4;
+  --gold: #d9b879;
+  --rust: #b96e43;
+  --ink: #2c3027;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 300;
+}
+
+button, a, input, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* COVER */
+.cover {
+  height: 100svh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #f8e8c7;
+  background: radial-gradient(ellipse at center, #4b7943 0%, #1d4b2b 48%, #092719 100%);
+  transition: height .8s, opacity .7s, transform .8s;
+}
+
+.cover:before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: repeating-conic-gradient(from 8deg at 50% 50%, transparent 0deg 7deg, rgba(177,205,112,.22) 8deg 9deg, transparent 11deg 18deg);
+  filter: blur(5px);
+  transform: scale(1.12);
+}
+
+.cover:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse, transparent 25%, rgba(0,0,0,.4) 100%);
+}
+
+.leaf {
+  position: absolute;
+  z-index: 1;
+  width: 70%;
+  height: 38%;
+  background: linear-gradient(110deg, #174327, #63964b 45%, #174327 78%, #a3b75b);
+  border: 1px solid #9eaf5b;
+  border-radius: 8% 90% 8% 90%;
+  box-shadow: inset 0 0 0 2px #244d2b, inset 0 0 18px #0c2419;
+  opacity: .88;
+}
+
+.leaf:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #c4c56d;
+  transform: rotate(22deg);
+  opacity: .8;
+}
+
+.leaf-a {
+  top: -4%;
+  left: -25%;
+  transform: rotate(25deg);
+}
+
+.leaf-b {
+  top: 12%;
+  right: -28%;
+  transform: rotate(155deg);
+}
+
+.leaf-c {
+  bottom: 5%;
+  left: -25%;
+  transform: rotate(-20deg);
+}
+
+.leaf-d {
+  bottom: -7%;
+  right: -25%;
+  transform: rotate(200deg);
+}
+
+.cover-flowers {
+  position: absolute;
+  z-index: 2;
+  top: 12%;
+  color: #f4d2c3;
+  font-size: 28px;
+  letter-spacing: 15px;
+  text-shadow: 0 2px 12px #0008;
+}
+
+.monogram {
+  position: relative;
+  z-index: 3;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(100px, 28vw, 190px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -.09em;
+  color: #ffe0d5;
+  text-shadow: 0 3px 20px #0008;
+}
+
+.monogram span {
+  font-family: "Great Vibes", cursive;
+  font-size: .6em;
+  letter-spacing: 0;
+  color: #fff1d7;
+}
+
+.cover-small,
+.open-button,
+.cover-bottom {
+  position: relative;
+  z-index: 3;
+  letter-spacing: .22em;
+  font-size: 10px;
+}
+
+.cover-small {
+  margin: 15px 0 28px;
+}
+
+.open-button {
+  border: 1px solid #f8d9aa;
+  border-radius: 40px;
+  background: linear-gradient(110deg, #e99b55, #d77835);
+  color: #fff5e4;
+  padding: 17px 31px;
+  letter-spacing: .18em;
+  font-family: Montserrat, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 30px #0002;
+}
+
+.cover-bottom {
+  position: absolute;
+  z-index: 3;
+  bottom: 30px;
+  display: grid;
+  gap: 9px;
+  text-align: center;
+}
+
+.cover-bottom span,
+.scroll-note span {
+  font-size: 20px;
+}
+
+.cover.opened {
+  height: 0;
+  min-height: 0;
+  opacity: 0;
+  transform: scale(1.06);
+  pointer-events: none;
+}
+
+/* MUSIC BUTTON */
+.music-toggle {
+  position: fixed;
+  right: 15px;
+  bottom: 18px;
+  z-index: 20;
+  background: #5b3325e8;
+  color: #fff1d8;
+  border: 1px solid #d8b879;
+  border-radius: 30px;
+  padding: 12px 17px;
+  font: 10px Montserrat, sans-serif;
+  letter-spacing: .1em;
+  box-shadow: 0 3px 18px #0003;
+}
+
+.music-toggle.playing {
+  background: #285338;
+}
+
+/* SHARED SECTION STYLES */
+.section-pad {
+  padding: 85px 22px;
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: .24em;
+  line-height: 1.8;
+  color: #a27a47;
+}
+
+.script {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  margin: 14px 0;
+  color: #c19b65;
+}
+
+/* HERO */
+.hero {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f8ecd6;
+  background: linear-gradient(#102e2380, #102e23a8), url('IMG-20260918-WA0006.jpg') center/cover;
+}
+
+.hero .eyebrow {
+  color: #ead7b5;
+}
+
+.hero h1,
+.closing h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(38px, 10vw, 65px);
+  line-height: 1.05;
+  margin: 12px 0;
+  color: #fff0dc;
+  text-shadow: 0 2px 12px #0008;
+}
+
+.hero h1 span,
+.closing h2 span {
+  font-family: "Great Vibes", cursive;
+  color: #f3d19b;
+  text-transform: none;
+}
+
+.hero-copy,
+.body-copy {
+  max-width: 470px;
+  line-height: 1.9;
+  font-size: 12px;
+}
+
+.ornament {
+  color: #e5c38b;
+  letter-spacing: .25em;
+  margin: 24px;
+}
+
+.scroll-note {
+  position: absolute !important;
+  bottom: 24px;
+  font-size: 9px;
+  letter-spacing: .2em;
+  display: grid;
+  gap: 5px;
+}
+
+/* SECOND PAGE: FADED PERSONAL PHOTO + LUXURY SERIF 8 */
+.story {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(248, 241, 228, .80), rgba(248, 241, 228, .84)),
+    url('IMG-20260918-WA0004.jpg') center center / cover no-repeat;
+}
+
+.story-content {
+  width: 100%;
+  max-width: 620px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.story-heading {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #25432e;
+  text-shadow: 0 1px 1px rgba(255,255,255,.35);
+}
+
+.story-heading-top {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(16px, 4vw, 23px);
+  line-height: 1.2;
+  letter-spacing: .15em;
+  font-weight: 500;
+}
+
+.story-number {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(230px, 67vw, 350px);
+  font-weight: 400;
+  line-height: .70;
+  letter-spacing: -.075em;
+  color: #25432e;
+  margin: 28px 0 20px;
+}
+
+.story-heading-bottom {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(22px, 6vw, 36px);
+  line-height: 1.1;
+  letter-spacing: .16em;
+  font-weight: 500;
+}
+
+.story-divider {
+  color: #a87b48;
+  font-size: 20px;
+  letter-spacing: .25em;
+  margin: 30px 0 22px;
+}
+
+.story-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(25px, 6vw, 34px);
+  line-height: 1.2;
+  font-weight: 500;
+  color: #5a3d2c;
+  margin: 0 0 18px;
+}
+
+.story .body-copy {
+  margin: 0 auto;
+  color: #4c4235;
+  font-size: 12px;
+  line-height: 2;
+  max-width: 450px;
+}
+
+.floral-mark {
+  font-size: 40px;
+  color: #a87b48;
+  margin: 22px 0 12px;
+}
+
+.story-ending {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  color: #25432e;
+  margin: 0;
+}
+
+/* GROOM AND BRIDE */
+.couple {
+  background: #163b2a;
+  color: #f8ecd6;
+  padding: 25px 18px;
+  position: relative;
+}
+
+.person {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto 22px;
+  height: 480px;
+  overflow: hidden;
+  background: #244a34;
+}
+
+.person-photo {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  filter: saturate(.8);
+}
+
+.photo-one {
+  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0002.jpg');
+}
+
+.photo-two {
+  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0003.jpg');
+}
+
+.person-text {
+  position: absolute;
+  bottom: 35px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+  text-shadow: 0 2px 10px #0009;
+}
+
+.person-text .script {
+  font-size: 36px;
+  color: #ffe4b0;
+}
+
+.person-text h2 {
+  font: 500 34px "Cormorant Garamond", serif;
+  letter-spacing: .1em;
+  margin: 4px;
+  color: #fff0df;
+}
+
+.person-text p {
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.and-mark {
+  text-align: center;
+  font: italic 45px "Cormorant Garamond", serif;
+  color: #f0d09b;
+  margin: -6px 0 14px;
+}
+
+/* SCRATCH DATE */
+.date-reveal {
+  text-align: center;
+  background: #eee1c9;
+}
+
+.date-reveal h2,
+.events h2,
+.countdown-section h2,
+.gallery-section h2,
+.rsvp h2 {
+  font: 500 clamp(32px, 8vw, 46px)/1.1 "Cormorant Garamond", serif;
+  margin: 15px 0;
+  color: #24422e;
+}
+
+.date-reveal > p:not(.eyebrow) {
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.scratch-wrap {
+  position: relative;
+  max-width: 330px;
+  height: 235px;
+  margin: 28px auto 12px;
+  box-shadow: 0 12px 32px #65411b24;
+  border: 1px solid #c8aa78;
+}
+
+.scratch-under {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff8e9;
+  color: #21432e;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.scratch-under span,
+.scratch-under b,
+.scratch-under small {
+  letter-spacing: .2em;
+  font: 10px Montserrat, sans-serif;
+}
+
+.scratch-under strong {
+  font-size: 84px;
+  line-height: 1.05;
+  color: #bd7b45;
   font-weight: 400;
 }
 
@@ -343,371 +841,4 @@
   .story-number {
     font-size: clamp(300px, 35vw, 390px);
   }
-}
-
-#bd7b45;
-  font-weight: 400;
-}
-
-.scratch-under b {
-  margin: 6px;
-}
-
-.scratch-under small {
-  margin-top: 12px;
-}
-
-.scratch-wrap canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  touch-action: none;
-  cursor: crosshair;
-}
-
-.scratch-hint {
-  font-size: 10px;
-  color: #856a43;
-}
-
-/* EVENTS */
-.events {
-  text-align: center;
-  background: #f8f1e4;
-}
-
-.event-card {
-  max-width: 430px;
-  margin: 30px auto 22px;
-  padding: 35px 22px;
-  border: 1px solid #d9c49b;
-  background: #fff9ee;
-  box-shadow: 0 12px 35px #5d42200b;
-}
-
-.event-icon {
-  font-size: 25px;
-  color: #ba8d54;
-}
-
-.event-card .script {
-  font-size: 29px;
-  margin: 15px 0 5px;
-}
-
-.event-card h3 {
-  font: 500 27px "Cormorant Garamond", serif;
-  color: #25472f;
-  margin: 8px;
-}
-
-.event-card p {
-  font-size: 11px;
-  line-height: 1.8;
-}
-
-.event-time {
-  color: #9a6c3d;
-  letter-spacing: .08em;
-}
-
-.fine-line {
-  width: 55px;
-  border-top: 1px solid #c9a36d;
-  margin: 23px auto;
-}
-
-.venue-name {
-  font: 600 15px "Cormorant Garamond", serif !important;
-}
-
-.map-button {
-  display: inline-block;
-  margin-top: 16px;
-  border: 1px solid #b9915d;
-  color: #31503a;
-  text-decoration: none;
-  padding: 12px 17px;
-  font-size: 9px;
-  letter-spacing: .1em;
-  border-radius: 24px;
-}
-
-/* COUNTDOWN */
-.countdown-section {
-  text-align: center;
-  background: #163b2a;
-  color: #f9eedb;
-}
-
-.countdown-section h2 {
-  color: #f8ead1;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 30px auto 0;
-  max-width: 430px;
-}
-
-.countdown div {
-  flex: 1;
-  border: 1px solid #c6a56e66;
-  padding: 18px 5px;
-  background: #ffffff08;
-}
-
-.countdown strong {
-  display: block;
-  font: 36px "Cormorant Garamond", serif;
-  color: #e2c38b;
-}
-
-.countdown span {
-  font-size: 8px;
-  letter-spacing: .13em;
-  color: #e9d8ba;
-}
-
-/* GALLERY */
-.gallery-section {
-  text-align: center;
-  background: #eee2cc;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  max-width: 600px;
-  margin: 28px auto;
-}
-
-.gallery-image {
-  border: 0;
-  padding: 0;
-  background: #d8c6a7;
-  overflow: hidden;
-  min-height: 180px;
-  cursor: pointer;
-}
-
-.gallery-image img {
-  width: 100%;
-  height: 100%;
-  min-height: 180px;
-  object-fit: cover;
-  display: block;
-  transition: transform .4s;
-}
-
-.gallery-image:active img {
-  transform: scale(1.04);
-}
-
-.gallery-image.wide {
-  grid-column: 1 / -1;
-  height: 260px;
-}
-
-.gallery-image.wide img {
-  height: 260px;
-}
-
-/* RSVP */
-.rsvp {
-  text-align: center;
-  background: #f8f1e4;
-}
-
-.rsvp form {
-  max-width: 430px;
-  margin: 30px auto 0;
-  text-align: left;
-  background: #fff9ee;
-  border: 1px solid #ddc9a4;
-  padding: 25px 20px;
-}
-
-.rsvp label {
-  display: block;
-  margin: 15px 0 7px;
-  font-size: 11px;
-  color: #4d593f;
-}
-
-.rsvp input,
-.rsvp select {
-  width: 100%;
-  padding: 14px 12px;
-  border: 1px solid #d8c5a1;
-  border-radius: 5px;
-  background: #fffdf7;
-  color: #243c2a;
-  font: 12px Montserrat, sans-serif;
-}
-
-.whatsapp-button {
-  width: 100%;
-  margin-top: 24px;
-  padding: 16px 10px;
-  border: 0;
-  border-radius: 30px;
-  background: #2d6c47;
-  color: white;
-  font: 600 10px Montserrat, sans-serif;
-  letter-spacing: .09em;
-  cursor: pointer;
-}
-
-.rsvp-note {
-  text-align: center;
-  font-size: 10px;
-  line-height: 1.7;
-  color: #77674f;
-}
-
-/* CLOSING */
-.closing {
-  text-align: center;
-  background: radial-gradient(ellipse, #244d34, #0c261a);
-  color: #f7ecd6;
-  min-height: 70svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.closing-flower {
-  font-size: 45px;
-  color: #d2ad70;
-}
-
-.closing .script {
-  margin-bottom: 0;
-}
-
-.closing h2 {
-  font-size: clamp(36px, 9vw, 54px);
-}
-
-.closing .body-copy {
-  margin: 15px auto;
-}
-
-.closing-date {
-  font: 18px "Cormorant Garamond", serif;
-  letter-spacing: .2em;
-  color: #dfbf85;
-}
-
-.closing .open-button {
-  margin-top: 12px;
-}
-
-/* PHOTO LIGHTBOX */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: #07120ff2;
-  z-index: 50;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.lightbox.show {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 100%;
-  max-height: 85svh;
-  object-fit: contain;
-}
-
-.lightbox button {
-  position: absolute;
-  right: 18px;
-  top: 14px;
-  color: white;
-  background: none;
-  border: 0;
-  font-size: 38px;
-}
-
-/* DESKTOP AND TABLET */
-@media (min-width: 700px) {
-  .cover {
-    min-height: 720px;
-  }
-
-  .couple {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-    padding: 50px;
-  }
-
-  .person {
-    width: 100%;
-    height: 600px;
-    margin: 0;
-  }
-
-  .and-mark {
-    position: absolute;
-    left: calc(50% - 20px);
-    z-index: 2;
-    background: #163b2a;
-    border-radius: 50%;
-    padding: 8px;
-  }
-
-  .section-pad {
-    padding: 100px 30px;
-  }
-
-  .hero {
-    min-height: 100vh;
-  }
-
-  .gallery-image {
-    min-height: 270px;
-  }
-
-  .gallery-image img {
-    min-height: 270px;
-  }
-
-  .story-number {
-    font-size: clamp(300px, 35vw, 390px);
-  }
-}
-/* ❤️ HEARTBEAT — TWO BEATS EVERY SECOND */
-.hero h1 .name-heart {
-  display: inline-block !important;
-  font-family: Arial, sans-serif !important;
-  font-size: 0.65em !important;
-  color: #ff1744 !important;
-  line-height: 1 !important;
-  animation: weddingHeartBeat 1s ease-in-out infinite !important;
-  transform-origin: center center;
-  vertical-align: middle;
-  text-shadow: 0 0 12px rgba(255, 23, 68, 0.6);
-  will-change: transform;
-}
-
-@keyframes weddingHeartBeat {
-  0%, 100% { transform: scale(1); }
-  12% { transform: scale(1.4); }
-  24% { transform: scale(1); }
-  36% { transform: scale(1.4); }
-  48% { transform: scale(1); }
 }
