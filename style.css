@@ -690,3 +690,24 @@
     font-size: clamp(300px, 35vw, 390px);
   }
 }
+/* ❤️ HEARTBEAT — TWO BEATS EVERY SECOND */
+.hero h1 .name-heart {
+  display: inline-block !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 0.65em !important;
+  color: #ff1744 !important;
+  line-height: 1 !important;
+  animation: weddingHeartBeat 1s ease-in-out infinite !important;
+  transform-origin: center center;
+  vertical-align: middle;
+  text-shadow: 0 0 12px rgba(255, 23, 68, 0.6);
+  will-change: transform;
+}
+
+@keyframes weddingHeartBeat {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.4); }
+  24% { transform: scale(1); }
+  36% { transform: scale(1.4); }
+  48% { transform: scale(1); }
+}
