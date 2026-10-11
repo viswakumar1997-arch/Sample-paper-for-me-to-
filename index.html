@@ -4,156 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subburaj & Seetha Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
         body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0c0c0c;
             color: #f4f4f4;
             overflow-x: hidden;
-            text-align: center;
         }
 
-        /* Intro Opening Screen */
-        .intro-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            transition: opacity 0.8s ease;
+        .font-serif {
+            font-family: 'Playfair Display', serif;
         }
 
-        .intro-screen.hidden {
+        /* Opening Screen Transition */
+        #introScreen {
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+        }
+        #introScreen.fade-out {
             opacity: 0;
-            pointer-events: none;
+            visibility: hidden;
         }
 
-        .intro-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-        }
-
-        .intro-content {
+        /* Scratch Card Styling */
+        .scratch-box {
             position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .intro-logo {
-            font-size: 3rem;
-            color: #d4af37;
-            font-weight: bold;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            border: 2px solid #d4af37;
-            padding: 10px 25px;
-            border-radius: 10px;
-            background: rgba(0,0,0,0.6);
-        }
-
-        .open-btn {
-            background: linear-gradient(135deg, #d4af37, #aa8228);
-            color: #000;
-            border: none;
-            padding: 12px 35px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .open-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Sections */
-        .section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .content-box {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        p {
-            color: #cccccc;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 30px;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            color: #888;
-        }
-
-        /* Scratch Card */
-        .card-date-box {
-            background: #1a1a1a;
-            border: 1px solid #d4af37;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 20px auto;
-            position: relative;
-            width: 300px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .date-text h3 {
-            font-size: 1.3rem;
-            color: #d4af37;
-            margin-top: 5px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 1rem;
+            overflow: hidden;
         }
 
         #scratchCanvas {
@@ -163,409 +44,221 @@
             width: 100%;
             height: 100%;
             cursor: pointer;
-            border-radius: 12px;
             touch-action: none;
         }
 
-        .scratch-instruction {
-            font-size: 0.85rem;
-            color: #aaa;
-        }
-
-        /* Event Cards */
-        .event-card {
-            background: #151515;
-            border: 1px solid #333;
-            width: 100%;
-            max-width: 450px;
-            padding: 35px 25px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            margin: 0 auto;
-        }
-
-        .event-card h2 {
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            color: #d4af37;
-            margin-bottom: 15px;
-        }
-
-        .date-highlight {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .date-highlight span {
-            color: #d4af37;
-        }
-
-        .day-text {
-            font-size: 0.9rem;
-            color: #aaa;
-            letter-spacing: 2px;
-            margin-top: 5px;
-        }
-
-        .divider {
-            height: 1px;
-            background: #333;
-            margin: 25px 0;
-        }
-
-        .info-row {
-            display: flex;
-            align-items: flex-start;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .info-row .icon {
-            font-size: 1.2rem;
-            margin-right: 15px;
-            color: #d4af37;
-        }
-
-        .info-row b {
-            display: block;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: #888;
-        }
-
-        .info-row strong {
-            font-size: 1rem;
-            color: #fff;
-        }
-
-        .info-row p {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-top: 15px;
-        }
-
-        .map-btn:hover {
-            background: #d4af37;
-            color: #000;
-        }
-
-        /* Gallery Slider */
-        .gallery-section h2 {
-            font-size: 1.5rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-        }
-
-        .gallery-slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding: 10px 20px;
-            width: 100%;
-            max-width: 800px;
-            scrollbar-width: none;
-        }
-
-        .gallery-slider::-webkit-scrollbar {
+        /* Custom Scrollbar for Gallery */
+        .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-
-        .gallery-item {
-            min-width: 250px;
-            height: 350px;
-            border-radius: 12px;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 1px solid #333;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .swipe-hint {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            color: #777;
-            margin-top: 15px;
-        }
-
-        /* Message Section */
-        .message-section .ornament {
-            color: #d4af37;
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
-
-        .message-section p {
-            font-style: italic;
-            color: #ddd;
-            font-size: 1.1rem;
-        }
-
-        .message-section h4 {
-            color: #d4af37;
-            font-weight: 400;
-            margin-top: 10px;
-        }
-
-        /* Countdown Section */
-        .countdown-section h2 {
-            font-size: 1.5rem;
-            color: #fff;
-        }
-
-        .countdown-section p {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: #d4af37;
-            margin-bottom: 30px;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 1.5rem;
-            color: #d4af37;
-            margin-bottom: 40px;
-        }
-
-        .countdown-timer div {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .countdown-timer strong {
-            font-size: 2rem;
-            color: #fff;
-        }
-
-        .countdown-timer span {
-            font-size: 0.65rem;
-            color: #888;
-        }
-
-        /* Floating Music Button */
-        .music-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #1a1a1a;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            z-index: 100;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Footer */
-        footer {
-            background: #080808;
-            padding: 40px 20px;
-            border-top: 1px solid #222;
-        }
-
-        .footer-title {
-            font-size: 1.2rem;
-            color: #d4af37;
-            margin-bottom: 10px;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
-<body>
+<body class="bg-[#0c0c0c] text-white">
 
-    <!-- Intro Opening Screen -->
-    <div class="intro-screen" id="introScreen">
-        <img src="IMG-20260918-WA0002.jpg" alt="Background" class="intro-bg">
-        <div class="intro-content">
-            <div class="intro-logo">S & S</div>
-            <button class="open-btn" id="openInvitation">Open Invitation</button>
+    <!-- Opening / Intro Screen (Matching Original Video Aesthetic) -->
+    <div id="introScreen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black">
+        <div class="absolute inset-0 overflow-hidden opacity-50">
+            <img src="IMG-20260918-WA0002.jpg" alt="Background" class="w-full h-full object-cover scale-105 animate-pulse">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+        </div>
+        
+        <div class="relative z-10 flex flex-col items-center text-center px-4">
+            <div class="mb-8 p-4 border-2 border-[#d4af37]/60 rounded-2xl bg-black/40 backdrop-blur-md shadow-2xl">
+                <span class="font-serif text-4xl md:text-5xl tracking-widest text-[#d4af37] font-bold">EA</span>
+            </div>
+            <button id="openBtn" class="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#aa8228] text-black font-bold uppercase tracking-widest rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+                Open Invitation
+            </button>
         </div>
     </div>
 
-    <main>
+    <!-- Main Content -->
+    <main class="relative z-10">
+        
         <!-- Groom Section -->
-        <section class="section groom-section">
-            <div class="content-box">
-                <span class="subtitle">Groom</span>
-                <h1>SUBBURAJ</h1>
-                <p>S/o Murugan</p>
+        <section class="h-screen flex flex-col justify-between items-center text-center py-16 px-4 relative">
+            <div class="absolute inset-0 -z-10 opacity-20">
+                <img src="IMG-20260918-WA0002.jpg" class="w-full h-full object-cover" alt="Groom BG">
             </div>
-            <div class="scroll-hint">SCROLL TO EXPLORE</div>
+            <div></div>
+            <div class="max-w-xl">
+                <span class="text-xs uppercase tracking-[0.3em] text-[#d4af37] block mb-3 font-semibold">Groom</span>
+                <h1 class="font-serif text-4xl md:text-6xl text-white font-normal mb-4">N. SUBBURAJ</h1>
+                <p class="text-gray-400 text-sm md:text-base tracking-wide">S/o Mr & Mrs Murugan</p>
+            </div>
+            <div class="text-xs tracking-[0.2em] text-gray-500 animate-bounce">SCROLL TO EXPLORE</div>
         </section>
 
         <!-- Bride Section -->
-        <section class="section bride-section">
-            <div class="content-box">
-                <span class="subtitle">Bride</span>
-                <h1>SEETHA</h1>
-                <p>D/o Rajapa Di</p>
+        <section class="h-screen flex flex-col justify-center items-center text-center py-16 px-4 relative">
+            <div class="absolute inset-0 -z-10 opacity-20">
+                <img src="IMG-20260918-WA0003.jpg" class="w-full h-full object-cover" alt="Bride BG">
+            </div>
+            <div class="max-w-xl">
+                <span class="text-xs uppercase tracking-[0.3em] text-[#d4af37] block mb-3 font-semibold">Bride</span>
+                <h1 class="font-serif text-4xl md:text-6xl text-white font-normal mb-4">J. SEETHA</h1>
+                <p class="text-gray-400 text-sm md:text-base tracking-wide">D/o Mr & Mrs Rajapa Di</p>
             </div>
         </section>
 
-        <!-- Save the Date Scratch Card Section -->
-        <section class="section save-date-section">
-            <div class="content-box">
-                <h2>Save the Date</h2>
-                <div class="card-date-box">
-                    <div class="date-text">
-                        <span>OUR WEDDING</span>
-                        <h3>20 NOVEMBER 2026</h3>
-                        <p>FRIDAY</p>
+        <!-- Save the Date (Scratch Card) Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center text-center py-16 px-4">
+            <div class="max-w-md w-full">
+                <h2 class="font-serif text-3xl text-[#d4af37] mb-8">Save the Date</h2>
+                <div class="scratch-box p-8 w-full h-44 flex flex-col items-center justify-center shadow-xl">
+                    <div id="hiddenDateContent" class="text-center">
+                        <span class="text-xs tracking-[0.2em] text-gray-400 block mb-1">OUR WEDDING</span>
+                        <h3 class="font-serif text-2xl md:text-3xl text-[#d4af37] font-bold">20 NOVEMBER 2026</h3>
+                        <p class="text-xs tracking-[0.2em] text-gray-300 mt-1">FRIDAY</p>
                     </div>
                     <canvas id="scratchCanvas"></canvas>
                 </div>
-                <p class="scratch-instruction">Scratch to reveal ✨</p>
+                <p class="text-xs text-gray-400 tracking-widest mt-4">Scratch to reveal ✨</p>
             </div>
         </section>
 
-        <!-- Wedding Ceremony Details -->
-        <section class="section event-details">
-            <div class="event-card">
-                <h2>THE WEDDING</h2>
-                <div class="date-highlight">20 <span>NOVEMBER</span> 2026</div>
-                <p class="day-text">FRIDAY</p>
-                <div class="divider"></div>
-                
-                <div class="info-row">
-                    <span class="icon">◷</span>
-                    <div>
-                        <b>TIME</b>
-                        <strong>9:30 AM – 11:00 AM</strong>
+        <!-- Wedding Event Card -->
+        <section class="min-h-screen flex flex-col justify-center items-center py-16 px-4">
+            <div class="bg-[#121212] border border-[#d4af37]/30 rounded-2xl max-w-md w-full p-8 shadow-2xl relative">
+                <h3 class="font-serif text-xl tracking-widest text-[#d4af37] mb-6 text-center">THE WEDDING</h3>
+                <div class="text-center mb-8">
+                    <div class="font-serif text-3xl md:text-4xl font-bold text-white">20 <span class="text-[#d4af37]">NOVEMBER</span> 2026</div>
+                    <p class="text-xs tracking-[0.2em] text-gray-400 mt-2">FRIDAY</p>
+                </div>
+                <div class="space-y-6 text-left border-t border-b border-white/10 py-6 mb-8">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-[#d4af37] text-xl">◷</span>
+                        <div>
+                            <b class="text-xs text-gray-400 tracking-wider block">TIME</b>
+                            <strong class="text-white text-sm md:text-base">9:30 AM – 11:00 AM</strong>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-[#d4af37] text-xl">⌖</span>
+                        <div>
+                            <b class="text-xs text-gray-400 tracking-wider block">VENUE</b>
+                            <strong class="text-white text-sm md:text-base">Deva Kalyana Mandapam</strong>
+                            <p class="text-gray-400 text-xs mt-1">Ottapidaram, Tuticorin</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="info-row">
-                    <span class="icon">⌖</span>
-                    <div>
-                        <b>VENUE</b>
-                        <strong>Deva Kalyana Mandapam</strong>
-                        <p>Ottapidaram, Tuticorin</p>
-                    </div>
-                </div>
-
-                <a href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw" class="map-btn" rel="noopener" target="_blank">
-                    <span>⌖</span> Open Map
+                <a href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw" target="_blank" rel="noopener" class="w-full flex items-center justify-center space-x-2 py-3 border border-[#d4af37] text-[#d4af37] rounded-full hover:bg-[#d4af37] hover:text-black transition-colors font-medium text-sm">
+                    <span>⌖</span>
+                    <span>Open Map</span>
                 </a>
             </div>
         </section>
 
-        <!-- Reception Details -->
-        <section class="section event-details">
-            <div class="event-card">
-                <h2>RECEPTION</h2>
-                <div class="date-highlight">21 <span>NOVEMBER</span> 2026</div>
-                <p class="day-text">SATURDAY</p>
-                <div class="divider"></div>
-                
-                <div class="info-row">
-                    <span class="icon">◷</span>
-                    <div>
-                        <b>TIME</b>
-                        <strong>9:00 AM – 10:30 PM</strong>
+        <!-- Reception Event Card -->
+        <section class="min-h-screen flex flex-col justify-center items-center py-16 px-4">
+            <div class="bg-[#121212] border border-[#d4af37]/30 rounded-2xl max-w-md w-full p-8 shadow-2xl relative">
+                <h3 class="font-serif text-xl tracking-widest text-[#d4af37] mb-6 text-center">RECEPTION</h3>
+                <div class="text-center mb-8">
+                    <div class="font-serif text-3xl md:text-4xl font-bold text-white">21 <span class="text-[#d4af37]">NOVEMBER</span> 2026</div>
+                    <p class="text-xs tracking-[0.2em] text-gray-400 mt-2">SATURDAY</p>
+                </div>
+                <div class="space-y-6 text-left border-t border-b border-white/10 py-6 mb-8">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-[#d4af37] text-xl">◷</span>
+                        <div>
+                            <b class="text-xs text-gray-400 tracking-wider block">TIME</b>
+                            <strong class="text-white text-sm md:text-base">9:00 AM – 10:30 PM</strong>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-[#d4af37] text-xl">⌖</span>
+                        <div>
+                            <b class="text-xs text-gray-400 tracking-wider block">VENUE</b>
+                            <strong class="text-white text-sm md:text-base">Deva Kalyana Mandapam</strong>
+                            <p class="text-gray-400 text-xs mt-1">Ottapidaram, Tuticorin</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="info-row">
-                    <span class="icon">⌖</span>
-                    <div>
-                        <b>VENUE</b>
-                        <strong>Deva Kalyana Mandapam</strong>
-                        <p>Ottapidaram, Tuticorin</p>
-                    </div>
-                </div>
-
-                <a href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw" class="map-btn" rel="noopener" target="_blank">
-                    <span>⌖</span> Open Map
+                <a href="https://maps.app.goo.gl/b9C1Yn49hL215aL49?g_st=aw" target="_blank" rel="noopener" class="w-full flex items-center justify-center space-x-2 py-3 border border-[#d4af37] text-[#d4af37] rounded-full hover:bg-[#d4af37] hover:text-black transition-colors font-medium text-sm">
+                    <span>⌖</span>
+                    <span>Open Map</span>
                 </a>
             </div>
         </section>
 
         <!-- Gallery Section -->
-        <section class="section gallery-section">
-            <h2>Our Gallery</h2>
-            <div class="gallery-slider">
-                <div class="gallery-item"><img src="IMG-20260918-WA0002.jpg" alt="Gallery 1"></div>
-                <div class="gallery-item"><img src="IMG-20260918-WA0003.jpg" alt="Gallery 2"></div>
-                <div class="gallery-item"><img src="IMG-20260918-WA0006.jpg" alt="Gallery 3"></div>
+        <section class="py-24 px-4 text-center">
+            <h2 class="font-serif text-3xl text-[#d4af37] mb-8">Our Gallery</h2>
+            <div class="flex overflow-x-auto space-x-4 px-4 max-w-4xl mx-auto no-scrollbar pb-4">
+                <div class="min-w-[280px] h-[380px] rounded-xl overflow-hidden border border-white/10 flex-shrink-0">
+                    <img src="IMG-20260918-WA0002.jpg" alt="Gallery 1" class="w-full h-full object-cover">
+                </div>
+                <div class="min-w-[280px] h-[380px] rounded-xl overflow-hidden border border-white/10 flex-shrink-0">
+                    <img src="IMG-20260918-WA0003.jpg" alt="Gallery 2" class="w-full h-full object-cover">
+                </div>
+                <div class="min-w-[280px] h-[380px] rounded-xl overflow-hidden border border-white/10 flex-shrink-0">
+                    <img src="IMG-20260918-WA0006.jpg" alt="Gallery 3" class="w-full h-full object-cover">
+                </div>
             </div>
-            <p class="swipe-hint">SWIPE LEFT OR RIGHT</p>
+            <p class="text-xs text-gray-500 tracking-[0.2em] mt-6">SWIPE LEFT OR RIGHT</p>
         </section>
 
         <!-- Heart Message Section -->
-        <section class="section message-section">
-            <div class="content-box">
-                <span class="subtitle">From our hearts</span>
-                <h3>A Message for You</h3>
-                <div class="ornament">❦</div>
-                <p>“Your presence, blessings and love will make our celebration truly complete.”</p>
-                <div class="ornament">❦</div>
-                <h4>Subburaj & Seetha</h4>
-            </div>
+        <section class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 max-w-xl mx-auto">
+            <span class="text-xs uppercase tracking-[0.3em] text-[#d4af37] mb-4">From our hearts</span>
+            <h3 class="font-serif text-2xl md:text-3xl text-white mb-6">A Message for You</h3>
+            <div class="text-[#d4af37] text-xl mb-6">❦</div>
+            <p class="font-serif italic text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                “Your presence, blessings and love will make our celebration truly complete.”
+            </p>
+            <div class="text-[#d4af37] text-xl mb-6">❦</div>
+            <h4 class="font-serif text-lg text-[#d4af37] tracking-wider">Subburaj & Seetha</h4>
         </section>
 
         <!-- Countdown Section -->
-        <section class="section countdown-section">
-            <h2>The Big Day</h2>
-            <p>COUNTING DOWN TO SUBBURAJ & SEETHA</p>
-            <div class="countdown-timer" id="countdown">
-                <div><strong id="days">00</strong><span>DAYS</span></div>
-                <div>:</div>
-                <div><strong id="hours">00</strong><span>HOURS</span></div>
-                <div>:</div>
-                <div><strong id="mins">00</strong><span>MIN</span></div>
-                <div>:</div>
-                <div><strong id="secs">00</strong><span>SEC</span></div>
+        <section class="py-24 text-center px-4">
+            <h2 class="font-serif text-3xl text-white mb-2">The Big Day</h2>
+            <p class="text-xs tracking-[0.25em] text-[#d4af37] mb-12">COUNTING DOWN TO SUBBURAJ & SEETHA</p>
+            <div class="flex justify-center items-center space-x-3 md:space-x-6 text-[#d4af37]">
+                <div class="flex flex-col"><strong id="days" class="text-3xl md:text-5xl font-serif text-white">00</strong><span class="text-[10px] tracking-widest text-gray-400 mt-1">DAYS</span></div>
+                <span class="text-2xl text-gray-600">:</span>
+                <div class="flex flex-col"><strong id="hours" class="text-3xl md:text-5xl font-serif text-white">00</strong><span class="text-[10px] tracking-widest text-gray-400 mt-1">HOURS</span></div>
+                <span class="text-2xl text-gray-600">:</span>
+                <div class="flex flex-col"><strong id="mins" class="text-3xl md:text-5xl font-serif text-white">00</strong><span class="text-[10px] tracking-widest text-gray-400 mt-1">MIN</span></div>
+                <span class="text-2xl text-gray-600">:</span>
+                <div class="flex flex-col"><strong id="secs" class="text-3xl md:text-5xl font-serif text-white">00</strong><span class="text-[10px] tracking-widest text-gray-400 mt-1">SEC</span></div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p class="footer-title">See you there</p>
-        <p>With love, laughter, and a beautiful beginning to forever.</p>
+    <footer class="bg-black py-16 text-center border-t border-white/10 px-4">
+        <p class="font-serif text-xl text-[#d4af37] mb-3">See you there</p>
+        <p class="text-sm text-gray-400">With love, laughter, and a beautiful beginning to forever.</p>
     </footer>
 
-    <!-- Background Music & Toggle Button -->
+    <!-- Audio & Music Toggle -->
     <audio id="bgMusic" loop preload="auto">
         <source src="audio.mp3" type="audio/mpeg">
     </audio>
-    <button class="music-toggle" id="musicToggle">🎵 MUSIC</button>
+    <button id="musicToggle" class="fixed bottom-6 right-6 z-50 bg-[#1a1a1a] border border-[#d4af37] text-[#d4af37] px-4 py-2 rounded-full text-xs font-semibold tracking-wider shadow-lg flex items-center space-x-2">
+        <span>🎵</span>
+        <span id="musicText">MUSIC</span>
+    </button>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const bgMusic = document.getElementById("bgMusic");
             const introScreen = document.getElementById("introScreen");
-            const openBtn = document.getElementById("openInvitation");
+            const openBtn = document.getElementById("openBtn");
+            const bgMusic = document.getElementById("bgMusic");
             const musicToggle = document.getElementById("musicToggle");
+            const musicText = document.getElementById("musicText");
 
-            // Open Button Action (Hides Intro and Plays Music)
+            // Open Button Action
             openBtn.addEventListener("click", function () {
-                introScreen.classList.add("hidden");
+                introScreen.classList.add("fade-out");
                 if (bgMusic) {
                     bgMusic.play().catch(e => console.log("Audio play error:", e));
+                    musicText.innerText = "PLAYING";
                 }
             });
 
@@ -573,14 +266,14 @@
             musicToggle.addEventListener("click", function () {
                 if (bgMusic.paused) {
                     bgMusic.play();
-                    musicToggle.innerText = "🎵 PLAYING";
+                    musicText.innerText = "PLAYING";
                 } else {
                     bgMusic.pause();
-                    musicToggle.innerText = "🔇 MUTED";
+                    musicText.innerText = "MUTED";
                 }
             });
 
-            // Scratch Card Effect
+            // Scratch Card Logic
             const canvas = document.getElementById("scratchCanvas");
             if (canvas) {
                 const ctx = canvas.getContext("2d");
@@ -590,7 +283,7 @@
                 ctx.fillStyle = "#d4af37";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-                ctx.font = "bold 14px sans-serif";
+                ctx.font = "bold 15px 'Plus Jakarta Sans', sans-serif";
                 ctx.fillStyle = "#1a1a1a";
                 ctx.textAlign = "center";
                 ctx.textBaseline = "middle";
@@ -606,7 +299,7 @@
 
                     ctx.globalCompositeOperation = "destination-out";
                     ctx.beginPath();
-                    ctx.arc(x, y, 22, 0, Math.PI * 2, false);
+                    ctx.arc(x, y, 25, 0, Math.PI * 2, false);
                     ctx.fill();
                 }
 
