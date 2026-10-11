@@ -10,8 +10,7 @@
 </head>
 <body>
 
-<button class="music-toggle" id="musicToggle" aria-label="Toggle wedding music">♫ MUSIC <span id="musicState">OFF</span></button>
-<audio id="weddingMusic" loop preload="metadata">
+<audio id="weddingMusic" loop preload="auto">
   <source src="Is%20It%20Love%20Bgm.mp3" type="audio/mpeg">
 </audio>
 
@@ -32,11 +31,13 @@
   <section class="hero section-pad">
     <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
     <p class="script">We invite you to celebrate</p>
+
     <h1 class="couple-names">
-  <span>Subburaj</span>
-  <span class="name-heart">❤️</span>
-  <span>Seetha</span>
-</h1>
+      <span>Subburaj</span>
+      <span class="name-heart">♡</span>
+      <span>Seetha</span>
+    </h1>
+
     <p class="hero-copy">Two hearts, one journey, a lifetime of love.</p>
     <div class="ornament">✦ ❦ ✦</div>
     <p class="scroll-note">SCROLL TO EXPLORE <span>↓</span></p>
@@ -52,7 +53,6 @@
       </h2>
 
       <div class="story-divider">✦ ❦ ✦</div>
-
       <p class="story-subtitle">Two souls, one beautiful story</p>
 
       <p class="body-copy">
@@ -220,30 +220,23 @@
 
 <script>
 const music = document.getElementById('weddingMusic');
-const musicToggle = document.getElementById('musicToggle');
-const musicState = document.getElementById('musicState');
+const openInvite = document.getElementById('openInvite');
 
-musicToggle.addEventListener('click', async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      musicState.textContent = 'ON';
-      musicToggle.classList.add('playing');
-    } catch (e) {
-      musicState.textContent = 'TAP AGAIN';
-    }
-  } else {
-    music.pause();
-    musicState.textContent = 'OFF';
-    musicToggle.classList.remove('playing');
-  }
-});
-
-document.getElementById('openInvite').addEventListener('click', () => {
+openInvite.addEventListener('click', async () => {
   document.getElementById('cover').classList.add('opened');
   document.body.classList.add('invitation-open');
+
+  /* Start music after the guest taps Open Invitation */
+  try {
+    await music.play();
+  } catch (error) {
+    console.log('Music could not start. Please check the audio file.');
+  }
+
   setTimeout(() => {
-    document.getElementById('invitation').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('invitation').scrollIntoView({
+      behavior: 'smooth'
+    });
   }, 450);
 });
 
@@ -260,8 +253,9 @@ let points = 0;
 
 function drawScratch() {
   const r = canvas.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
+  if (!r.width || !r.height) return;
 
+  const dpr = window.devicePixelRatio || 1;
   canvas.width = r.width * dpr;
   canvas.height = r.height * dpr;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -373,6 +367,7 @@ document.querySelectorAll('.gallery-image').forEach(button => {
 function closeLb() {
   lightbox.classList.remove('show');
   lightbox.setAttribute('aria-hidden', 'true');
+  lbimg.src = '';
 }
 
 document.getElementById('closeLightbox').addEventListener('click', closeLb);
