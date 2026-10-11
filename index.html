@@ -19,7 +19,7 @@
             text-align: center;
         }
 
-        /* Opening / Intro Screen */
+        /* Intro Opening Screen */
         .intro-screen {
             position: fixed;
             top: 0;
@@ -47,7 +47,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         .intro-content {
@@ -59,8 +59,15 @@
         }
 
         .intro-logo {
-            width: 120px;
-            margin-bottom: 30px;
+            font-size: 4rem;
+            color: #d4af37;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            border: 2px solid #d4af37;
+            padding: 10px 30px;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.5);
         }
 
         .open-btn {
@@ -393,7 +400,7 @@
     <div class="intro-screen" id="introScreen">
         <img src="assets/IMG-20260918-WA0002.jpg" alt="Background" class="intro-bg">
         <div class="intro-content">
-            <img src="assets/logo.png" alt="Logo" class="intro-logo">
+            <div class="intro-logo">S & S</div>
             <button class="open-btn" id="openInvitation">Open Invitation</button>
         </div>
     </div>
@@ -615,7 +622,7 @@
             // Countdown Timer (20 Nov 2026)
             const weddingDate = new Date('November 20, 2026 09:30:00').getTime();
 
-.            function updateCountdown() {
+            function updateCountdown() {
                 const now = new Date().getTime();
                 const diff = weddingDate - now;
 
