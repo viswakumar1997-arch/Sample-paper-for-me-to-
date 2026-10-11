@@ -310,19 +310,17 @@ button, a, input, select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #B22222 !important;
+  color: #25432e;
   text-shadow: 0 1px 1px rgba(255,255,255,.35);
 }
-color: #D4AF37 !important;
+
 .story-heading-top {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(16px, 4vw, 23px);
   line-height: 1.2;
   letter-spacing: .15em;
   font-weight: 500;
-  color: #D4AF37;
 }
-color: #D4AF37 !important;
 
 .story-number {
   display: block;
@@ -341,7 +339,6 @@ color: #D4AF37 !important;
   line-height: 1.1;
   letter-spacing: .16em;
   font-weight: 500;
-  color: #D4AF37;
 }
 
 .story-divider {
@@ -413,10 +410,7 @@ color: #D4AF37 !important;
 }
 
 .photo-two {
-  background-image: linear-gradient(rgba(9, 36, 23, 0.05), rgba(9, 36, 23, 0.45)), url('IMG-20260918-WA0003.jpg');
-  background-position: center;
-  background-size: cover;
-  filter: saturate(0.4);
+  background-image: linear-gradient(#09241722, #092417a8), url('IMG-20260918-WA0003.jpg');
 }
 
 .person-text {
