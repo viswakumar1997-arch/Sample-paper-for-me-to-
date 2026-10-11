@@ -19,7 +19,7 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Opening Screen Transition */
+        /* Intro Opening Screen Animation */
         #introScreen {
             transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
         }
@@ -47,7 +47,7 @@
             touch-action: none;
         }
 
-        /* Custom Scrollbar for Gallery */
+        /* Custom Scrollbar */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -59,18 +59,16 @@
 </head>
 <body class="bg-[#0c0c0c] text-white">
 
-    <!-- Opening / Intro Screen (Matching Original Video Aesthetic) -->
+    <!-- Opening / Intro Screen with Banana Leaf Background -->
     <div id="introScreen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black">
-        <div class="absolute inset-0 overflow-hidden opacity-50">
-            <img src="IMG-20260918-WA0002.jpg" alt="Background" class="w-full h-full object-cover scale-105 animate-pulse">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- நீங்கள் சேமித்த புதிய இமேஜ் ஃபைல் பெயர் இங்கே மாற்றப்பட்டுள்ளது -->
+            <img src="1791710031699.jpg" alt="Banana Leaf Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/20"></div>
         </div>
         
         <div class="relative z-10 flex flex-col items-center text-center px-4">
-            <div class="mb-8 p-4 border-2 border-[#d4af37]/60 rounded-2xl bg-black/40 backdrop-blur-md shadow-2xl">
-                <span class="font-serif text-4xl md:text-5xl tracking-widest text-[#d4af37] font-bold">EA</span>
-            </div>
-            <button id="openBtn" class="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#aa8228] text-black font-bold uppercase tracking-widest rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+            <button id="openBtn" class="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#aa8228] text-black font-bold uppercase tracking-widest rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 border border-yellow-200/50">
                 Open Invitation
             </button>
         </div>
@@ -253,7 +251,7 @@
             const musicToggle = document.getElementById("musicToggle");
             const musicText = document.getElementById("musicText");
 
-            // Open Button Action
+            // Open Button Action (Hides Intro and Starts Music)
             openBtn.addEventListener("click", function () {
                 introScreen.classList.add("fade-out");
                 if (bgMusic) {
